@@ -24,4 +24,10 @@ https://docs.google.com/document/d/1B2QOauLFeeLsscMUoG2lcfMvGIi_ENdLPZ1N9esUQOo/
 Meeting 2:
 https://docs.google.com/document/d/1q9C8DgIFqTYI8w0RGWKqx66kerT4qpkONo63V2J8Clk/edit#heading=h.40mlfguty7ok
 
+Meeting 3:
+https://docs.google.com/document/d/1GoDNuDj_V74x2BGpQDrVvJPbFO_oXIdhxk6PTEPwbLk/edit
+
+Meeting 4:
+https://docs.google.com/document/d/1jvj0QxMKksIdZCHxOnan1vmvcfbeZE6GGGIm_8588P8/edit#heading=h.5ikuzuxoakug
+
 
