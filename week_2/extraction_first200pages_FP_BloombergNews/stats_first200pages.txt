@@ -1,0 +1,21 @@
+base_url = 'https://business.financialpost.com/author/bloombergnp/page/'
+
+total number of articles extracted from first 200 pages: 780 (all inside articles_export.csv)
+
+for first 200 pages, stats for each of 6 econ indicators
+# =============================================================================
+# 72 items inside GDP indicator basket
+# 172 items inside mortgage indicator basket
+# 224 items inside interest_rate indicator basket
+# 146 items inside employment indicator basket
+# 216 items inside housing indicator basket
+# 188 items inside TSX indicator basket
+# =============================================================================
+
+Search terms used for each indicator: 
+
+mortgage_keywords = ['mortgage rates','mortgage'] ## added in more keywords as first keyword cannot return enough entries(returned only 1/2 entries)
+interestrate_keywords = ['interest rates']
+employment_keywords = ['employment']
+housing_keywords = ['housing price','housing']
+TSX_keywords = ['TSX', 'stock market']
