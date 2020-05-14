@@ -1,6 +1,6 @@
 base_url = 'https://business.financialpost.com/author/bloombergnp/page/'
 
-total number of articles extracted from first 200 pages: 780 (all inside articles_export.csv)
+total number of articles extracted from first 200 pages: 1982 (all inside articles_output.json)
 
 for first 200 pages, stats for each of 6 econ indicators
 # =============================================================================
