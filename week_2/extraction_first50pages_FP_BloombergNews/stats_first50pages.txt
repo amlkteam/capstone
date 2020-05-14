@@ -1,0 +1,19 @@
+base_url = 'https://business.financialpost.com/author/bloombergnp/page/'
+
+for first 50 pages, stats for each of 6 econ indicators
+# =============================================================================
+# 23 items inside GDP indicator basket
+# 54 items inside mortgage indicator basket
+# 47 items inside interest_rate indicator basket
+# 50 items inside employment indicator basket
+# 33 items inside housing indicator basket
+# 78 items inside TSX indicator basket
+# =============================================================================
+
+Search terms used for each indicator: 
+
+mortgage_keywords = ['mortgage rates','mortgage'] ## add in more keywords if first keyword cannot return enough entries
+interestrate_keywords = ['interest rates']#,'interest rate']
+employment_keywords = ['employment']
+housing_keywords = ['housing price','housing']
+TSX_keywords = ['TSX', 'stock market']
