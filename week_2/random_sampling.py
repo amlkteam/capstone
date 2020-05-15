@@ -1,12 +1,13 @@
 def random_sampling(indicator_name,entries,target_number=25):
     '''takes in an economic indicator's name, and the list containing json-format info of articles related to the indicator.
-    return a random sample of target size and save as csv file for annotation use.'''
+    returns a random sample of target size and save as csv file for annotation use.'''
     
     sample = []
     added_url = set()
     
     while len(sample) < target_number:
         entry = random.choice(entries)
+        # to prevent duplicate entries. treat url as unique article ID
         if entry['url'] not in added_url:
             sample.append(entry)
             added_url.add(entry['url'])
