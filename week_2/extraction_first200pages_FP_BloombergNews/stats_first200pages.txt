@@ -4,13 +4,15 @@ total number of articles extracted from first 200 pages: 1982 (all inside articl
 
 for first 200 pages, stats for each of 6 econ indicators
 # =============================================================================
-# 72 items inside GDP indicator basket
-# 172 items inside mortgage indicator basket
-# 224 items inside interest_rate indicator basket
-# 146 items inside employment indicator basket
-# 216 items inside housing indicator basket
-# 188 items inside TSX indicator basket
+# 72 items inside GDP indicator basket ## all unique entries
+# 172 items inside mortgage indicator basket ## 160 unique*
+# 224 items inside interest_rate indicator basket ## all unique
+# 146 items inside employment indicator basket ## all unique
+# 216 items inside housing indicator basket ##201 unique*
+# 188 items inside TSX indicator basket ## 169 unique*
 # =============================================================================
+
+* will deal with duplicates when reading into pandas dataframe for preprocessing
 
 Search terms used for each indicator: 
 
