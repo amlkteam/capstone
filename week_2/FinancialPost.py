@@ -327,11 +327,14 @@ def combine_fp_bloomberg_then_sample(bloomberg_json, fp_json, keyword, article_n
     
     '''
     bloomberg_df = pd.read_json(bloomberg_json)
-    bloomberg_df = bloomberg_df[(bloomberg_df.source != 'The Canadian Press') & (bloomberg_df.source != 'Reuters')]
+    bloomberg_df = bloomberg_df.drop_duplicates('url')
+    #bloomberg_df = bloomberg_df[(bloomberg_df.source != 'The Canadian Press') & (bloomberg_df.source != 'Reuters')]
+    bloomberg_df = bloomberg_df[(bloomberg_df.source == 'Bloomberg News')]
     bloomberg_df = bloomberg_df[bloomberg_df.source.notnull()]
     bloomberg_df['publishedAt'] = bloomberg_df['publishedAt'].apply(lambda x: datetime.strptime(x, '%b %d, %Y').strftime('%Y-%m-%d'))
     
     fp_df = pd.read_json(fp_json)
+    fp_df = fp_df.drop_duplicates('url')
     fp_df['publishedAt'] = fp_df['publishedAt'].apply(lambda x: ' '.join(x.split()[:3]))
     fp_df['publishedAt'] = fp_df['publishedAt'].apply(lambda x: datetime.strptime(x, '%B %d, %Y').strftime('%Y-%m-%d'))
 
@@ -348,6 +351,14 @@ def combine_fp_bloomberg_then_sample(bloomberg_json, fp_json, keyword, article_n
     
     sample_df.to_csv(keyword + '_sample.csv')
     
+    return len(sample_df)
+
+# =============================================================================
+# combine_fp_bloomberg_then_sample(bnn_folder+bloomberg_json, fp_folder+fp_json, 'stock_market_combined', 3)
+# combine_fp_bloomberg_then_sample(bnn_folder+'employment_95_Bloomberg_article.json', fp_folder+'employment_output.json', 'employment_combined', 3)
+# combine_fp_bloomberg_then_sample(bnn_folder+'GDP_100_Bloomberg_article.json', fp_folder+'GDP_output.json', 'GDP_combined', 3)
+#     
+# =============================================================================
 # Using Ajax Api to scrape Bloomberg Articles
 
 def clean_bloomberg_date(date):
@@ -377,78 +388,82 @@ def bnn_article_scraper(query):
     api_soup = BeautifulSoup(response.text, 'lxml')
     
     for article in api_soup.find_all('div', {'class': 'article-content'}):
-        title = article.a.text.strip()
-        #print("article_title:", title)
-
-        article_url = url_prefix + article.a.get('href').strip()
-        #print("article_url:", article_url)
-
-
-
-        article_response = requests.get(article_url)
-        article_soup = BeautifulSoup(article_response.text, 'lxml')
-        # get date
-        date_tag = article_soup.find('div', class_ = "date")
-        if date_tag:
-            date = date_tag.get_text().strip()
-        else:
-            date = None
-        #print('date:', date)
-
-        # get author
-        author_tag = article_soup.find('span', class_ = "author")
-        if author_tag:
-            author = author_tag.get_text().strip()
-        else:
-            author = None 
-        #print('author:', author)
-
-        # get source
-        source_tag = article_soup.find('span', {'class':'source'})
-        if source_tag:
-            source = source_tag.get_text().strip()
-        else:
-            source = None
-        #print('source:', source)
-
-        # get content
-        article_text_tag = article_soup.find('div', {'class':'article-text'})
-        if article_text_tag:
-            article_text = article_text_tag.get_text(' ')
-            desc = article_text_tag.text.strip().split("\n")[0]
-        else:
-            article_text_tag = article_soup.find('div', {'class':'article-text-chart'})
+        
+        try:
+            title = article.a.text.strip()
+            #print("article_title:", title)
+    
+            article_url = url_prefix + article.a.get('href').strip()
+            #print("article_url:", article_url)
+    
+    
+    
+            article_response = requests.get(article_url)
+            article_soup = BeautifulSoup(article_response.text, 'lxml')
+            # get date
+            date_tag = article_soup.find('div', class_ = "date")
+            if date_tag:
+                date = date_tag.get_text().strip()
+            else:
+                date = None
+            #print('date:', date)
+    
+            # get author
+            author_tag = article_soup.find('span', class_ = "author")
+            if author_tag:
+                author = author_tag.get_text().strip()
+            else:
+                author = None 
+            #print('author:', author)
+    
+            # get source
+            source_tag = article_soup.find('span', {'class':'source'})
+            if source_tag:
+                source = source_tag.get_text().strip()
+            else:
+                source = None
+            #print('source:', source)
+    
+            # get content
+            article_text_tag = article_soup.find('div', {'class':'article-text'})
             if article_text_tag:
                 article_text = article_text_tag.get_text(' ')
                 desc = article_text_tag.text.strip().split("\n")[0]
             else:
-                article_text = None
-                desc = None
-        #print('content:', article_text)
-
-        # get image url
-        article_image_tag = article_soup.find('p', {'class':'image-center'})
-        if article_image_tag:
-            image_url = url_prefix + article_image_tag.img['src']
-        else:
-            image_url = None
-        #print('image_url:', image_url)
-        #print('\n')
-        
-        article_dict = {}
-        
-        article_dict['source'] = source
-        article_dict['author'] = author
-        article_dict['title'] = title
-        article_dict['description'] = desc
-        article_dict['url'] = article_url
-        article_dict['urlToImage'] = image_url
-        article_dict['publishedAt'] = clean_bloomberg_date(date)
-        article_dict['content'] = article_text
+                article_text_tag = article_soup.find('div', {'class':'article-text-chart'})
+                if article_text_tag:
+                    article_text = article_text_tag.get_text(' ')
+                    desc = article_text_tag.text.strip().split("\n")[0]
+                else:
+                    article_text = None
+                    desc = None
+            #print('content:', article_text)
+    
+            # get image url
+            article_image_tag = article_soup.find('p', {'class':'image-center'})
+            if article_image_tag:
+                image_url = url_prefix + article_image_tag.img['src']
+            else:
+                image_url = None
+            #print('image_url:', image_url)
+            #print('\n')
+            
+            article_dict = {}
+            
+            article_dict['source'] = source
+            article_dict['author'] = author
+            article_dict['title'] = title
+            article_dict['description'] = desc
+            article_dict['url'] = article_url
+            article_dict['urlToImage'] = image_url
+            article_dict['publishedAt'] = clean_bloomberg_date(date)
+            article_dict['content'] = article_text
+        except:
+            continue
         
         output_list.append(article_dict)
         
-    output_folder = r'C:\Users\gen80\OneDrive\Documents\MDSlectures\capstone_sentiment_analysis\better_dwelling_capstone\week_2\BNN_extractions_3indicators'
+    output_folder = r'C:\Users\gen80\OneDrive\Documents\MDSlectures\capstone_sentiment_analysis\better_dwelling_capstone\week_2\BNN_extractions_6indicators'
     filename = '_'.join(query.split()) + '_' + str(len(output_list)) + '_' +'Bloomberg_article' + '.json'
     with open(os.path.join(output_folder, filename), 'w') as json_file:
         json.dump(output_list, json_file)
