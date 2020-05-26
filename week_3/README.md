@@ -1,6 +1,6 @@
 ## Week 3 Documents
 
-Meeting 9: 
+Meeting 9: https://docs.google.com/document/d/1uyKMWgonRY-TYD_00Bp0txepbqd7--O4_hy78bU-Oy0/edit
 
 Meeting 10: https://docs.google.com/document/d/1-pWckqIh5KlDn6b9hCdnqXw8-RN4sO_pUNTYVUwsZ84/edit#
 
