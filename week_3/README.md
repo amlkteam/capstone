@@ -6,4 +6,4 @@ Meeting 10:
 
 Meeting 11:
 
-Meeting 12: 
+Meeting 12: https://docs.google.com/document/d/1sXBy1A_hIJ0hlBGaKqjut5c_6Rs4n17G1L06gJjsPY0/edit
