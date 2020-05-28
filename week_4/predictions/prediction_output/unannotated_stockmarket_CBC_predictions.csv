@@ -1,0 +1,614 @@
+Unnamed: 0,source,title_desc,publishedAt,pred_label,confidence
+0,CBC,Tesla loses $13B in market value after CEO Elon Musk tweets 'stock price is too high'. Subsequent share drop erased nearly $3B US from the value of Musk's stake,2020-05-01,0,0.5732796788215637
+1,CBC,How Canadians can interpret COVID-19's volatile effect on the stock market. Is it too soon to invest hope in the latest round of market gains?,2020-04-24,0,0.6818007230758667
+2,CBC,"Hamilton realtor was first time stock market investor, 'then, the pandemic happened'. He's lost about $200 so far",2020-04-09,0,0.5663940906524658
+3,CBC,Manitoba securities commission warns investors about letter exploiting COVID-19 stock market anxiety. Gold mining company named in letter says it’s not involved,2020-04-09,0,0.6093794703483582
+4,CBC,"Oil plunge, coronavirus fears prompt panic selling on stock markets. Oil prices fall as much as 30 per cent; stock markets halted and bond yields plunge",2020-03-09,0,0.5828002691268921
+5,CBC,TSX and NYSE closed for Good Friday but Asian stock markets rise. Oil loses ground again after producing nations still can't agree on production cuts,2020-04-10,0,0.6819961667060852
+6,CBC,"Stock market rally fizzles as oil turns negative again. TSX, Dow and S&P 500 all up by about three per cent early but gave up gains",2020-04-07,0,0.548041045665741
+7,CBC,Battered stock markets post best day in years as governments fight coronavirus with cash. Is that light at the end of the tunnel? TSX and Dow rise more than 9%,2020-03-24,0,0.5548230409622192
+8,CBC,"Amid coronavirus rout, is it time to shut down the stock market?. Unprecedented volatility has raised calls for shutdown, but that poses problems, too",2020-03-19,0,0.5448343753814697
+9,CBC,Stock markets slide as coronavirus fears spread. Worst day for TSX since October as travel and tourism sectors hit hard,2020-01-27,0,0.63137286901474
+10,CBC,"In 1987, a triple-digit-point stock market drop was huge. Frenzied selloff at TSE drew in curious spectators on Black Monday",2020-03-19,0,0.5518553853034973
+11,CBC,TSX moves higher on Friday as stock market roller-coaster continues. TSX follows up the worst day in its history with gains ,2020-03-13,0,0.5516762137413025
+12,CBC,"Stock markets close higher as investors shake off coronavirus fears — for now. TSX and Dow start strong, sell off through the morning, rally again in the afternoon",2020-03-10,0,0.5518843531608582
+13,CBC,Stock market seesaw continues as TSX and Dow Jones sell off Thursday. Markets paralyzed by indecision as fear of the unknown settles in,2020-03-05,0,0.5518619418144226
+14,CBC,Stock markets finish rough week with another dive into the red. TSX loses 3% as global stock sell-off continues for 6th day,2020-02-28,0,0.5517111420631409
+15,CBC,Stock markets finish rough week with another dive into the red. TSX loses 3% as global stock sell-off continues for 6th day,2020-02-28,0,0.5517111420631409
+16,CBC,Stock markets lose ground again Monday despite U.S. central bank pledge to do 'whatever it takes'. Federal Reserve removes limits on how much debt it will take on from banks as collateral,2020-03-23,0,0.6461212038993835
+17,CBC,"Skittish over coronavirus, stock markets end fearful week with more losses. Dow sheds 600 points, TSX down close to 1 per cent",2020-01-31,0,0.5487855672836304
+18,CBC,"Stock markets broadly up on Brexit breakthrough. Markets also got a lift from solid financial results reported by Netflix, banks ",2019-10-17,0,0.6003961563110352
+19,CBC,"Shanghai stock exchange has worst day since 2015 as markets reopen amid coronavirus outbreak. Other markets also fell sharply, with Taiwan's benchmark down 2.8%",2020-02-03,0,0.577756404876709
+20,CBC,Stock markets down on growing concern about coronavirus in China. Canada's main stock index fell for the first time in 7 sessions on concerns about the outbreak,2020-01-21,0,0.6518475413322449
+21,CBC,"Stock markets sell off as inverted yield curve in bond market prompts recession fears. Dow Jones loses 800 points, TSX down almost 300",2019-08-14,0,0.5505520105361938
+22,CBC,"Why are stock markets soaring amid so much uncertainty?. Despite gloomy forecasts and slow growth, it doesn't take much to spur investors",2019-11-05,0,0.6325759291648865
+23,CBC,North American markets end best year since 2013 thanks to big gains in tech stocks. The Toronto Stock Exchange's S&P/TSX composite index was up 19% on the year,2020-01-02,0,0.5518216490745544
+24,CBC,"TSX and Dow sell off sharply as global recession fears bubble up again. Dow loses almost 500 points, TSX down by 136.69",2019-10-02,0,0.6265780925750732
+25,CBC,"Include CO2 emission levels in stock market reports, says B.C. professor. When the market goes up, so do CO2 emissions, says Rick Kool",2019-09-24,0,0.6326414346694946
+26,CBC,Slump in U.S. manufacturing knocks stock market to lowest point in 5 weeks. Manufacturing weakened in September for the 2nd straight month as U.S.-China trade war dragged on confidence,2019-10-01,0,0.5849385261535645
+27,CBC,"Stocks down as markets react to new China tariffs, Brexit jitters. The British pound dropped to its lowest level against the U.S. dollar in 34 years",2019-09-03,0,0.5517953634262085
+28,CBC,"Oil plunges 5% as stock markets tumble on trade, growth fears. Technology, among sectors most exposed to China, along with energy were the hardest hit",2019-05-23,0,0.5505848526954651
+29,CBC,Expect rate cuts to wait till Fed thinks they're essential: Don Pittis. As recession fears grow Powell and Poloz have good reasons to keep their powder dry,2019-06-17,0,0.6319851279258728
+31,CBC,"Clearwater's sales hit hard by COVID-19. Company suspends dividends for the rest of 2020, increases access to credit",2020-05-15,0,0.6514731645584106
+32,CBC,"COVID-19 restrictions see some short-term rentals returned to P.E.I. housing market. Dismal tourism prospects lead some operators to remove listings, find longer-term tenants",2020-05-15,0,0.6675613522529602
+33,CBC,"Stock markets remain jittery even as Trump and China try to ease trade war fears. As G7 summit nears end, China offers to renew bargaining, U.S president says",2019-08-26,0,0.5513777732849121
+34,CBC,"Lobster population deemed healthy in eastern N.S. as uncertain season begins. 'We can't help but be pleased, to take some pride,' says Cape Breton fisherman",2020-05-15,0,0.5663898587226868
+35,CBC,"COVID-19 on P.E.I.: What's happening Thursday, May 14. COVID-19 has brought out the worst in some Islanders, says premier",2020-05-14,0,0.5484980344772339
+36,CBC,U.S. Senate intelligence committee chair steps aside during insider-trading investigation. FBI served search warrant for Sen. Richard Burr's phone as part of probe,2020-05-14,0,0.555618405342102
+37,CBC,U.S. Senate intelligence committee chair steps aside during insider-trading investigation. FBI served search warrant for Sen. Richard Burr's phone as part of probe,2020-05-14,0,0.555618405342102
+38,CBC,Hospital procures half a million N95 masks from China in 'wild west' style deal. 'One of the most unbelievable experiences of a lifetime' says Hospital CEO David Musyj,2020-05-15,0,0.6792120337486267
+39,CBC,"Farmers, butchers going 'full-tilt' to keep up with growing demand for local meat. Point de Bute farmer says she's seen 300% increase in demand for beef since isolation started ",2020-05-13,0,0.5480506420135498
+40,CBC,U.S. Fed chair rules out negative interest rates even as Trump trumpets them. U.S. president goes negative on Jerome Powell for rejection of below-zero interest rates,2020-05-13,0,0.6513945460319519
+41,CBC,Alberta Energy Regulator blocks sale of Shell assets over cleanup concerns. AER said it wasn't happy with how the deal would have split the liability for cleaning up the sites,2020-05-15,0,0.6513458490371704
+43,CBC,Canadian Natural surprises by maintaining dividend while cutting spending. The payouts will cost the company about $2 billion ,2020-05-07,0,0.5505761504173279
+44,CBC,"MPs pass bill to increase dairy commission's borrowing limit. Bill allows Crown corporation to borrow $200M more, financing additional butter, cheese purchases",2020-05-14,0,0.6049352884292603
+45,CBC,"Whitecap Resources posts $2.1-billion loss, warns of 'involuntary' crude cuts. Calgary-based company says it's planning for a methodical shut-in if required",2020-04-30,0,0.628818154335022
+46,CBC,Commercial fishers on Lake Winnipeg tangle with province over requirement to use new nets. Larger mesh allows smaller fish to swim free; fishers already hurt by pandemic fear they will go belly-up,2020-05-13,0,0.6313899755477905
+47,CBC,"Canadian energy companies Cenovus and Husky swing to huge losses amid oil price collapse. Falling oil demand has dragged down producers' stocks, forced cost-cutting measures",2020-04-29,0,0.6333982944488525
+48,CBC,Vermilion Energy posts $1.3B loss on oil and gas assets writedown. Calgary-based firm cut dividend in half in March and suspended it entirely in mid-April,2020-04-29,0,0.6115139126777649
+49,CBC,"The economy with a capital 'E'. We dive into the markets, energy and housing to find out the COVID-19",2020-04-24,0,0.659463107585907
+50,CBC,Suncor reports $3.5B loss in 1st quarter due to low oil prices. Oil sector production cutbacks are expected to grow up to 1.7 million bpd,2020-05-06,0,0.5873420238494873
+51,CBC,TSX and Dow Jones bounce back somewhat after massive Monday sell-off. Monday was one of the bleakest days ever on the stock exchanges,2020-03-17,0,0.632145345211029
+52,CBC,"Jamaican farmers start working in Annapolis Valley after quarantine. 'We wouldn't be in business without temporary foreign workers,' says farmer",2020-05-02,0,0.5663937926292419
+53,CBC,Public pensions take a hit from COVID-19 concerns. Plans have likely lost more than $1 billion in stock markets over the last four weeks,2020-03-18,0,0.5508930087089539
+54,CBC,TSX and Dow make gains Thursday but coronavirus volatility continues. Canadian dollar fell to lowest level since 2003 on Wednesday,2020-03-19,0,0.5516764521598816
+55,CBC,Shell cuts dividend for first time since Second World War. Oil company worried that global recession could extend to 2023,2020-04-30,0,0.6384751796722412
+56,CBC,"TSX falls by 12%, now back to where it was in 2016. Circuit breaker rules designed to calm panicky markets triggered in Toronto and New York exchanges",2020-03-13,0,0.648072361946106
+57,CBC,"TSX and Dow plunge back into the red Friday, capping bleak week for stock markets. Canadian dollar below 70 cents US",2020-03-20,0,0.551842987537384
+58,CBC,"Husky cuts production by 80,000 bpd, taking Canadian total to 365,000 bpd so far. 'We have taken immediate action to preserve our balance sheet'",2020-04-20,0,0.693687915802002
+59,CBC,"Pandemic pushes Moncton toward multi-million deficit, staff aim to avoid tax hike. City forecasts deficit of at least $1.7 million if measures to control the pandemic remain until June",2020-04-07,0,0.5520755052566528
+60,CBC,TSX shut down for 'technical halt' as stock markets sell off. Company that owns and operates exchange says systems will be ready for Friday,2020-02-28,0,0.5485108494758606
+61,CBC,"As France emerges from 2 gruelling months of isolation, Macron hopes to win back citizens' trust. More than 26,000 people have died of COVID-19 in France",2020-05-10,0,0.5483101010322571
+62,CBC,Profitable Cannabis NB outperforming some companies bidding to take it over. Higgs government resumes consideration of bids by companies to take over cannabis retailing in New Brunswick,2020-05-04,0,0.6301249265670776
+63,CBC,"Coronavirus impact on global economy may jeopardize Alberta's balanced-budget plans: Kenney. 'In the short term, it's going to have a negative impact on our budget and on our economy,' premier says",2020-03-06,0,0.5664218664169312
+64,CBC,TSX and Dow Jones down by 20% since sell-off began last week. Another down day brings rolling total of losses close to definition of a bear market,2020-03-11,0,0.5518155097961426
+65,CBC,Husky Energy slashes spending by $1 billion. Company says move made to 'fortify' business in wake of challenging market,2020-03-12,0,0.6232097744941711
+66,CBC,"TSX and Dow Jones lose another 10% as coronavirus sell-off continues. When stock markets go down by 7%, automatic trading halts kick in to calm the situation",2020-03-16,0,0.6809205412864685
+67,CBC,Stock markets sell off again as global economy infected by coronavirus fear. Every major stock exchange in world is now in negative territory for 2020,2020-02-26,0,0.5518234372138977
+68,CBC,Retired Delta lawyer charged in stem cell company investigation. RCMP say victims in Canada and U.S. lost thousands of dollars in stem cell therapy company ,2020-03-11,0,0.5243407487869263
+69,CBC,"Man charged with 2nd-degree murder in ByWard Market stabbing. Gholam Alisalehie, 58, stabbed Thursday afternoon, died in hospital Saturday",2020-03-22,0,0.5260878205299377
+70,CBC,"CBC News Poll: In experts we trust (at least, more than we used to). Poll suggests rising levels of trust for experts amongst Albertans, even before COVID-19 struck",2020-04-08,0,0.5485095381736755
+71,CBC,"Stock markets sell off as coronavirus spread threatens global economy. Dow Jones loses almost 1000 points at open, price of oil sells off too",2020-02-24,0,0.5518422722816467
+72,CBC,"Could dogs detect coronavirus in humans? Your COVID-19 questions answered. From meat shortages to seasonal allergies, here's what you’re asking us today",2020-05-13,0,0.5510287284851074
+73,CBC,OPEC faces 'make-or-break' decision on oil production. Cartel meets as spread of COVID-19 continues to roil crude markets worldwide,2020-03-03,0,0.5478323698043823
+74,CBC,"$200 cheques for Manitoba seniors draw mix of praise, criticism. Make Poverty History Manitoba says benefit for seniors should have been based on income",2020-05-08,0,0.6801177859306335
+75,CBC,"Could dogs detect coronavirus in humans? Your COVID-19 questions answered. From meat shortages to seasonal allergies, here's what you’re asking us today",2020-05-13,0,0.5510287284851074
+76,CBC,"'We will get through this': Oilpatch hunkers down amid price plunge, virus fears. Companies scrutinize priorities as they prepare for 'extraordinary' times",2020-03-12,0,0.5482370853424072
+77,CBC,TSX loses another 8% as Canadian oil price falls to lowest level on record. Canadian dollar dips below 70 cents US,2020-03-18,0,0.5501677393913269
+78,CBC,Murray Street stabbing now homicide investigation. 58-year-old man died in hospital Saturday,2020-03-21,0,0.5371212959289551
+79,CBC,"Some Toronto workers 'left out' of federal financial support amid COVID-19. Canada Emergency Response Benefit has gaps that need to be fixed, workers say",2020-04-06,0,0.5468877553939819
+80,CBC,"Gasoline prices dip below 80¢ a litre at some Calgary pumps. Most city fuel stations selling regular gas for around 85¢, tracker shows",2020-03-12,0,0.5491090416908264
+81,CBC,Man in life-threatening condition after stabbing in ByWard Market. Murray Street closed between King Edward and Cumberland as police investigate,2020-03-19,0,0.5317045450210571
+82,CBC,"Why the TSX lost 1,500 points in just one week and what coronavirus has to do with it. China could set example for what happens after an economic pause due to COVID-19",2020-02-29,0,0.6535431742668152
+83,CBC,Chris Hall: Bill Morneau's keeping his pandemic focus firmly on the near-term. He knows Canadians want to be told when to expect a return to 'normal' — but he's got bigger problems,2020-04-18,0,0.6347912549972534
+84,CBC,Shares in drug company Gilead rise Friday on hopeful signs remdesivir helps with COVID-19. Patients using the drug in a clinical trial showed rapid recovery in fever and respiratory symptoms.,2020-04-17,0,0.6867923736572266
+85,CBC,P.E.I. oyster sales dropped to zero when pandemic hit. ‘The first two weeks were nothing’,2020-04-22,0,0.632482647895813
+86,CBC,"With markets reeling, can Quebec's budget offset uncertainty? Yes, says Legault. But opposition calls for $1 billion contingency fund to deal to economic effects of coronavirus",2020-03-09,0,0.6816408634185791
+87,CBC,7 potential lingering effects of COVID-19 on the economy: Don Pittis. How to choose among economic forecasts in a time of record uncertainty,2020-03-30,0,0.551469087600708
+88,CBC,"Tight rental market has Dartmouth renters worried over looming 'renoviction'. Tenants can reapply to the building after renovations, but rents will be hundreds of dollars higher",2020-03-12,0,0.5509945154190063
+89,CBC,Winnipeg's finance chair says city budget can weather economic storm. Stock markets and oil prices plunge as coronavirus wreaks financial havoc,2020-03-09,0,0.6811976432800293
+90,CBC,"Securities regulators warn of 'aggressive' junior gold miner promotion. Mailing makes exaggerated claims about Crestview Exploration Inc., 2 regulators caution",2020-04-09,0,0.5436992645263672
+91,CBC,Some supplies running low as coronavirus fears grow. Shelves at some stores bare as residents heed warning to be prepared,2020-03-04,0,0.5403796434402466
+92,CBC,"'So much uncertainty': New data highlights global economic pain from COVID-19. France's economy shrank by 5.8%, the biggest quarterly drop since 1949, as Germany projects 6.3% GDP decline",2020-04-30,0,0.5998929738998413
+93,CBC,Struggling with nightmares and sleepless nights? Don't let pandemic stress ruin your rest. 'All the bad sleep habits that we have can be exacerbated by this',2020-04-15,0,0.5503601431846619
+94,CBC,Loonie dips below 70 cents US as coronavirus impact lingers. The Canadian dollar has been swept up in the wave of negativity brought on by the coronavirus,2020-03-18,0,0.6736369729042053
+95,CBC,Riverview Market's chicken ginger soup. Yields 10 cups,2020-02-02,0,0.5730584859848022
+96,CBC,"High returns or recession: What does 2020 have in store for your money?. Mark Ting, financial columnist for CBC's On The Coast, reveals his predictions for the new year",2020-01-12,0,0.5488671064376831
+97,CBC,"Nova Scotia LNG project decision delayed due to market conditions, COVID-19. 'We are building for the future, not for the current economic situation,' says CEO",2020-04-16,0,0.5663855075836182
+98,CBC,"Will COVID-19 affect the spring real estate market?. Mark Ting, On the Coast's finance columnist, on what you should do if you're looking to buy — or sell",2020-03-15,0,0.6305821537971497
+99,CBC,Will COVID-19 cause the next North American recession?. Finance columnist Mark Ting answers questions about the financial impact of coronavirus,2020-03-08,0,0.6792795658111572
+100,CBC,How COVID-19 could hit the Doug Ford government's budget. Forecasting COVID-19 impact on Ontario's economic growth a challenge as budget looms on March 25,2020-03-10,0,0.5493979454040527
+101,CBC,"Is the coronavirus ravaging your investment portfolio? Here's what you need to know. Financial experts predict the recovery could take a year or more, and there may be more rough times ahead",2020-03-13,0,0.6076017618179321
+102,CBC,"Canadian dollar hits 14-month high, TSX lifts on energy-sector gains. Loonie traded at 77.10 cents US, up from 76.99 cents Friday",2020-01-06,0,0.6067110300064087
+103,CBC,"Markets up sharply, rebounding from 7-day, coronavirus-driven decline. Rally comes amid hope central banks will cut rates to shore up economies ",2020-03-03,0,0.6535487771034241
+104,CBC,U.S. Federal Reserve cuts benchmark interest rate by half-point to offset coronavirus impact. Rate cut is biggest since 2008 financial crisis,2020-03-03,0,0.6382405161857605
+108,CBC,Wealth of billionaires falls for 1st time since 2015 as uncertainty hits the super-wealthy. Wealth fell by 4.3 per cent globally to $8.5 trillion US last year,2019-11-08,0,0.5480371117591858
+109,CBC,Harpauer says falling oil prices should have little impact on Sask. budget. Sask. finance minister responds to NDP concerns about budget day,2020-03-12,0,0.5505439639091492
+110,CBC,Ontario Real Estate Association calls on agents to stop open houses amid COVID-19 outbreak. The association's president is asking realtors to shift their practices online,2020-03-22,0,0.6495569944381714
+111,CBC,"If COVID-19 creates an economic crisis, many see stimulus as a chance for change: Don Pittis. Morneau and others must decide whether to use bailouts to perpetuate what some see as an ailing status quo",2020-03-11,0,0.5513857007026672
+112,CBC,"Fewer homes on the market could mean bargains for buyers still on the hunt during COVID-19. Real estate market has slowed to a halt, leaving buyer's market during COVID-19 pandemic",2020-03-29,0,0.6809163689613342
+113,CBC,The Great Recession nearly killed Harper's government — and COVID-19 could be worse. Addressing the outbreak is only part of the federal government's job. It also has to fight fear.,2020-03-10,0,0.6328698396682739
+114,CBC,"How will Waterloo region weather COVID-19? Experts say it looks good but there will be challenges. Even if everything is OK, now is a good time to take stock, says Canadian Urban Institute CEO",2020-04-18,0,0.5438060760498047
+115,CBC,"Negotiators close on nearly $2 trillion virus aid package. Top Democrat Chuck Schumer says despite differences with Republicans, aid deal could be reached today",2020-03-24,0,0.5852644443511963
+116,CBC,'Agonizing': The prospect of a historic oil glut weighs on crude prices. North American benchmark price drops below $30 US per barrel,2020-03-16,0,0.5720715522766113
+117,CBC,Shopify shares jump after web-retail supplier reports soaring 4th-quarter sales. Ottawa-based tech company's sales and profit top expectations,2020-02-12,0,0.5833105444908142
+118,CBC,"Lessons from the Great Crash of 1929 for investing in an ever-rising market: Don Pittis. Having escaped an October crash, can we finally talk about irrational markets?",2019-11-11,0,0.6813088655471802
+119,CBC,How coronavirus fears could impact your investment portfolio. Finance columnist Mark Ting expects more short term volatility with further drops in the Chinese stock markets,2020-02-02,0,0.6815375685691833
+120,CBC,"Help for Canadian oilpatch coming in 'hours, possibly days,' finance minister promises. 'The energy sector is in a particularly challenging situation,' Bill Morneau tells senators",2020-03-25,0,0.5663970112800598
+121,CBC,Bank of Canada may cut rates to aid economy sickened by COVID-19: Don Pittis. Central bank action may be part of a co-ordinated G7 plan as recommended by OECD,2020-03-03,0,0.6736668348312378
+123,CBC,Wall Street rally pauses near records in Christmas Eve trade. All three major stock indexes closed at all-time highs on Monday,2019-12-24,0,0.5482479333877563
+124,CBC,Union seeks court guarantee Dominion Diamond will honour millions in pension shortfall. Last official report says shortfall $9.1M but company official says true figure could be higher,2020-05-07,0,0.6283369660377502
+126,CBC,Bourse anarchy — what fear of the coronavirus is doing to markets. Plus how regulatory flip-flops makes balancing environment and economics harder,2020-02-28,0,0.6059792041778564
+127,CBC,"Markets up as retailers rise with holiday shopping. Amazon, other retailers had last-minute surge in online holiday shopping",2019-12-26,0,0.6326636075973511
+128,CBC,"CBC News poll: Albertans were already anxious. Then, the floor dropped out. Even before the pandemic, Albertans were braced for hard economic times",2020-04-07,0,0.5502704977989197
+129,CBC,"New Brunswick's two-week old budget already a 'mess' in wake of COVID-19 crisis. Blaine Higgs says economic cost of pandemic is high, but government will pay what's needed to prevent spread",2020-03-20,0,0.5480359196662903
+131,CBC,"Provincial tribunal backs London developer in bitter, 5-year demolition battle. Demolition looms for the building where London's labour movement was born",2020-05-08,0,0.615808367729187
+132,CBC,"As stock markets fall, the time to stock up at the store  is before COVID-19 comes to town: Don Pittis. Empty shelves in places the virus hits are a reminder to prepare for emergencies",2020-02-27,0,0.6053261756896973
+133,CBC,"U.S. political leaders deal with fallout — and self-quarantine — in face of coronavirus outbreak. Trump 'not concerned at all' about exposure to virus, White House press secretary says",2020-03-10,0,0.5477386713027954
+134,CBC,"U.S. political leaders deal with fallout — and self-quarantine — in face of coronavirus outbreak. Trump 'not concerned at all' about exposure to virus, White House press secretary says",2020-03-10,0,0.5477386713027954
+135,CBC,"As COVID-19 hits the economy, bailouts are a fresh reminder why governments matter: Don Pittis. When this is all over, will penny-pinchers remember the value of governments?",2020-03-20,0,0.6480692625045776
+136,CBC,90 years young: Family owned and operated Freeds celebrates. Sam Freed spoke 11 languages when he opened the store in 1929,2019-11-18,0,0.5489164590835571
+137,CBC,"Canadian Natural Resources reports fourth-quarter profit, raises dividend. Energy company says it will now pay quarterly dividend of 42.5 cents per share",2020-03-05,0,0.6298375725746155
+138,CBC,2 different start dates being recommended for 2 P.E.I. lobster fishing areas. 'It is not going to be one thing ... to solve it for everyone' ,2020-04-21,0,0.6266424655914307
+139,CBC,Ontario Securities Commission chair and CEO Maureen Jensen to step down. Jensen was the first woman to be named chair and CEO of the securities regulator,2020-01-21,0,0.6276342868804932
+140,CBC,"Crude storage is filling fast as demand tumbles, piling pressure on oilpatch. 'It's happening at lightspeed,' market watcher says",2020-04-21,0,0.5663906931877136
+141,CBC,"Stung by WeWork losses, SoftBank boss charts more cautious IPO course. SoftBank Group plunged to its first quarterly loss in 14 years on Wednesday",2019-11-07,0,0.5513049364089966
+142,CBC,"Canopy Growth reports $374.6M loss, restructures softgel and oil portfolio. The latest quarter results includes a $32.7-million restructuring charge for returns ",2019-11-14,0,0.6818823218345642
+143,CBC,"How bad will Canada's COVID-19 recession be?. 2 million jobs could be at stake, and the economy could shrink by more than it did in 2009",2020-03-27,0,0.5504204034805298
+144,CBC,Canopy Growth names Constellation Brands executive as new CEO. Founding employee Mark Zekulin to step down from CEO and board position,2019-12-09,0,0.5521330833435059
+145,CBC,U.S. Federal Reserve leaves rates near zero as COVID-19 savages U.S. economy. Economists forecast sharpest downturn in U.S. history this quarter,2020-04-29,0,0.5518632531166077
+146,CBC,"Interest rates are plunging — so why aren't mortgage rates?. Bond yields and central bank rates have never been lower, but not all the savings are filtering down",2020-04-04,0,0.572633683681488
+147,CBC,Coronavirus forces strained London grocery stores to change the way they do business. Supermarkets have unwittingly found themselves on the front lines of a pandemic,2020-03-17,0,0.681367039680481
+148,CBC,Is the North American economy heading for a recession?. Financial contributor Mark Ting predicts there won't be a recession until 2021 or later,2019-08-11,0,0.582271933555603
+149,CBC,CannTrust shares plunge again as Health Canada deems 2nd cannabis facility 'non-compliant'. Problems mount at cannabis company as government cracks down after unlicensed growing,2019-08-12,0,0.5409417152404785
+150,CBC,"Cannabis companies could go bust in 2020, industry insiders predict. 2 Canadian companies sought creditor protection last month",2020-01-21,0,0.5518619418144226
+151,CBC,"To boost beef industry, N.L. government invites farmers to have a cow. 15 purebred Hereford cattle imported in past 3 years",2019-10-09,0,0.5286597609519958
+152,CBC,"Website connects laid-off workers with overburdened food manufacturers. Companies facing increased demand, reduced staff keen for experienced workers",2020-03-27,0,0.6661966443061829
+153,CBC,"North American markets reach new record highs on stronger U.S. economic growth. In New York, Dow Jones industrial average up 42.32 points to 28,164",2019-11-27,0,0.631568968296051
+154,CBC,"Pandemic closures show the value of local farmers, says Wooden Monkey owner. Lil MacPherson, who has closed her well-known Halifax restaurants, says emphasis moving to local food",2020-03-20,0,0.5509073138237
+155,CBC,"Automakers dodged parts shortage, but COVID-19 poses new threat. Analysts predict gloomy outlook for sales this year",2020-03-17,0,0.55180823802948
+156,CBC,How the coronavirus has thrown interest rate plans out the window. 40 banks around the world have already cut interest rates — and Canada could be next,2020-03-01,0,0.551796019077301
+157,CBC,China-U.S. trade and Hong Kong uncertainty weigh on global stocks. This comes after U.S. President Donald Trump said he had not agreed to gradually lift tariffs on Chinese goods,2019-11-11,0,0.6479499340057373
+158,CBC,CBC News poll: Albertans were hurting financially even before COVID-19. More than half of Albertans said their household’s finances were worse this year than last year,2020-04-04,0,0.5516852736473083
+159,CBC,Dispatches from the small businesses struggling with COVID-19 and the economics of creating a vaccine. Hear first-hand from Canadians facing economic problems due to the outbreak,2020-03-20,0,0.6761459708213806
+160,CBC,New York markets bounce higher as U.S. tariffs on Mexico averted. Mexican president says new NAFTA trade deal could be signed next week,2019-06-10,0,0.5517789125442505
+162,CBC,"Path of COVID-19 economy even harder to predict than that of virus itself: Don Pittis. Economic bounce-back depends not just on what virus does but how governments, businesses, people react",2020-05-04,0,0.6307103037834167
+163,CBC,Interest rate cut for COVID-19 is like surgery with a club: Don Pittis. Cheap money is a blunt instrument that won't fix specific economic problems caused by coronavirus outbreak,2020-03-05,0,0.5746766328811646
+164,CBC,Oil price jump boosts Canadian energy stocks. Higher fuel prices for consumers expected,2019-09-16,0,0.5517244338989258
+165,CBC,"Stocks fall as trade concerns spark growth fears, push investors to bonds. Each of the major U.S. indexes suffered their fourth decline in five sessions",2019-05-30,0,0.551856517791748
+167,CBC,"Trump retaliates against China with tariff hike; stocks sell off. U.S. president spars with Fed chief, orders U.S. companies to stop doing business in China",2019-08-23,0,0.6493363976478577
+168,CBC,"An alley full of dumpster fires: Which crisis would you like to deal with first?. If the Muskrat Falls report weren't enough, a stock market collapse and a pandemic came upon us",2020-03-14,0,0.5517531633377075
+169,CBC,"When we were talking a lot about 'e-business' stocks 20 years ago. In 1999, some internet-related companies saw sharp drops in their stock prices",2019-08-06,0,0.6041920185089111
+170,CBC,Add a little green to your isolation blues by growing an indoor garden. 'This weather is not going to last forever and eventually these things can go outside',2020-03-24,0,0.6960455775260925
+171,CBC,"'Stay the course': Don't let COVID-19 anxieties dictate your personal finance plans, says consultant. Keep an emergency fund, and focus on the long term: Preet Banerjee",2020-03-08,0,0.6768210530281067
+172,CBC,"'Stay the course': Don't let COVID-19 anxieties dictate your personal finance plans, says consultant. Keep an emergency fund, and focus on the long term: Preet Banerjee",2020-03-08,0,0.6768210530281067
+173,CBC,"S&P 500 hits record high on hopes of trade deal, rate cut. Technology stocks also helped push benchmark index to all-time high and Nasdaq close to record",2019-10-28,0,0.5518601536750793
+174,CBC,"'Master of narrative' Trump tells voters his story about the U.S. economy. The economy is strong, but not everyone has experienced gains under the Trump administration's policies",2020-02-05,0,0.6378257274627686
+175,CBC,U.S. stock indexes wobble as traders turn cautious over trade. The U.S. held off on tariffs set to kick in Tuesday but has yet to cancel plans for more tariffs in December ,2019-10-16,0,0.5480453968048096
+176,CBC,Driller Ensign Energy shares fall on slashed dividend and quarterly loss. Calgary-based driller's shares closed down more than 14 per cent,2019-11-13,0,0.5439369678497314
+177,CBC,McDonald's to offer Beyond Meat burger in Ontario pilot project starting next week. Iconic burger chain the latest to jump on plant-based eating bandwagon,2019-09-26,0,0.6339024305343628
+178,CBC,"How long does the virus stay in your beard? Your COVID-19 questions answered. From beards to serology tests, here's what you're asking us today",2020-04-09,0,0.55265873670578
+179,CBC,"Depleted national stockpile leaves Canada reliant on China for masks, gowns and other supplies during pandemic. Health Canada has temporarily lowered its standard for the importation of PPE to meet demand",2020-05-07,0,0.5994889736175537
+180,CBC,New York stock indexes hammered as China allows yuan to devalue. Threat of tariffs has been hitting markets hard for the past 3 days,2019-08-05,0,0.5518459677696228
+181,CBC,Lyft continues to post losses despite revenue growth. The ride-hailing company lost $664.2 million US despite posting revenue of $867.3 million,2019-08-07,0,0.5516394376754761
+182,CBC,Canopy Growth shares slump as cannabis company earnings reveal quarterly loss. Biggest cannabis company in Canada had bigger loss than expected last quarter,2019-06-21,0,0.5298668146133423
+184,CBC,"Aurora Cannabis cuts 500 jobs across company, CEO steps down. Company halted construction on 2 facilities in November",2020-02-06,0,0.5372008681297302
+185,CBC,Shareholder sues Zoom for not disclosing security flaws. Shares down nearly a third of their value since hitting record highs in late March,2020-04-08,0,0.5516886711120605
+186,CBC,Oil price plunge will not be factored into upcoming Sask. budget. Western Canadian Select price drops to $20 US per barrel,2020-03-10,0,0.5992844104766846
+187,CBC,"Grocery stores struggling to keep up as shoppers clear shelves but say there's no lack of supply. Despite the run on stock, stores say supply chain is strong and goods are being replenished",2020-03-18,0,0.6297898292541504
+188,CBC,COVID-19 could cool London's busy spring real estate market before it begins. Many people looking to buy or sell a home now might be reconsidering ,2020-03-30,0,0.6323052048683167
+189,CBC,"Barrick to pay Tanzanian government $300M to settle mining dispute. Deal marks end of long impasse between Tanzania and Acacia Mining, which firm took over",2019-10-21,0,0.6310677528381348
+190,CBC,"Barrick to pay Tanzanian government $300M to settle mining dispute. Deal marks end of long impasse between Tanzania and Acacia Mining, which firm took over",2019-10-21,0,0.6310677528381348
+191,CBC,"Teck Resources warns of $1.13B charge if Frontier oilsands mine rejected. The $20.6-billion, 260,000-barrel-per-day project is located in northeastern Alberta",2020-02-21,0,0.5309655070304871
+192,CBC,"'The building is so well made': Tenants celebrate 90th birthday of historic Frontenac. Regina apartment complex, built in 1929, was granted official municipal heritage status in early 2016",2019-12-14,0,0.5787989497184753
+193,CBC,B.C. businessman Jim Pattison makes bid to take Canfor private. Canfor stock jumps after Great Pacific Capital makes offer of $16 per share,2019-08-12,0,0.6326614618301392
+194,CBC,How coronavirus is colouring the U.S. presidential campaign. 'The way you respond to crises can be make-or-break moments for elected officials',2020-03-14,0,0.6559516787528992
+197,CBC,"S&P 500 hits record high on hopes of trade deal, rate cut. Technology stocks also helped push benchmark index to all-time high and Nasdaq close to record",2019-10-28,0,0.5518601536750793
+198,CBC,Recounting a devastating week in North America's biggest oil play. A day-by-day account in the west Texas oilfields as oil markets in a free fall,2020-03-15,0,0.5341801047325134
+199,CBC,Stelco cites 'unprecedented' drop in steel prices while reporting Q4 loss. Steelmaker working to diversify offerings and add higher value-added products,2020-02-19,0,0.6781486868858337
+200,CBC,"3 different companies hired to bus Halifax-area students starting this fall. Stock Transportation, which has faced criticism, gets special-needs contract",2020-02-06,0,0.5607872009277344
+201,CBC,'Sock Rocket:' Trump's mispronunciation leads to sales boost for Calgary company. Family business tweeted at the U.S president encouraging him to buy their socks,2019-11-29,0,0.5594819784164429
+203,CBC,Tesla shares soar 40% in 2 days as euphoria sets in — and short sellers get squeezed. Company has quadrupled in value since summer of 2019,2020-02-05,0,0.6123659014701843
+204,CBC,"Cineplex agrees to acquisition by U.K.-based Cineworld. Group offers to pay 42% premium for Canadian theatre chain, subject to shareholder approval",2019-12-16,0,0.6300787925720215
+205,CBC,"Manitoba government promises 'emergency-ready' 2020 budget. Tax cuts are even more necessary in uncertain financial times, Finance Minister Scott Fielding says",2020-03-11,0,0.5498442649841309
+206,CBC,"Under shadow of COVID-19, Island potato growers face uncertain season. Those who grow for french fry industry expecting volume cut of up to 20% in contract with Cavendish Farms",2020-04-20,0,0.5507349967956543
+207,CBC,"Cineplex agrees to acquisition by U.K.-based Cineworld. Group offers to pay 42% premium for Canadian theatre chain, subject to shareholder approval",2019-12-16,0,0.6300787925720215
+208,CBC,Cargojet Inc. shares surge on deal with Amazon to grow partnership. The company's shares were up $14.88 at $105.55 in morning trading on the Toronto Stock Exchange,2019-08-23,0,0.6321935057640076
+209,CBC,"Ford open to closing borders to visitors during pandemic, not to commerce. Provincial officials say there are now 177 cases of COVID-19 in Ontario",2020-03-16,0,0.5750571489334106
+210,CBC,"Ontario shelves plan for full 2020 budget amid COVID-19 uncertainty. Province will release fiscal outlook, which includes cash to deal with coronavirus",2020-03-16,0,0.6830251216888428
+211,CBC,"Oilpatch buyers expected to stay on the sidelines in 2020, analysts say. 'Canadian guys are facing more country risk and currency risk and regulatory risk'",2019-12-23,0,0.6469275951385498
+212,CBC,U.S. corporate insiders selling shares at fastest pace since financial crisis a decade ago. Investors watch for signs of whether insiders put more or less money into their own companies,2019-09-09,0,0.5650319457054138
+213,CBC,CannTrust hires adviser to explore sale amid unlicensed pot growing probe. Greenhill & Co. Canada will serve as the company's financial adviser,2019-07-31,0,0.682059109210968
+214,CBC,Answers to your questions about the coronavirus. A roundup of helpful links from around the CBC,2020-05-15,0,0.5511010885238647
+215,CBC,"Quebec companies aim to dress the province's health workers in a crucial piece of 'armour'. With the outbreak of COVID-19, stockpiles of medical gowns ‘melting like snow in the sun'",2020-04-09,0,0.6423044800758362
+216,CBC,"Dow at record above 27,000 as U.S. rate cuts look likely. Powell's testimony to Congress indicates key rate could be cut in July",2019-07-11,0,0.5503486394882202
+217,CBC,"Divesting from U.S. gun industry is not so easy if you pay into Canada Pension Plan. Companies that make assault rifles, handguns, bullets among CPP investments",2019-09-04,0,0.6820483207702637
+218,CBC,"Canadian companies feeling the pinch as coronavirus takes toll on their business prospects. Sectors from retail to air travel, mining and manufacturing are bracing for impact",2020-01-28,0,0.6802242994308472
+219,CBC,"Cabinet grilled on why it took so long for premier to rule out spring election. There will be no spring election amid COVID-19 concerns, Sask. premier says",2020-03-12,0,0.549117386341095
+221,CBC,"Slashing all car insurance rates during COVID-19 would be 'overly simplistic,' says industry CEO. Don Forgeron says ‘adjustments’ are being made to ‘better reflect the reduced risk’ ",2020-04-24,0,0.6793022155761719
+222,CBC,"TSX falls from record high after a week of gains, U.S. markets mixed. 'I think this kind of a catch-your-breath moment for the markets, analyst said",2019-09-23,0,0.559486985206604
+223,CBC,"Miner Teck Resources reports Q3 profit down, plans to cut 500 full-time jobs. Vancouver-based corporation says it wants to improve efficiency following Q3 profit drop",2019-10-25,0,0.6321497559547424
+224,CBC,"Slashing all car insurance rates during COVID-19 would be 'overly simplistic,' says industry CEO. Don Forgeron says ‘adjustments’ are being made to ‘better reflect the reduced risk’ ",2020-04-24,0,0.6793022155761719
+225,CBC,OPINION | Kenney ignoring teachers' pension fears after AIMCo's $4-billion 'blunder'. ATA worried about pensions' future under AIMCo,2020-04-24,0,0.675223708152771
+226,CBC,How tariffs work and why they've always mattered to Canada: Don Pittis. Trump may be changing the rules by threatening Mexico with tariffs over immigration,2019-06-05,0,0.6507344245910645
+227,CBC,Boost for Saudi Arabia as Aramco shares surge 10% on debut. Crown prince trying to diversify economy away from oil,2019-12-11,0,0.5740644931793213
+228,CBC,"Creditor protection buys Dominion Diamond time, but an uncertain future lies ahead. One of the N.W.T.'s main employers is steps away from bankruptcy; what happens next will be critical",2020-04-24,0,0.5858167409896851
+229,CBC,Rigolet is still looking for someone to buy its gas station. The community government took over the gas station 13 years ago,2020-02-26,0,0.548180341720581
+230,CBC,"Education, reuse key to making sure personal protective equipment lasts, says doctor. Hundreds of people have been trained to coach health-care workers on PPE use",2020-04-17,0,0.5346695184707642
+231,CBC,"More rate cuts possible if coronavirus impact worsens, Poloz says. Investors think it is a near certainty that bank will cut again next month",2020-03-05,0,0.5508975982666016
+232,CBC,Saudi Arabia taking Aramco public on Riyadh stock exchange. IPO documents say state-owned oil giant has largest liquid reserves of any company in the world,2019-11-03,0,0.551356852054596
+233,CBC,"Farmers concerned about disruptions to spring seeding, livestock operations amid COVID-19. Fuel, chemical and seed supply worries come as farmers are getting ready to plant",2020-03-30,0,0.6326593160629272
+234,CBC,Major Canadian pot companies facing proposed class-action lawsuits in the U.S.. Each producer is accused of misleading investors or failing to disclose certain problems with their businesses,2020-01-19,0,0.6558728218078613
+235,CBC,"Saudi Aramco is now the world's most valuable company - but for how long?. In its first day of trading, Saudi Aramco soared to a valuation of $1.9 trillion US",2019-12-11,0,0.5517704486846924
+236,CBC,China warns U.S. investment curbs would hurt global economy. Foreign ministry appealed to Washington to 'meet us halfway' and resolve disputes amid tariff war,2019-09-30,0,0.5483014583587646
+237,CBC,"Canada Pension Plan board president says the retirement fund is safe, despite economic downturn. ‘This is one thing they should take off their list to worry about,’ says Mark Machin",2020-04-06,0,0.629692792892456
+238,CBC,Trump considering delisting Chinese companies from U.S. stock exchanges. Move,2019-09-27,0,0.5517448782920837
+239,CBC,Dining during COVID-19: Andrew Coppolino's tips for getting local food online. CBC K-W's food columnist looks at how to nourish yourself in times of social distancing,2020-03-28,0,0.6817917227745056
+240,CBC,"Ottawa's Italian businesses feel effects of lockdown, from prosciutto to guided tours. Italians are only allowed to travel for work or medical reasons until April 3",2020-03-11,0,0.5516735315322876
+241,CBC,"For Alberta, the day of fiscal reckoning has arrived. Province’s economy and budget can recover, but it will require hard choices",2020-04-28,0,0.6319550275802612
+242,CBC,"Ottawa's Italian businesses feel effects of lockdown, from prosciutto to guided tours. Italians are only allowed to travel for work or medical reasons until April 3",2020-03-11,0,0.5516735315322876
+243,CBC,"For Alberta, the day of fiscal reckoning has arrived. Province’s economy and budget can recover, but it will require hard choices",2020-04-28,0,0.6319550275802612
+244,CBC,"Canadian e-commerce firm Shopify looks set to challenge Amazon. It's not well known among consumers, but if you shop online you’ve likely used it",2019-10-30,0,0.6446474194526672
+245,CBC,"U.S. allies complain of 'Wild West' tactics in race for medical supplies. Shipments of masks, other vital medical supplies to fight coronavirus disrupted",2020-04-05,0,0.5720590353012085
+246,CBC,Here's what the oilpatch wants in financial aid from Ottawa. Oil remains at record low prices and companies desperately want access to money,2020-04-02,0,0.5745818614959717
+247,CBC,"'I'm spending way less': How the lockdown is leading to more savings for some Canadians. Consumers pull back on spending during the pandemic, but will new habits continue when businesses reopen?",2020-04-22,0,0.6354434490203857
+248,CBC,"When 2 brewers fought over who could be crowned as a king in Canada. In 1982, Federal Court judge said Budweiser could not use phrase 'king of beers' on its packaging",2019-12-21,0,0.676166832447052
+249,CBC,Hexo shares slip as it reports $56.7M fourth-quarter loss. Cannabis company's net revenue totalled $15.4M,2019-10-29,0,0.5661669969558716
+250,CBC,"Canadian government shopping for high-demand N95 masks on the international market. With no factory in Canada, domestic production of N95 masks is still months away",2020-04-01,0,0.5855181217193604
+251,CBC,"Suresh's picks for gyros, oysters, chicken and cheese at St. Lawrence Market. St. Lawrence Market is located at 93 Front St. E.",2019-12-19,0,0.626200795173645
+252,CBC,"What Alberta job losses in January mean for Edmonton. Statistics Canada says Alberta lost 19,000 jobs last month ",2020-02-08,0,0.5355395078659058
+253,CBC,"Canadian government shopping for high-demand N95 masks on the international market. With no factory in Canada, domestic production of N95 masks is still months away",2020-04-01,0,0.5855181217193604
+254,CBC,"Suresh's picks for gyros, oysters, chicken and cheese at St. Lawrence Market. St. Lawrence Market is located at 93 Front St. E.",2019-12-19,0,0.626200795173645
+255,CBC,"Italy heading to no-confidence vote, possible snap elections. Alliance between League and Five-Star, tenuous almost since inception, on brink of collapse",2019-08-09,0,0.6194941401481628
+256,CBC,Knowledge House appeals rejected by Nova Scotia's highest court. Once-celebrated business was a success story right up to its abrupt closure in September 2001,2020-02-05,0,0.547879695892334
+257,CBC,Money was scarce and times were tough in P.E.I.'s Bygone Days. How some Islanders scraped together a living 100 years ago,2020-03-22,0,0.5518838763237
+258,CBC,"The battle between black and white Air Force 1 sneakers means profit for Nike. We explain why one shade of the sneaker is ""per-shoe-na"" non grata",2019-12-07,0,0.5868068337440491
+259,CBC,"New virus could trigger travel sector woes akin to damage from SARS in 2003. Transportation, tourism companies have seen declines in share prices",2020-01-23,0,0.6326218843460083
+260,CBC,"From shopping to walks: Your coronavirus questions answered. Staying protected is all about social distancing, cleanliness with 'attention to detail'",2020-03-25,0,0.6052870750427246
+261,CBC,"Prominent scientist dares to ask: Has the COVID-19 response gone too far?. Leading epidemiologists publish duelling commentaries, igniting debate on social media",2020-03-19,0,0.6813206672668457
+262,CBC,Global pact forged to drastically cut oil production to contain price crash. OPEC and other producers agreed to cut 9.7 million barrels a day,2020-04-13,0,0.5503498315811157
+263,CBC,"Brian Pallister's pre-budget tax surprise: The premier giveth, the premier taketh away. The PST is going down again, the carbon tax is back and nobody quite knows what happens next",2020-03-06,0,0.5489048957824707
+264,CBC,"Rental vacancies up in Ottawa, but so's the rent. 2-bedroom units in city's west end led surge in rental prices in 2019",2020-01-16,0,0.5481582283973694
+265,CBC,"Rental vacancies up in Ottawa, but so's the rent. 2-bedroom units in city's west end led surge in rental prices in 2019",2020-01-16,0,0.5481582283973694
+266,CBC,"Whitehorse residents paint picture of what dismal rental market looks like. Median price for renting in Whitehorse is $1,050 a month, according to Yukon Bureau of Statistics",2019-07-28,0,0.6726029515266418
+267,CBC,"Potato chip punchout: How Hostess and Old Dutch fought for market share. In 1991, Old Dutch sent chips to the Ontario market, where a rival started snapping up its stock",2019-07-03,0,0.6578009724617004
+268,CBC,Tim Hortons strikes deal with Beyond Meat to offer plant-based breakfast sandwiches. Coffee chain is 2nd in Canada to offer Beyond Meat's products,2019-06-12,0,0.6662026643753052
+270,CBC,"Housing crisis forcing domestic violence victims to stay longer in shelters. Length of stays on the rise in Guelph, Waterloo region",2020-03-13,0,0.5427091717720032
+271,CBC,"Trump barks at Fed but offers no fresh details on trade in speech. Trump said the U.S. is close to signing a ""phase one"" trade deal with China",2019-11-12,0,0.6323358416557312
+272,CBC,"Netflix loses U.S. subscribers for the first time ever, stock sinks 11%. Drop-off comes as company faces challenges from a star-studded cast of entertainment and technology companies",2019-07-18,0,0.5708131790161133
+273,CBC,"Netflix loses U.S. subscribers for the first time ever, stock sinks 11%. Drop-off comes as company faces challenges from a star-studded cast of entertainment and technology companies",2019-07-18,0,0.5708131790161133
+274,CBC,Cigarette giants Altria and Philip Morris in merger talks. All-stock proposal seen as a bid for alternative revenue streams as sales fall,2019-08-27,0,0.6317777037620544
+275,CBC,"Watch for signs of financial abuse of seniors, securities commission warns after mortgage salesperson charged. Bret Allan Dobbin allegedly involved in transactions totaling more than $500K: Manitoba Securities Commission",2020-01-23,0,0.625446617603302
+276,CBC,Doctor feel-good practising without a licence: Winnipeg police bust illegal cannabis operation. Dr. Kush warehouse in Sargent Park subject of raid where 'sophisticated' business operating outside of the law,2020-04-18,0,0.6231498718261719
+277,CBC,"Montreal to publish names of delinquent landlords in bid to improve rental availability. With rental vacancy rate at lowest in 15 years, city says release of data will prod landlords to make repairs",2020-02-06,0,0.6813650727272034
+278,CBC,Canada's energy sector swings to profit in Q1 on higher oil prices. The energy sector's increase in operating profit outpaced all other major Canadian industries,2019-05-24,0,0.6510310769081116
+279,CBC,"Nissan results reflect falling sales, organizational turmoil. Automaker 'underperformed' in U.S., Europe, and Japan, incoming CFO says",2019-11-12,0,0.5267139077186584
+280,CBC,Oil price jumps on fear of Iranian retaliation over U.S. killing of top general. Iran previously threatened supply of oil that travels through the Persian Gulf,2020-01-03,0,0.6080850958824158
+281,CBC,"How to talk to children and address their coronavirus concerns. Be honest and don't keep them in the dark, youth psychiatrist says",2020-03-16,0,0.5519790053367615
+282,CBC,Inter Pipeline shares lose some of last week's takeover speculation gains. Calgary-based company recently rejected unsolicited takeover from unnamed bidder,2019-08-12,0,0.6800494194030762
+283,CBC,"COVID-19 delays research into connection between climate change, redfish boom. 'It seems that redfish are kind of enjoying those new conditions in the Gulf,' says DFO researcher",2020-04-13,0,0.5663974285125732
+284,CBC,Discount broker Charles Schwab in talks to buy TD Ameritrade. Industry profits are under pressure from a shift to zero commission,2019-11-21,0,0.5518578290939331
+285,CBC,Acadian Timber shares fall after Brookfield sells its 45% stake to Macer. Brookfield sold its stake to Macer for $128 million or $17 per share,2019-08-22,0,0.6326430439949036
+286,CBC,Airbnb to become publicly traded company next year. Short-term rental company's shares will be on stock exchange,2019-09-19,0,0.6326569318771362
+287,CBC,60% of Albertans say they're $200 or less away from not being able to pay their bills amid crisis. MNP survey finds many 'heading into economic survival mode' during pandemic,2020-03-30,0,0.6792746186256409
+288,CBC,"Shareholders in HBC propose to take the company private. Takeover group includes executive chairman, but also backing of office leasing firm WeWork",2019-06-10,0,0.6325621604919434
+289,CBC,60% of Albertans say they're $200 or less away from not being able to pay their bills amid crisis. MNP survey finds many 'heading into economic survival mode' during pandemic,2020-03-30,0,0.6792746186256409
+290,CBC,"Threat of U.S. tariffs on Mexico roils markets, dims hopes for new NAFTA. Auto stocks dive, oil knocked lower on news of 5% tariff on all imports by June 10",2019-05-31,0,0.5508548617362976
+291,CBC,U of A steps closer to developing lands near south campus. Michener Park likely first up for redevelopment,2020-02-03,0,0.6337615847587585
+292,CBC,Stocks move higher on word that U.S. and China will hold trade talks next month. Phone discussions went well so moving on to next step,2019-09-05,0,0.5841342806816101
+293,CBC,U of A steps closer to developing lands near south campus. Michener Park likely first up for redevelopment,2020-02-03,0,0.6337615847587585
+294,CBC,"Hamilton job market 'healthy,' slower in St. Catharines-Niagara: economist. Employment up in most Canadian areas, says Conference Board of Canada",2019-07-08,0,0.6168175935745239
+296,CBC,In fashion: Edmonton's second-hand market event draws hundreds. 'There’s no stigma against it anymore',2019-09-15,0,0.5663487911224365
+297,CBC,"BMO restructuring charge to lead to hundreds of job losses. BMO says restructuring charge to affect about 5% of global workforce, without offering specifics",2019-12-03,0,0.6822236776351929
+299,CBC,"How to use canned vegetables when you've run out of fresh. Adding canned callaloo, artichokes and okra to your grocery list is a very good idea",2020-04-22,0,0.5617237091064453
+301,CBC,"Fitbit bought by Google for $2.1B. Deal is pending regulatory approval, Google says Fitbit could move or delete their data",2019-11-01,0,0.6637473702430725
+302,CBC,Is downtown Summerside 'prime' for a new grocery store?. 'I think you have a win-win',2019-09-25,0,0.6321528553962708
+303,CBC,"Conservation Council recommends more local food security as part of COVID-19 recovery plan. Group also calls for more protection of natural areas and more reliable, affordable electricity system ",2020-04-24,0,0.638280987739563
+304,CBC,Hexo's poor outlook could foreshadow bad trip for cannabis industry. Major Quebec pot producer's revenue well below expectations,2019-10-13,0,0.5245744585990906
+305,CBC,"City's climate plan calls for smaller homes, cleaner cars. But latest inventory shows greenhouse gas emissions rising, not falling",2019-12-14,0,0.5882986187934875
+306,CBC,"What profits at Canada's big banks are saying about the odds of a recession. Royal and CIBC revealed numbers last week. Now it's BMO, Scotia and TD's turn",2019-08-27,0,0.5503952503204346
+307,CBC,"City, province vow to find solutions as company threatens to close 4 recycling centres. TIRU says it can't handle the volume of material after China banned importing waste",2020-01-23,0,0.6631875038146973
+308,CBC,"City's climate plan calls for smaller homes, cleaner cars. But latest inventory shows greenhouse gas emissions rising, not falling",2019-12-14,0,0.5882986187934875
+309,CBC,"Michael Avenatti prosecutors rest case, play recording of alleged threat against Nike. Prosecutor says Avenatti was motivated by mounting debt to extort Nike",2020-02-11,0,0.5359963178634644
+310,CBC,"Winners, losers and highlights from Manitoba's 2020 budget. Budget highlights include $300M for rainy-day fund, $100M for emergency expenditures",2020-03-19,0,0.6815868020057678
+311,CBC,"Yes, computers really are taking jobs from humans — especially in banking: Don Pittis. Study shows automation and artificial intelligence will cut 10% of banking jobs alone",2019-10-03,0,0.5497947931289673
+312,CBC,"Province not prepared to ease policies as housing market sputters. Vancouver homeowners cite rising taxes, falling equity; NDP argues moderation is improving affordability",2019-05-23,0,0.6820811033248901
+313,CBC,"Yes, computers really are taking jobs from humans — especially in banking: Don Pittis. Study shows automation and artificial intelligence will cut 10% of banking jobs alone",2019-10-03,0,0.5497947931289673
+314,CBC,"Vancouver needs 10,000 affordable housing units a year to address rental 'backlog,' report advises. There’s a mismatch between what’s being built and what renters need, says economist Mark Lee",2019-12-12,0,0.5498616099357605
+315,CBC,"Quebec government under fire for ignoring COVID-19 impact in new budget. Premier says government will intervene if necessary, but current spending enough to deal with outbreak",2020-03-11,0,0.5769546627998352
+316,CBC,"BlackRock, world's largest asset manager, changing its focus to climate change. 'In the near future  … there will be a significant reallocation of capital,' CEO says",2020-01-14,0,0.5663203597068787
+317,CBC,"Quebec government under fire for ignoring COVID-19 impact in new budget. Premier says government will intervene if necessary, but current spending enough to deal with outbreak",2020-03-11,0,0.5769546627998352
+318,CBC,"Canopy Growth won't cut jobs despite losses, interim CEO insists. 'We simply don't have enough places to sell our product in Ontario'",2019-11-15,0,0.6650585532188416
+319,CBC,"COVID-19 unknowns leave economy dazed and wobbly: Don Pittis. It is certain the world will recover, but doubts remain over when and how",2020-03-17,0,0.610914409160614
+320,CBC,"Syria braces for lockdown after 1st COVID-19 case, as Iran outbreak worsens. Health-care system in Syria has been devastated by nearly decade of civil war",2020-03-23,0,0.5789821743965149
+321,CBC,"CIBC, TD close bleak 4th-quarter earning season with lower profit. CIBC drew an impairment charge for the sale of its stake in Barbadian bank",2019-12-05,0,0.5990070700645447
+323,CBC,Coal and bitumen: Why the Norwegian pension fund is ditching the oilsands. KLP executive explains decision to sell $77M in shares of oilsands companies,2019-10-08,0,0.6508530378341675
+325,CBC,German prosecutors indict top Volkswagen bosses over emissions scandal. U.S. also charges Fiat Chrysler senior manager with conspiracy to mislead regulators,2019-09-24,0,0.6560720205307007
+326,CBC,"China launches WTO case against U.S. tariffs. After fresh round of tit-for-tat tariffs, China's manufacturing sector is hurting",2019-09-02,0,0.5807055234909058
+328,CBC,"Essex man sleeping in scooter after town's order to leave 'hazardous' apartment. 70-year-old struggling with long wait list for affordable housing, rising rental rates",2020-03-10,0,0.661950945854187
+329,CBC,"Vacancy rate on the rise in Regina, so why isn't the cost of rent going down?. Some residents struggle to afford rent in Regina despite oversupply",2019-10-08,0,0.6876674890518188
+331,CBC,When the Hudson's Bay Company said farewell to furs. 'It's certainly not the business it used to be a decade ago',2020-01-30,0,0.6323870420455933
+332,CBC,"Southwestern Ontario hospitals could run out of surgical face masks in 5 days, officials warn. 500,000 masks have been ordered but are being held at Chinese customs, Ontario Nurses Association says",2020-04-04,0,0.5562278032302856
+334,CBC,Words of calm and consolation during the coronavirus crisis. Thoughts on everything from keeping a distance to keeping the faith,2020-03-17,0,0.599323570728302
+335,CBC,Falling Hong Kong markets another example of hardline failure: Don Pittis. Warning: This story contains a graphic photo some readers may find disturbing,2019-11-12,0,0.6145563125610352
+337,CBC,Equipment dealer blames farm trade wars as plans for aggressive growth stall. Rocky Mountain Dealerships Inc. cites Canada's inability to solve trade disputes,2019-07-31,0,0.6616165041923523
+338,CBC,Hajdu says some provinces face a 'deficit' of medical supplies as COVID-19 cases rise. Canada to repatriate passengers on Grand Princess cruise ship,2020-03-09,0,0.5693250298500061
+339,CBC,Spicing up your life with expanded seasonings is the goal of new farmer's market project. Bringing in more wish-list spices and seasonings to make newcomers feel more at home,2019-11-24,0,0.682077169418335
+340,CBC,Hajdu says some provinces face a 'deficit' of medical supplies as COVID-19 cases rise. Canada to repatriate passengers on Grand Princess cruise ship,2020-03-09,0,0.5693250298500061
+342,CBC,"Under Armour being investigated over accounting practices, company confirms. Shares fell as a result for Under Armour, which announced CEO transition last month",2019-11-04,0,0.5455408096313477
+343,CBC,"U.S. central bank cuts interest rate for 1st time since 2008. Move trims U.S. rate by quarter point to 2.25%, closer to Bank of Canada's",2019-07-31,0,0.681455671787262
+344,CBC,Capital One hack snags data on 106 million people — including 6 million in Canada. Credit card breach is among largest on record of a major financial institution,2019-07-30,0,0.5411443710327148
+345,CBC,"City of Regina warns owners to pay back taxes or risk losing property. Market value exceeds property taxes in all cases, city report says",2019-10-03,0,0.6352912187576294
+346,CBC,"Despite a strong economy, cost of living still top of mind for Canadians. An accounting of the economic data shows that perceptions don't quite match reality",2019-07-02,0,0.5502474904060364
+347,CBC,"Despite a strong economy, cost of living still top of mind for Canadians. An accounting of the economic data shows that perceptions don't quite match reality",2019-07-02,0,0.5502474904060364
+348,CBC,"U.S. Fed says monetary policy will remain 'non-political' after Trump-Powell meeting. Trump summons Fed chairman to White House to discuss economy, interest rates",2019-11-18,0,0.6033890843391418
+349,CBC,"Fact-checking farmers markets: Calgary vendors, managers want stricter regulations. Province says vendors are responsible for ensuring practices meet legal regulations",2019-07-07,0,0.6730870604515076
+350,CBC,Ontario Cannabis Store runs out of edibles just hours after online sales begin. Edible cannabis products could be purchased online as of 9 a.m. Thursday,2020-01-16,0,0.5504159927368164
+351,CBC,Oilsands pipeline firm Inter Pipeline posts record Q2 net income of $260M. Increase comes despite only slight rise in revenue ,2019-08-08,0,0.6820059418678284
+352,CBC,"'Now is the time for action,' says Mayor Valérie Plante, as Montreal vacancy rate hits 15-year low. Tenants' advocates worry critical housing shortage will lead to 'renters finding themselves on the streets'",2020-01-16,0,0.6601889133453369
+353,CBC,Luxury conglomerate LVMH to buy Tiffany for $16.2B US. Companies expect to close the deal in mid 2020,2019-11-25,0,0.5518509745597839
+354,CBC,"U.S. nears goal line in coronavirus stimulus negotiations, Senate leaders say. Trump hopes economy is 'raring to go' by April 12, but WHO concerned about U.S. disease response",2020-03-24,0,0.6211736798286438
+355,CBC,"'Now is the time for action,' says Mayor Valérie Plante, as Montreal vacancy rate hits 15-year low. Tenants' advocates worry critical housing shortage will lead to 'renters finding themselves on the streets'",2020-01-16,0,0.6601889133453369
+356,CBC,Province announces forestry innovation rebate program. $5M will be available in each of the next 2 years for rebates of 25 per cent,2020-02-19,0,0.5535743832588196
+357,CBC,"Burning biomass in N.S. will speed up the climate crisis, warns MIT prof. ‘Every time somebody switches from coal or oil to wood they're making climate change worse’",2020-02-14,0,0.6573097705841064
+358,CBC,Hopes for trade war truce emerge as U.S. scales back Chinese tariff threat. Investors welcome tiny clue that world's 2 largest economies may be sorting out their trade war,2019-08-13,0,0.5516638159751892
+359,CBC,How the coronavirus has helped push down the wholesale price of coffee 30% in a month. Even one of the most popular drinks in the world isn't immune to the virus's impact,2020-02-07,0,0.6455979943275452
+360,CBC,"Faced with rental housing crisis, Rosemont—La Petite-Patrie moves to restrict Airbnbs. Borough cracks down on hundreds of property owners who are turning apartments into hotels",2020-02-12,0,0.5378468036651611
+361,CBC,"N.B. pension management employees score record $5M in bonuses. Province's investments saw 2% gain last year, despite significant declines in global stock markets ",2019-06-17,0,0.6820269227027893
+362,CBC,"CBC News poll: Why the economic crisis could speed up transition to renewable energy. Poll suggests Albertans support energy transition, but it’s complicated",2020-04-16,0,0.5517767071723938
+363,CBC,"Faced with rental housing crisis, Rosemont—La Petite-Patrie moves to restrict Airbnbs. Borough cracks down on hundreds of property owners who are turning apartments into hotels",2020-02-12,0,0.5378468036651611
+364,CBC,What's open and closed for Christmas Day and Boxing Day 2019 in Halifax. Spoiler alert: most stores and services are closed on the 25th and 26th,2019-12-24,0,0.5480368137359619
+365,CBC,"CBC News poll: Why the economic crisis could speed up transition to renewable energy. Poll suggests Albertans support energy transition, but it’s complicated",2020-04-16,0,0.5517767071723938
+367,CBC,One on One with Markus — Perry Dellelce. Perry Dellelce says his parents always encouraged him to give back,2019-05-29,0,0.6058928966522217
+368,CBC,"Job-hunting in a pandemic: 'Take a breath because it's not going to be easy'. Layoffs, pay cuts sweep across the economy — but some sectors are still hiring ",2020-03-24,0,0.5480444431304932
+369,CBC,Husky Energy announces layoffs. Calgary-based firm cuts staff as it 'aligns' workforce with reduced capital spending,2019-10-23,0,0.6793401837348938
+370,CBC,Husky Energy announces layoffs. Calgary-based firm cuts staff as it 'aligns' workforce with reduced capital spending,2019-10-23,0,0.6793401837348938
+371,CBC,"DFO will soon use satellites to fight illegal fishing worldwide. 'I think that's quite a critical mission for our department and for Canada,' says federal official",2019-08-23,0,0.5560065507888794
+372,CBC,"Job-hunting in a pandemic: 'Take a breath because it's not going to be easy'. Layoffs, pay cuts sweep across the economy — but some sectors are still hiring ",2020-03-24,0,0.5480444431304932
+373,CBC,"Job-hunting in a pandemic: 'Take a breath because it's not going to be easy'. Layoffs, pay cuts sweep across the economy — but some sectors are still hiring ",2020-03-24,0,0.5480444431304932
+374,CBC,"DFO will soon use satellites to fight illegal fishing worldwide. 'I think that's quite a critical mission for our department and for Canada,' says federal official",2019-08-23,0,0.5560065507888794
+375,CBC,How COVID-19 blew up the Doug Ford government's budget. Ontario’s 2020-21 spending plan makes optimistic assumption that economy won’t shrink this year,2020-03-25,0,0.5488749742507935
+376,CBC,"Air Canada's Transat deal requires additional scrutiny, minister says. Transport Minister calls for input from competition commissioner",2019-08-26,0,0.5350481867790222
+377,CBC,Heavily Canadian Cup champion Blues visit Trump at White House as full team. Just 1 American remains on St. Louis roster that defeated Boston last season,2019-10-15,0,0.6188317537307739
+378,CBC,Heavily Canadian Cup champion Blues visit Trump at White House as full team. Just 1 American remains on St. Louis roster that defeated Boston last season,2019-10-15,0,0.6188317537307739
+379,CBC,"New Year brings new taxes, rates, regulations in Sask.. Property tax rates set to increase in Saskatoon and Regina among other changes in 2020",2020-01-01,0,0.5523160099983215
+380,CBC,Gambling chain Caesars to be taken over by Eldorado Resorts in $17B deal. Acquisition puts about 60 casinos and resorts in 16 states under a single name,2019-06-24,0,0.6003501415252686
+381,CBC,"Limited supply of cannabis edibles nearly ready in N.L.. 'Start low, go slow,' advises NLC's cannabis project lead Peter Murphy",2019-12-16,0,0.5496447086334229
+382,CBC,"25 years in the making, model train display destroyed by vandals. Donations have poured in to help the U.K. club, including from Sir Rod Stewart",2019-08-19,0,0.551841139793396
+384,CBC,"Cupcakes, podcasts and Instagram: How churches are navigating the pandemic. The opportunities and challenges of providing worship amidst COVID-19",2020-03-22,0,0.6803703904151917
+385,CBC,Canadian and U.S. economies are converging but danger lurks: Don Pittis. Poloz and Wilkins warn that markets overestimate the power of a rate-cut quick fix,2019-07-11,0,0.5661956667900085
+386,CBC,"Trump declares national emergency to contain coronavirus. Deal struck with White House on aid package, House Speaker Nancy Pelosi says ",2020-03-13,0,0.5421208143234253
+388,CBC,Moody's loses confidence in Dominion Diamond's ability to pay back $550M bond. Bond it owes creditors set to come due at same time 2 N.W.T. mines expected to wind down ,2019-10-23,0,0.6325843930244446
+389,CBC,Yellowknife's housing market slows as economic slump looms on the horizon: CMHC. CMHC's annual report on Northern housing shows mixed outlook across the 3 territories ,2019-08-29,0,0.6380881071090698
+390,CBC,"St. John's housing prices will lead country in growth, according to Moody's. Economist says below-trend prices, drop in unemployment rate leading to predicted increase",2019-05-26,0,0.6329463124275208
+391,CBC,B.C. braces for economic impact as coronavirus cancellations pile up. Tourism industry expected to take 'significant' hit as Canada bans cruise ships and big events are suspended,2020-03-14,0,0.6307104825973511
+392,CBC,"Trump declares national emergency to contain coronavirus. Deal struck with White House on aid package, House Speaker Nancy Pelosi says ",2020-03-13,0,0.5421208143234253
+393,CBC,B.C. braces for economic impact as coronavirus cancellations pile up. Tourism industry expected to take 'significant' hit as Canada bans cruise ships and big events are suspended,2020-03-14,0,0.6307104825973511
+394,CBC,Beyond Meat eyes production in Asia before the end of 2020. Plant-based food market expected to explode to $140 billion US over next decade ,2019-11-07,0,0.548041820526123
+395,CBC,Why Trump tariffs haven't revitalized American steelmakers. U.S. president's fight against foreign steel overshadowed by trade war with China ,2019-11-05,0,0.6460169553756714
+396,CBC,New housing opening in northern B.C. for Indigenous patients who have to travel for medical appointments. The units will be close to medical centres in Prince George and Fort St. John,2020-01-21,0,0.5547749400138855
+397,CBC,Beyond Meat eyes production in Asia before the end of 2020. Plant-based food market expected to explode to $140 billion US over next decade ,2019-11-07,0,0.548041820526123
+398,CBC,Cree Nation Bears Hockey benched for 2019-2020 as funding cut. Organization loses 75 per cent of its operating budget for next season,2019-06-13,0,0.679422914981842
+399,CBC,"'Pelting out' of Cox's Cove mink farm latest sign of trouble in N.L. fur industry. A sagging market has crippled farmers as closures, consolidation overtakes the industry",2019-12-11,0,0.6256802678108215
+400,CBC,"'Pelting out' of Cox's Cove mink farm latest sign of trouble in N.L. fur industry. A sagging market has crippled farmers as closures, consolidation overtakes the industry",2019-12-11,0,0.6256802678108215
+401,CBC,"Street food with a side of ""good vibes"" at Hamilton's 1st night market. Market 'exceeded expectations,' says organizers",2019-08-05,0,0.5335296392440796
+402,CBC,"When it comes to personal finances, most Canadian voters have the same concerns. Canada is a vast and diverse country, but data shows many of us are facing similar economic challenges",2019-09-15,0,0.6800325512886047
+403,CBC,"Street food with a side of ""good vibes"" at Hamilton's 1st night market. Market 'exceeded expectations,' says organizers",2019-08-05,0,0.5335296392440796
+404,CBC,"Pembina CEO says Trans Mountain pipeline bid is unlikely despite Kinder Morgan deal. Deal also includes U.S. portion of 110,000 barrel pipeline between Alberta and Illinois",2019-08-21,0,0.6603360772132874
+405,CBC,"Crude price plummet raises spectre of spending cuts, job losses in Canadian oilpatch. 'This is one of the biggest shocks we've seen in the last 40 years,' analyst says",2020-03-12,0,0.5663970708847046
+406,CBC,Coronavirus: Here's what's happening in Canada and around the world on March 13. The federal government warns Canadians against travelling outside of the country,2020-03-14,0,0.6286129355430603
+407,CBC,The pandemic is creating a season of anxiety in hard-hit farm sectors. Canada isn't running out of food — but some producers may be running out of time,2020-05-06,0,0.5513190627098083
+408,CBC,Trudeau's crisis calendar is overflowing - could climate change get pushed to the margins?. The government's ability to manage multiple emergencies is being sorely tested,2020-03-01,0,0.5978593826293945
+409,CBC,Investors are paying bond sellers to take their money in these crazy economic times. Governments running up deficits that taxpayers must repay is an equally bad idea,2019-10-06,0,0.5968344807624817
+410,CBC,Airbnb to verify all 7 million properties to improve user trust. Changes follow a deadly Halloween party shooting in an Airbnb in California,2019-11-07,0,0.555101752281189
+411,CBC,Inter Pipeline confirms takeover offer on regulator request after stock halted. Calgary-based company issues brief statement an hour after stock halted,2019-08-10,0,0.6189664602279663
+412,CBC,"Canopy Growth announces joint venture with Drake. Drake now majority owner of More Life Growth, which plans to sell cannabis and related products",2019-11-07,0,0.6786797642707825
+413,CBC,"Air Canada plans to hire 350 pilots ahead of eventual Boeing 737 Max return. Airline had to cancel relatively few flights after Max grounding, but needed to lease planes",2019-10-29,0,0.6766791939735413
+414,CBC,"European Central Bank holds rates, but paves way for possible stimulus. More stimulus could be coming soon to support an economy weakening in the face of global trade tensions",2019-07-25,0,0.6185287237167358
+415,CBC,"Juul to stop selling most flavoured vaping pods in Canada. Vaping company to halt production of mango, vanilla, fruit and cucumber varieties",2020-01-14,0,0.6383145451545715
+416,CBC,"What you need to know about COVID-19 in Alberta on March 12, 2020. Infection of child in Calgary brings confirmed cases to 23",2020-03-13,0,0.5502081513404846
+418,CBC,"Ontario's rising rents hurt the poor, Ottawa advocates say. Province raises cap on rent increase to 2.2% for 2020, highest hike since 2013",2020-01-04,0,0.6468148827552795
+419,CBC,"Democrats might have the edge over Trump, whether or not they want to believe it . Trump will have some advantages going into the election, but there are ample signs he's in trouble",2020-03-12,0,0.6322742104530334
+420,CBC,"Democrats might have the edge over Trump, whether or not they want to believe it . Trump will have some advantages going into the election, but there are ample signs he's in trouble",2020-03-12,0,0.6322742104530334
+421,CBC,"U.S. Congress launches antitrust probe into big tech companies. Officials didn't say which firms are being investigated, as shares in Facebook, Google, Amazon and Apple fall ",2019-06-04,0,0.5383554100990295
+422,CBC,"Manitoba promises payroll tax cut for 1,000 employers. Businesses with total salaries below $1.5M will be exempt from the tax as of next year",2020-03-11,0,0.5494897365570068
+423,CBC,"Higgs government delivers 2nd balanced budget, projects $92M surplus in 2020-21. People's Alliance likes budget, but Green MLAs still making up mind ",2020-03-10,0,0.5725587606430054
+424,CBC,"Higgs government delivers 2nd balanced budget, projects $92M surplus in 2020-21. People's Alliance likes budget, but Green MLAs still making up mind ",2020-03-10,0,0.5725587606430054
+426,CBC,"'My heart is here': Lighthouse Fish Market for sale, after 34 years on James Street. Local Hamilton grocer in 'no rush' to close",2019-08-29,0,0.6296867728233337
+427,CBC,"Outside buyers allowed in cod market as fishermen protest in St. John's, Old Perlican. If they want the fish at all, buyers will have 14 days to purchase, says fisheries minister",2019-08-12,0,0.5483543872833252
+428,CBC,Trade war rhetoric between U.S. and China eases Tuesday as Beijing revalues yuan. Escalating tensions on Monday give way to cooler heads on Tuesday,2019-08-06,0,0.5534718036651611
+429,CBC,"Support coming for Canadians quarantined due to coronavirus, finance minister says. Liberal government will increase the risk adjustment provision in the upcoming budget",2020-03-06,0,0.6136316657066345
+430,CBC,"'Just nothing available,' says P.E.I. housing navigator. P.E.I. vacancy rate is at a record low",2019-07-24,0,0.5877465009689331
+432,CBC,Are 2020's tax changes 'significant' or 'a wash'?. Liberals' promised tax cut may help 20 million Canadians - but only a little,2019-12-31,0,0.5484590530395508
+433,CBC,"Support coming for Canadians quarantined due to coronavirus, finance minister says. Liberal government will increase the risk adjustment provision in the upcoming budget",2020-03-06,0,0.6136316657066345
+434,CBC,"Closed stores, grounded airlines as COVID-19 limits business. Businesses responding to lower demand, trying to mitigate risks amid outbreak",2020-03-16,0,0.6218114495277405
+435,CBC,"Enbridge tops up Mainline capacity, boosting oil export options slightly for western Canadian producers. Calgary-based company says it'll soon be able to ship extra 100,000 bpd on Mainline system",2019-11-08,0,0.681905210018158
+436,CBC,"Enbridge tops up Mainline capacity, boosting oil export options slightly for western Canadian producers. Calgary-based company says it'll soon be able to ship extra 100,000 bpd on Mainline system",2019-11-08,0,0.681905210018158
+439,CBC,WeWork CEO stepping aside amid questions about how company is run. Wall Street has raised questions about the company's lack of profits ahead of planned IPO,2019-09-24,0,0.6798384785652161
+441,CBC,"Enbridge tops up Mainline capacity, boosting oil export options slightly for western Canadian producers. Calgary-based company says it'll soon be able to ship extra 100,000 bpd on Mainline system",2019-11-08,0,0.681905210018158
+443,CBC,"Closed stores, grounded airlines as COVID-19 limits business. Businesses responding to lower demand, trying to mitigate risks amid outbreak",2020-03-16,0,0.6218114495277405
+446,CBC,"Closed stores, grounded airlines as COVID-19 limits business. Businesses responding to lower demand, trying to mitigate risks amid outbreak",2020-03-16,0,0.6218114495277405
+447,CBC,Prescribed version of heartburn drug Zantac recalled worldwide as a 'precaution'. U.S. regulator finds 'unacceptable' levels of probable cancer-causing impurity NDMA,2019-10-09,0,0.6655753254890442
+449,CBC,"New P.E.I. dealership for used electric cars aims to fill 'significant gap' in market. First in the Maritimes, says association that represents industry",2019-08-13,0,0.5501594543457031
+452,CBC,"What's happening in the 'repo' loan market and why does it matter?. Rates in obscure part of U.S. lending market spiked this week, prompting fears of broader problems",2019-09-19,0,0.6789848804473877
+454,CBC,"After 163 weeks in office, Trump gets his defining crisis. Trump's reaction to the pandemic confused Americans, annoyed allies and rattled financial markets",2020-03-13,0,0.6792707443237305
+455,CBC,U.S. central bank cuts interest rate again — but split on what to do next. Federal Reserve moving to stimulate economy as trade fears mount,2019-09-18,0,0.548898458480835
+457,CBC,Houses in New Brunswick selling at unusually fast rate. Increase in home sales backed by record-setting month in May,2019-07-05,0,0.5515990257263184
+458,CBC,Pandemic panic sees seed sales spike. Seed distributors are struggling to keep up with sudden demand amid reduced labour,2020-04-07,0,0.5529248714447021
+462,CBC,Hampton getting new seniors apartments. Non-profit board says building will allow more people to stay in the small community,2019-05-27,0,0.6808605790138245
+463,CBC,"Canadians must think like investors in oil and gas: Don Pittis. If you could invest your own pension savings in fossil fuels, would you?",2019-10-15,0,0.548584520816803
+465,CBC,"Canadians must think like investors in oil and gas: Don Pittis. If you could invest your own pension savings in fossil fuels, would you?",2019-10-15,0,0.548584520816803
+467,CBC,"Uber loses $1B in quarter in first results since IPO. Rail-hailing service boosts revenue 20%, but is struggling to hold its market share",2019-05-31,0,0.632780909538269
+468,CBC,"OPINION | Federal carbon tax and Teck Frontier: Jason Kenney wins one, loses another. For Alberta's premier, a win and a loss don't add up to the status quo",2020-02-25,0,0.5485741496086121
+469,CBC,Ontario health-care workers' pension has up to $430M at stake in Danish tax dispute. Denmark alleges HOOPP wasn't entitled to huge rebates it claimed on stock dividends,2019-09-15,0,0.6779611706733704
+470,CBC,"Apple warns coronavirus in China will cut iPhone production, sales. Company says it will not meet revenue guidance for March quarter",2020-02-18,0,0.5488283038139343
+472,CBC,Inter Pipeline bid highlights bright spot in Canada's oil sector. Calgary oilsands pipeline firm posted record Q2 net income of $260M last week,2019-08-16,0,0.5305670499801636
+473,CBC,Inter Pipeline bid highlights bright spot in Canada's oil sector. Calgary oilsands pipeline firm posted record Q2 net income of $260M last week,2019-08-16,0,0.5305670499801636
+474,CBC,"Apple warns coronavirus in China will cut iPhone production, sales. Company says it will not meet revenue guidance for March quarter",2020-02-18,0,0.5488283038139343
+475,CBC,"In light of seal predation report, FFAW calls for government action. Union head Keith Sullivan fears N.L. will share fate with low Gulf of St. Lawrence stocks",2019-08-28,0,0.6047936677932739
+476,CBC,"What the attack on Saudi oil facilities could mean for Canada's oilpatch and Keystone XL. 'The strike on Saudi refineries should be a wake-up call,' Alberta premier says",2019-09-17,0,0.5663970112800598
+478,CBC,"U.S. states, hospitals plead for help as Trump approves coronavirus aid bill. Trump also signs order under Defense Production Act, requiring GM to produce ventilators",2020-03-27,0,0.6819905042648315
+479,CBC,"Forcing builders to include low-income units not a solution, say developers. Social Development Minister Dorothy Shephard open to exploring inclusionary zoning ",2019-12-12,0,0.5463279485702515
+480,CBC,"She fled domestic abuse. Now she and her daughter are victims of the housing crisis. Shelters are full, wait lists are long and market rents are too high for most single mothers",2019-11-12,0,0.5498226284980774
+481,CBC,Canadian Tire buys all Party City stores in Canada for $175M. Canadian Tire plans to double sales within two years,2019-08-08,0,0.5794396996498108
+482,CBC,WeWork shelves plans to go public. Parent company said Monday it will file to withdraw its initial public offering for now,2019-09-30,0,0.6301766633987427
+483,CBC,"She fled domestic abuse. Now she and her daughter are victims of the housing crisis. Shelters are full, wait lists are long and market rents are too high for most single mothers",2019-11-12,0,0.5498226284980774
+484,CBC,"Name calling and market pressure may curb U.S. Fed's independence: Don Pittis. With few signs of recession, could Jerome  Powell leave rates unchanged even if he wanted to?",2019-09-16,0,0.6800096035003662
+485,CBC,Lobster fishing season in northern New Brunswick delayed 2 weeks. Season will open May 15 ,2020-04-22,0,0.5517086982727051
+486,CBC,Kate's 5 fun things to do this weekend (May 31 to June 2). Weekend events vary from a film fest to duelling artists to a beer fest and dancing,2019-05-31,0,0.549965500831604
+487,CBC,9 great books on the science of love. The mathematical equation for “happily ever after” and other data-driven revelations,2020-02-12,0,0.5567233562469482
+488,CBC,Federal Reserve holds key interest rate steady — but its patience is wearing thin. U.S. central bank keeps benchmark rate in range between 2.25% and 2.5%,2019-06-19,0,0.6239098906517029
+489,CBC,9 great books on the science of love. The mathematical equation for “happily ever after” and other data-driven revelations,2020-02-12,0,0.5567233562469482
+490,CBC,"Rising home prices encourage consumers to borrow and spend, giving economy a boost. Bank of Canada study analyzes spending triggered by borrowing against the house",2019-09-20,0,0.5521978139877319
+491,CBC,"Rising home prices encourage consumers to borrow and spend, giving economy a boost. Bank of Canada study analyzes spending triggered by borrowing against the house",2019-09-20,0,0.5521978139877319
+492,CBC,Husky Energy shares rise on analyst report about potential privatization. Husky isn't commenting on any speculation,2019-08-19,0,0.6034785509109497
+493,CBC,"Trump touts economy, strong employment in state of the union. Trump did not mention his impeachment focusing instead on why he should be re-elected",2020-02-05,0,0.6318617463111877
+494,CBC,"Amid 'astronomical' house prices, councillors push for bigger tax rebate in first-time buyers' pockets. Some warn proposal could curb city revenue stream, push up home prices",2020-01-25,0,0.6777564883232117
+495,CBC,"Trump touts economy, strong employment in state of the union. Trump did not mention his impeachment focusing instead on why he should be re-elected",2020-02-05,0,0.6318617463111877
+496,CBC,Seed sellers see business bloom as pandemic pushes demand. Some worry sudden interest from homebound gardeners could strain seed supply,2020-04-20,0,0.5344797968864441
+497,CBC,'Don't come in if you're sick': NB Pharmacists try to manage COVID-19 rush. Customers complain 30-day limit on refills triples their drug costs.,2020-03-19,0,0.6792638301849365
+498,CBC,"Amid 'astronomical' house prices, councillors push for bigger tax rebate in first-time buyers' pockets. Some warn proposal could curb city revenue stream, push up home prices",2020-01-25,0,0.6777564883232117
+499,CBC,'No gatherings of over 50' among new recommendations announced by officials to curb spread of COVID-19. Provincial budget postponed; new legislation coming to help workers affected by COVID-19 measures,2020-03-16,0,0.678871214389801
+500,CBC,How to take advantage of a real estate buyers' market.  Metro Vancouver home sales 43% below April's 10-year average as buyers wait it out,2019-05-25,0,0.5772270560264587
+501,CBC,"British budget confronts challenges of coronavirus, post-Brexit economy. New finance minister's budget preceded by half-point Bank of England rate cut",2020-03-11,0,0.6329759955406189
+502,CBC,Bank of Canada holds interest rates steady. Holds benchmark interest rate at 1.75 per cent,2019-12-04,0,0.5468482971191406
+503,CBC,How produce stickers contribute to climate change. Also: The biggest players in battery storage,2020-02-14,0,0.6509157419204712
+504,CBC,"Kenney heads to Ottawa to demand urgent help from federal Liberals, warning Alberta faces 'triple whammy'. 'It's time for Ottawa to have Alberta's back'",2020-03-11,0,0.6475349068641663
+505,CBC,"Staff vacancies, 'favourable weather' behind Edmonton's $20M surplus in 2019. City took in less than expected in transit fares, construction permits, taxes",2020-03-09,0,0.6479521989822388
+506,CBC,"Oil prices take biggest plunge in decades, taking another bite out of reeling Alberta. Alberta Premier Kenney, with softened tone, shifts emphasis from restraint to protection of economy, jobs",2020-03-10,0,0.5812516808509827
+507,CBC,"Oil prices take biggest plunge in decades, taking another bite out of reeling Alberta. Alberta Premier Kenney, with softened tone, shifts emphasis from restraint to protection of economy, jobs",2020-03-10,0,0.5812516808509827
+508,CBC,U.S. suspends plans to hike tariffs Tuesday on Chinese imports. The tariffs on $250 billion in Chinese imports were set to rise Tuesday from 25% to 30%,2019-10-11,0,0.6298514008522034
+509,CBC,"Winners and losers from Teck's decision to pull the plug on Frontier oilsands project. What the unexpected move means for the federal government, investors, climate and Indigenous groups",2020-02-25,0,0.5764778852462769
+510,CBC,"OPINION | Opposition betting on Alberta premier's slumping popularity. NDP now sees Kenney as a political liability to the UCP, not an unbeatable asset",2020-03-06,0,0.6226657629013062
+511,CBC,"Intensive care for Alberta cities:  Listen to the latest West of Centre episode. Politicians, pundits and others chat about the priorities, preoccupations and politics of Western Canada",2020-05-14,0,0.5498275756835938
+512,CBC,"Winners and losers from Teck's decision to pull the plug on Frontier oilsands project. What the unexpected move means for the federal government, investors, climate and Indigenous groups",2020-02-25,0,0.5764778852462769
+513,CBC,"OPINION | Opposition betting on Alberta premier's slumping popularity. NDP now sees Kenney as a political liability to the UCP, not an unbeatable asset",2020-03-06,0,0.6226657629013062
+514,CBC,"Taiwan's election being watched closely in Beijing, Washington. Backlash against Beijing pressure aimed at Taiwan, Hong Kong could propel Tsai Ing-wen to new term",2020-01-10,0,0.5486303567886353
+515,CBC,U.S. corporate leaders swing left to fix 'frayed' American dream: Don Pittis. But critics call 11th-hour conversion a smokescreen to block new rules and taxes,2019-08-20,0,0.6423211097717285
+516,CBC,"No toilet paper, no problem: Maybe it's time to try the bidet. 'Why have we been indoctrinated to believe that ... dry paper properly cleans the dirtiest part of our body?'",2020-03-15,0,0.5650767087936401
+517,CBC,Criminal artificial intelligence may be coming for your money: Don Pittis. 'Deep fake' rip-off of British energy company sounds a warning bell,2019-09-06,0,0.5428415536880493
+518,CBC,Powell hints Federal Reserve will cut rates if needed over trade wars. Expectations are rising that the Fed will cut rates at least once and possibly twice before year's end,2019-06-04,0,0.5828051567077637
+519,CBC,"Province to spend $629K on new affordable housing units over 3 years, $12M on repairs. Rent supplements cut to spend $2M on emergency shelter beds with 500 people across New Brunswick homeless",2019-12-11,0,0.6825769543647766
+520,CBC,'This is a crisis': N.W.T. survey shows worsening housing conditions. 2019 NWT Community Survey says 42% of all households have at least one major problem,2019-11-29,0,0.6803345680236816
+521,CBC,Criminal artificial intelligence may be coming for your money: Don Pittis. 'Deep fake' rip-off of British energy company sounds a warning bell,2019-09-06,0,0.5428415536880493
+522,CBC,"Province to spend $629K on new affordable housing units over 3 years, $12M on repairs. Rent supplements cut to spend $2M on emergency shelter beds with 500 people across New Brunswick homeless",2019-12-11,0,0.6825769543647766
+523,CBC,'This is a crisis': N.W.T. survey shows worsening housing conditions. 2019 NWT Community Survey says 42% of all households have at least one major problem,2019-11-29,0,0.6803345680236816
+524,CBC,"No toilet paper, no problem: Maybe it's time to try the bidet. 'Why have we been indoctrinated to believe that ... dry paper properly cleans the dirtiest part of our body?'",2020-03-15,0,0.5650767087936401
+525,CBC,"Lacking customers and suppliers, Cape Breton natural gas project faces uncertain future. Bear Head LNG project was recently granted extension to construction permit by Utility and Review Board",2020-01-02,0,0.5947988629341125
+526,CBC,Land-based salmon farm proposed for Grande-Anse. Fish would spend their entire lives — from eggs to harvest — on land,2019-12-13,0,0.6744020581245422
+527,CBC,"U.S., China grant trade concessions as fresh talks loom. Trump announced 2-week delay to increased tariffs on Chinese imports 'as a gesture of goodwill'",2019-09-12,0,0.6786539554595947
+528,CBC,"U.S., China grant trade concessions as fresh talks loom. Trump announced 2-week delay to increased tariffs on Chinese imports 'as a gesture of goodwill'",2019-09-12,0,0.6786539554595947
+529,CBC,"'We are not in a crisis': New N.W.T. government delivers $1.9B budget. Fiscal situation is 'not what was hoped in the last budget but it is manageable,' says finance minister",2020-02-28,0,0.5482221245765686
+530,CBC,Hundreds turn out for Fort McMurray's 1st retail cannabis store. 'I’m just pumped to get it now and I want to go home and try out some supply',2019-06-27,0,0.5695805549621582
+531,CBC,"The life-saving medicine she needs is cheap, common and unavailable in Canadian pharmacies. Cassidy Armstrong among a fewer than 200 Canadians who must apply for access",2020-01-30,0,0.679236650466919
+532,CBC,'None of them speak my language': Frustration with politicians echoes across Canada: Peter Mansbridge. Talking with average Canadians reveals an undercurrent of feeling ahead of Monday’s federal election,2019-10-18,0,0.6121529936790466
+533,CBC,Alibaba founder Jack Ma steps down as chairman of Chinese e-commerce giant. Chinese retailers facing uncertainty as Beijing and Washington battle over trade,2019-09-10,0,0.67497318983078
+534,CBC,'A mother should never ever have to be put in this position': Chilliwack mom on brink of homelessness. Michelle Paquette cares for 5 children; 2 have disabilities,2019-12-13,0,0.6817359328269958
+535,CBC,'A mother should never ever have to be put in this position': Chilliwack mom on brink of homelessness. Michelle Paquette cares for 5 children; 2 have disabilities,2019-12-13,0,0.6817359328269958
+536,CBC,"Kate's 5 fun things to do this weekend (Sept. 20 to 22). Doors Open is this weekend, along with a peace concert and the Open Sky Festival",2019-09-20,0,0.55120849609375
+537,CBC,"WeWork hype was never anything more than 'unicorn feces,' says business prof. The real-estate startup dazzled investors by painting itself as a technology company, says Scott Galloway",2019-10-24,0,0.5268869996070862
+538,CBC,"New cabinet must make the best of an uncertain economic outlook: Don Pittis. Market indicators turn optimistic on global economy but others say, 'Hold on'",2019-12-03,0,0.5989806056022644
+539,CBC,"WeWork hype was never anything more than 'unicorn feces,' says business prof. The real-estate startup dazzled investors by painting itself as a technology company, says Scott Galloway",2019-10-24,0,0.5268869996070862
+540,CBC,Pot producers implore Ontario to open more stores. Just 24 legal retailers open in Ontario compared to 324 in Alberta,2019-11-13,0,0.5671390295028687
+541,CBC,"WeWork hype was never anything more than 'unicorn feces,' says business prof. The real-estate startup dazzled investors by painting itself as a technology company, says Scott Galloway",2019-10-24,0,0.5268869996070862
+542,CBC,Pot producers implore Ontario to open more stores. Just 24 legal retailers open in Ontario compared to 324 in Alberta,2019-11-13,0,0.5671390295028687
+543,CBC,"New cabinet must make the best of an uncertain economic outlook: Don Pittis. Market indicators turn optimistic on global economy but others say, 'Hold on'",2019-12-03,0,0.5989806056022644
+544,CBC,Meet The Montreal Children's Library — our CBC charity of 2019. The 90-year-old library was created by 7 women who wanted to boost literacy,2019-12-04,0,0.6320653557777405
+545,CBC,Meet The Montreal Children's Library — our CBC charity of 2019. The 90-year-old library was created by 7 women who wanted to boost literacy,2019-12-04,0,0.6320653557777405
+546,CBC,"Thefts in hospitals lead to lockup of masks, protective gear amid COVID-19 supply shortage. Nurses' frustrations grow as hospitals seek to ration crucial PPE supplies in COVID-19 crisis",2020-04-10,0,0.6330350041389465
+547,CBC,"Emboldened by impending acquittal, Trump uses state of the union as stump speech. An emboldened U.S. president sees little reason to reach across the aisle",2020-02-06,0,0.5517560839653015
+548,CBC,New picture book about the ABCs of aviation aims to inspire little girls and boys to fly. Main character honours one of Canada's first Indigenous female commercial pilots,2019-08-13,0,0.6380547881126404
+549,CBC,"U.S. reports on GDP, consumer spending remain positive. Improvement in economic data seemingly reduces the risks of a recession in the near term",2019-11-27,0,0.5532447099685669
+550,CBC,Vancouver is still in a housing crisis. But when will we know if it's over?. It's a question without a defined answer — but one that could have big policy implications down the road,2019-07-07,0,0.6297975182533264
+551,CBC,Vancouver is still in a housing crisis. But when will we know if it's over?. It's a question without a defined answer — but one that could have big policy implications down the road,2019-07-07,0,0.6297975182533264
+552,CBC,Vape product concerns weigh on Canadian cannabis companies looking for sales boost. Investigators point to THC as likely playing a role in vaping-related illnesses,2019-09-30,0,0.6481010913848877
+553,CBC,Vape product concerns weigh on Canadian cannabis companies looking for sales boost. Investigators point to THC as likely playing a role in vaping-related illnesses,2019-09-30,0,0.6481010913848877
+554,CBC,B.C. seniors face up to 2-month wait for more effective flu vaccine. Fluzone High-Dose vaccine produces a stronger immune response in seniors who are vulnerable to the flu,2019-10-09,0,0.6297093033790588
+555,CBC,Fed chair sees North America as an economic oasis in 2020: Don Pittis. Solidifying our trade link with the U.S. means optimism could spread north next year,2019-12-12,0,0.5518060326576233
+556,CBC,The best of Halloween on CBC Gem. Have the perfect Halloween snuggled up with these spooky specials.,2019-10-31,0,0.6511147022247314
+557,CBC,The battle to keep this country together will be harder in some provinces than others. The Canada Votes newsletter has been your tip-sheet for the 2019 federal election.,2019-10-27,0,0.6310294270515442
+560,CBC,Photographer David Yarrow gets up close and personal in the name of art. The renowned Scottish photographer's first exhibit in Vancouver opens this week,2019-10-19,0,0.5515573024749756
+561,CBC,U.S. extends temporary sales permit to Huawei for 90 days. Move comes a day after Trump said U.S. should not do business with Chinese tech giant,2019-08-19,0,0.6300652623176575
+562,CBC,U.S. extends temporary sales permit to Huawei for 90 days. Move comes a day after Trump said U.S. should not do business with Chinese tech giant,2019-08-19,0,0.6300652623176575
+563,CBC,U.S. extends temporary sales permit to Huawei for 90 days. Move comes a day after Trump said U.S. should not do business with Chinese tech giant,2019-08-19,0,0.6300652623176575
+564,CBC,Photographer David Yarrow gets up close and personal in the name of art. The renowned Scottish photographer's first exhibit in Vancouver opens this week,2019-10-19,0,0.5515573024749756
+566,CBC,"Hong Kong airport protests are a warning that violence is bad for business: Don Pittis. Hong Kong used to have a regional lock on business services, but not anymore",2019-08-15,0,0.5457383394241333
+567,CBC,"British PM Theresa May says she'll resign on June 7. Conservative leadership contest to begin June 10, with U.K. divided over Brexit battle",2019-05-24,0,0.5480372905731201
+568,CBC,Australian stores ration toilet paper amid coronavirus panic buying. Most of Australia's 42 COVID-19 cases linked to cruise ship docked in Japan ,2020-03-04,0,0.5935154557228088
+569,CBC,Hong Kong court to hear assault case against student shot by police. 18-year-old in stable condition in hospital,2019-10-03,0,0.6310968399047852
+572,CBC,"Housing group wants city to license landlords. Renters, neighbours, landlords asked to fill out survey by Sept. 4.",2019-08-29,0,0.5508599877357483
+573,CBC,"Energy prices spike after Saudi oil attack, U.S. blames Iran. Trump says U.S. 'locked and loaded' to respond, Iran calls U.S. claims 'maximum lies'",2019-09-16,0,0.6777488589286804
+574,CBC,A week of tax promises that are more about politics than policy. All parties say they want to simplify the tax system — but their platforms say something else,2019-09-30,0,0.5480712652206421
+575,CBC,"Housing group wants city to license landlords. Renters, neighbours, landlords asked to fill out survey by Sept. 4.",2019-08-29,0,0.5508599877357483
+576,CBC,"Old store, new life: How plants and patterns are reviving a historic St. John's building. The 150-year-old Templeton's building has some new tenants",2019-07-08,0,0.6801601648330688
+577,CBC,COVID-19 outbreak: Here's what's happening around the world Friday. WHO director says risk of spread and impact 'very high at a global level',2020-02-29,0,0.629608154296875
+578,CBC,"Posh corner of London to get 55 affordable apartments, thanks to local church. The units will bolster the well-heeled northwest, an underserved section of the city",2019-08-29,0,0.552325963973999
+579,CBC,COVID-19 outbreak: Here's what's happening around the world Friday. WHO director says risk of spread and impact 'very high at a global level',2020-02-29,0,0.629608154296875
+580,CBC,Auxly Cannabis signs $123M deal with tobacco giant Imperial Brands. Vancouver firm will get global licences to the British tobacco company's vaping technology,2019-07-25,0,0.682067334651947
+581,CBC,"Bookshop on wheels makes the connection between books and readers. More than 2,200 titles wedged onto the shelves of the Daisy Chain Book Company",2019-07-25,0,0.5328988432884216
+582,CBC,"Germany's Deutsche Bank to cut 18,000 jobs by 2022 in overhaul. Restructuring follows failure in April of merger talks with German rival Commerzbank",2019-07-07,0,0.6792898178100586
+583,CBC,"Bookshop on wheels makes the connection between books and readers. More than 2,200 titles wedged onto the shelves of the Daisy Chain Book Company",2019-07-25,0,0.5328988432884216
+584,CBC,"Germany's Deutsche Bank to cut 18,000 jobs by 2022 in overhaul. Restructuring follows failure in April of merger talks with German rival Commerzbank",2019-07-07,0,0.6792898178100586
+585,CBC,Uber exceeds 3rd-quarter revenue estimates but misses targets for users. Ride-hailing company still posting overall losses but is expanding into new areas,2019-11-04,0,0.6810696721076965
+586,CBC,Uber exceeds 3rd-quarter revenue estimates but misses targets for users. Ride-hailing company still posting overall losses but is expanding into new areas,2019-11-04,0,0.6810696721076965
+587,CBC,U.S. issues 'do not travel' warning as coronavirus death toll in China rises. WHO declares public health emergency of international concern,2020-01-31,0,0.6780425310134888
+588,CBC,Nepean shooting top of mind for many as Ottawa finishes Airbnb rules. Consultations on short-term rentals now done; report expected next month,2019-10-24,0,0.5520923137664795
+589,CBC,Business success of paperless papers may signal next step in mainstream news: Don Pittis. Can traditional broadsheets survive without print or paywalls? New evidence says yes,2020-03-23,0,0.5858448147773743
+590,CBC,Business success of paperless papers may signal next step in mainstream news: Don Pittis. Can traditional broadsheets survive without print or paywalls? New evidence says yes,2020-03-23,0,0.5858448147773743
+591,CBC,Calgary to tighten its hold as Canada's cannabis capital. Dozens of new stores expected to open in weeks ahead as province lifts moratorium,2019-06-05,0,0.6821585297584534
+592,CBC,Business success of paperless papers may signal next step in mainstream news: Don Pittis. Can traditional broadsheets survive without print or paywalls? New evidence says yes,2020-03-23,0,0.5858448147773743
+593,CBC,"Big cost and challenges to major restoration of Alberta legislature. 18,000 repairs are needed to restore the crumbling sandstone of the Alberta legislature building",2019-08-11,0,0.5873013734817505
+594,CBC,"New Brunswick pharmacies sell out of medical masks amid coronavirus concerns. WHO warns of global shortage, but masks not recommended for healthy individuals and risks deemed low in N.B.",2020-02-13,0,0.6271044611930847
+595,CBC,"Big cost and challenges to major restoration of Alberta legislature. 18,000 repairs are needed to restore the crumbling sandstone of the Alberta legislature building",2019-08-11,0,0.5873013734817505
+596,CBC,Oil prices jump 15% following drone attack on Saudi facility. Trump authorized use of emergency U.S. oil stockpiles to ensure stable supplies,2019-09-16,0,0.6815775036811829
+597,CBC,"Advent of luxury calendars means the Christmas countdown isn't just for kids anymore. Traditional 24-day calendars are now filled with alcohol, cheese, even jewelry — and they're selling",2019-11-27,0,0.5508774518966675
+598,CBC,"Ottawa's 'draconian' Airbnb rules will hurt students, landlord says. Proposed bylaw would restrict short-term rentals to primary residences",2019-11-08,0,0.656478226184845
+599,CBC,"Alberta test case: Planned sale of gas wells, pipelines raises cleanup concerns. 'We in Alberta have gotten way too used to backroom deals and backroom regulators that are not transparent'",2019-11-14,0,0.6798397302627563
+600,CBC,A long trade war could threaten Communist Party legitimacy: Don Pittis. Looming U.S. election offers China short-term clout but it faces long-term dangers,2019-05-27,0,0.6820133924484253
+601,CBC,"Ottawa's 'draconian' Airbnb rules will hurt students, landlord says. Proposed bylaw would restrict short-term rentals to primary residences",2019-11-08,0,0.656478226184845
+602,CBC,"'To do it all remotely is pretty impossible:' Campus closings hamper hands-on school programs. Students need access to labs, gear, co-op jobs to be ready to graduate",2020-04-25,0,0.551498293876648
+603,CBC,"'To do it all remotely is pretty impossible:' Campus closings hamper hands-on school programs. Students need access to labs, gear, co-op jobs to be ready to graduate",2020-04-25,0,0.551498293876648
+604,CBC,"'To do it all remotely is pretty impossible:' Campus closings hamper hands-on school programs. Students need access to labs, gear, co-op jobs to be ready to graduate",2020-04-25,0,0.551498293876648
+605,CBC,'Mask wars' risk setting back global fight against coronavirus. Global competition for supplies among Western nations spikes,2020-04-06,0,0.5480148196220398
+606,CBC,"Forests, rowdy nightlife and one slippery sea lion: An artist's guide to falling in love with London. Writer Oliver Skinner is here to show you that London is much more than just a college town or pit stop",2019-08-02,0,0.5510637760162354
+607,CBC,"Netflix's U.S. subscriber growth slowing as competition looms. Netflix added 520,000 subscribers from the U.S. from July to September, below the 800,000 management expected",2019-10-16,0,0.5500883460044861
+608,CBC,"No cause for panic — or celebration: Downtown Winnipeg developers driven by profits, not altruism. Proposed sale of Portage Place is no bellwether for downtown Winnipeg, but it could ease the housing crunch",2019-07-13,0,0.5584551692008972
+609,CBC,"No cause for panic — or celebration: Downtown Winnipeg developers driven by profits, not altruism. Proposed sale of Portage Place is no bellwether for downtown Winnipeg, but it could ease the housing crunch",2019-07-13,0,0.5584551692008972
+610,CBC,"Retail businesses reopen in Wuhan, China's original coronavirus epicentre. Not every shop open, and limits are placed on number of customers at any 1 time",2020-03-30,0,0.5494356155395508
+611,CBC,"Retail businesses reopen in Wuhan, China's original coronavirus epicentre. Not every shop open, and limits are placed on number of customers at any 1 time",2020-03-30,0,0.5494356155395508
+612,CBC,"What's going on at Alberta's liquor, gaming and cannabis regulator? The province won't say. Old board dumped, 2 new members promptly resigned, status of major files remains unclear",2019-11-12,0,0.5491181015968323
+613,CBC,"Progress, but still no deal to avert U.S.-Mexico tariffs. U.S. stocks, oil and Treasury yields rise on signs sides are getting closer",2019-06-07,0,0.6075222492218018
+614,CBC,"Liberals ask voters to 'choose forward' while Tories vow to help Canadians 'get ahead' in new campaign ads. Liberals, Tories launch TV ad campaigns ahead of Oct. 21 vote, NDP expected to follow next week",2019-08-26,0,0.5483643412590027
+615,CBC,Do chuckwagon races amount to 'cruel' abuse or save horses from slaughter? Here's what you said. Some argue horses would otherwise be on dinner plates; others insist races are 'cruel' and audiences complicit,2019-07-12,0,0.6793505549430847
+616,CBC,"Vancouver's lasting 2010 Olympic legacies, from big arenas to iconic art. Vancouver projects successfully integrated into the community, says city's former chief planner",2020-02-15,0,0.538943886756897
+617,CBC,"How a leaner, regulated Nalcor could save millions and better protect consumers. Liberty Consulting is proposing a dramatic shakeup at embattled Crown corporation in the Muskrat era",2019-10-05,0,0.5517797470092773
+618,CBC,5 stylish Canadian yoga wear brands committing to more sustainable practices. These makers are striving for greener production — and not sacrificing on look or feel in the least,2019-07-30,0,0.5516782402992249
+621,CBC,Quebec firm Group Mach makes rival offer for Transat. Transat announced last month it was in exclusive talks with Air Canada,2019-06-04,0,0.549119234085083
+622,CBC,"Ilya Kovalchuk wants to be part of the Canadiens' future, but do the Habs want him?. 36-year-old's career was on the rocks in L.A., but he’s excelled since joining Montreal",2020-01-31,0,0.5517825484275818
+623,CBC,"Inside the secret, million-dollar world of baby eel trafficking. Undercover Canadian government operation highlights global concerns around smuggling to feed Asian demand",2019-06-25,0,0.5722579956054688
+624,CBC,"U.S. jobs growth strong, casting doubt on anticipated Fed rate cut. Stocks slide as jobs report indicates continuing growth in U.S. economy",2019-07-05,0,0.6734941601753235
+625,CBC,"U.S. jobs growth strong, casting doubt on anticipated Fed rate cut. Stocks slide as jobs report indicates continuing growth in U.S. economy",2019-07-05,0,0.6734941601753235
+626,CBC,"Ilya Kovalchuk wants to be part of the Canadiens' future, but do the Habs want him?. 36-year-old's career was on the rocks in L.A., but he’s excelled since joining Montreal",2020-01-31,0,0.5517825484275818
+627,CBC,"What to cook in June: Spring's bounty of sorrel, radishes, garlic scapes and strawberries is finally here. From sorrel sauce to berry cordials to a new kind of pesto, here’s how to make the most of it",2019-06-04,0,0.5510851144790649
+628,CBC,Bots tweeting about Toronto's Sidewalk Labs project raise disinformation red flags. Twitter suspends accounts after questions from journalists and privacy experts,2019-07-10,0,0.5330840349197388
+629,CBC,Soaring rents and house prices in Canadian cities make housing a key election issue. Federal parties roll out their strategies to help urban Canadians keep housing costs in check,2019-09-24,0,0.6341856122016907
+630,CBC,"Cancel culture, indeed: COVID-19 is going to slam the gig economy. Freelancers, creatives and the self-employed are already feeling the sting of coronavirus",2020-03-14,0,0.6326714158058167
+631,CBC,Soaring rents and house prices in Canadian cities make housing a key election issue. Federal parties roll out their strategies to help urban Canadians keep housing costs in check,2019-09-24,0,0.6341856122016907
+632,CBC,"Iran breaches key uranium enrichment limit in nuclear deal, UN watchdog confirms. Tehran also warns Europe has 60 days to save nuclear deal quit by Washington",2019-07-08,0,0.5494974851608276
+633,CBC,Tehran lashes out at Britain for seizing Iranian oil tanker bound for Syria. Marks 1st time EU has seized vessel for violating sanctions against Syria,2019-07-04,0,0.6378459334373474
+634,CBC,What it would mean for pensioners if Kenney creates an Alberta pension plan. Pension funds would likely be transferred to government-owned AIMCo,2019-11-10,0,0.6784217953681946
+635,CBC,"United Technologies, Raytheon plan merger to create defence, aerospace giant. New company to be named Raytheon Technologies would be valued at $121B US",2019-06-10,0,0.5517913699150085
+636,CBC,"United Technologies, Raytheon plan merger to create defence, aerospace giant. New company to be named Raytheon Technologies would be valued at $121B US",2019-06-10,0,0.5517913699150085
+637,CBC,"Why the Bank of Canada won't fight a recession till there is one: Don Pittis. With the economy riding high, Poloz is unlikely to be pressured into early cuts",2019-09-03,0,0.6639079451560974
+638,CBC,"Why the Bank of Canada won't fight a recession till there is one: Don Pittis. With the economy riding high, Poloz is unlikely to be pressured into early cuts",2019-09-03,0,0.6639079451560974
+639,CBC,'Mask wars' risk setting back global fight against coronavirus. Global competition for supplies among Western nations spikes,2020-04-06,0,0.5480148196220398
+640,CBC,"Winter is coming, and so is an uncharted economic abyss: Neil Macdonald. The economic situation scares me. But then, I'm not an economist",2019-08-13,0,0.548703670501709
+641,CBC,'Mask wars' risk setting back global fight against coronavirus. Global competition for supplies among Western nations spikes,2020-04-06,0,0.5480148196220398
+642,CBC,Facebook wants to be your bank with its new Libra cryptocurrency. Newsletter: A closer look at the day's most notable stories,2019-06-18,0,0.5963953137397766
+644,CBC,Winnipeg Folk Festival kicks off its 46th year. Four days to take in the music from Thursday through Sunday,2019-07-12,0,0.5518285632133484
+645,CBC,Winnipeg Folk Festival kicks off its 46th year. Four days to take in the music from Thursday through Sunday,2019-07-12,0,0.5518285632133484
+647,CBC,Cabbage rolls by the thousand: Peg's Kitchen's success lies in bringing 'down-home' Sask. cooking to the city. Local foodie eats his way through Regina to share his take on what’s good,2019-11-28,0,0.6062465906143188
+649,CBC,Cabbage rolls by the thousand: Peg's Kitchen's success lies in bringing 'down-home' Sask. cooking to the city. Local foodie eats his way through Regina to share his take on what’s good,2019-11-28,0,0.6062465906143188
+651,CBC,Demise of Canadian cannabis website a symptom of failed dreams: Don Pittis. End of brave venture The Leaf News is proof of Canada's collective pot delusion,2019-11-18,0,0.6278891563415527
+652,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 18. PM announces $82B aid package; Canada, U.S. agree to close shared border to non-essential travel",2020-03-19,0,0.6509674191474915
+653,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 18. PM announces $82B aid package; Canada, U.S. agree to close shared border to non-essential travel",2020-03-19,0,0.6509674191474915
+654,CBC,5 restaurants where you can get a farm-to-table meal in Sask.. These eateries highlight the province’s best in-season ingredients,2019-07-27,0,0.656589925289154
+655,CBC,Affordable housing project up in the air after provincial cuts. Provincial rebate program helped fund low-income apartments,2019-09-26,0,0.6734911203384399
+656,CBC,5 restaurants where you can get a farm-to-table meal in Sask.. These eateries highlight the province’s best in-season ingredients,2019-07-27,0,0.656589925289154
+658,CBC,"OPINION | What happens if Albertans keep praying for another oil boom, but God has none left to give?. If Calgarians are looking for an answer to that question, they could do a lot worse than look to Detroit",2019-09-11,0,0.5547440052032471
+659,CBC,"OPINION | What happens if Albertans keep praying for another oil boom, but God has none left to give?. If Calgarians are looking for an answer to that question, they could do a lot worse than look to Detroit",2019-09-11,0,0.5547440052032471
+660,CBC,How a new mall in New York City is hoping to reverse the 'retail apocalypse'. Hudson Yards development has dedicated an entire floor to digital brands making their brick and mortar debut,2019-05-19,0,0.5492513179779053
+661,CBC,"A modern primer on engagement ring shopping. From ethical diamonds to recycled gold, top experts share everything we need to consider",2019-12-11,0,0.6261563897132874
+662,CBC,"A modern primer on engagement ring shopping. From ethical diamonds to recycled gold, top experts share everything we need to consider",2019-12-11,0,0.6261563897132874
+664,CBC,"Trudeau to meet with premiers, Indigenous leaders Thursday as COVID-19 spreads and oil prices tank. First Ministers' Meeting being held in Ottawa amid economic shocks from COVID-19 pandemic",2020-03-12,0,0.6804763674736023
+665,CBC,Why Albertans give so much money to charity (but shouldn't be too smug about it). Donor culture highlights how we view the role of government vs. civil society,2019-12-25,0,0.6009939312934875
+666,CBC,"Trudeau announces $1B COVID-19 package as WHO calls global outbreak a pandemic. Federal government will waive 1-week wait for employment insurance, fund research",2020-03-11,0,0.6814075708389282
+667,CBC,Tips for getting the most out of your air conditioning unit. Research engineer says spring and fall are the best times to purchase a new unit,2019-07-15,0,0.5992918014526367
+668,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 20. Provinces ramp up restrictions as number of COVID-19 cases in Canada passes 1,000",2020-03-21,0,0.6305167078971863
+670,CBC,Coronavirus: What's happening in Canada and the world on April 12. Long-term care homes deaths account for close to half of Ontario's COVID-19 toll,2020-04-13,0,0.6293419003486633
+671,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 16. B.C. reported 3 more deaths at long-term care home, bringing national toll to 4",2020-03-17,0,0.5512925982475281
+672,CBC,"Coronavirus: Here's what's happening in Canada and the world March 19. PM talks about need for increased testing, travel restrictions between Canada and U.S.",2020-03-20,0,0.6815561056137085
+673,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 17. Ontario, Alberta and B.C. declare emergency as Trudeau pledges relief for Canadians",2020-03-20,0,0.5665820837020874
+674,CBC,"Coronavirus: Here's what's happening in Canada and around the world on March 17. Ontario, Alberta and B.C. declare emergency as Trudeau pledges relief for Canadians",2020-03-20,0,0.5665820837020874
+675,CBC,Does approving TMX do anything for the Liberals?. The Canada Votes newsletter is your weekly tip-sheet as we count down to Oct. 21,2019-06-16,0,0.5498363375663757
+676,CBC,Coronavirus: What's happening in Canada and around the world on March 23. Quebec and Ontario order closure of all non-essential workplaces starting Wednesday,2020-03-24,0,0.5513785481452942
