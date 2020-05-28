@@ -1,0 +1,2 @@
+
+mortgage_rates_100_Bloomberg_article.json collected on May27 week4 is only 1 row different from week2 scraping
