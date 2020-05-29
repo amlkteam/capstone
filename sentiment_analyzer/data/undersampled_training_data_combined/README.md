@@ -1,1 +1,1 @@
-## Add the undersampled data that Aaron created for training the models
+## This folder contains the undersampled data that is used for training the models
