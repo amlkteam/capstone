@@ -346,9 +346,9 @@ indic_to_value["value_employment"] = "Employment Rate <br>(All genders, 15+ year
 indic_to_value["value_interest_rates"] = "Interest Rate <br>(overnight target rate)"
 
 #giant indicators df imported
-indicators_df = pd.read_csv('combined_indicator_data.csv', parse_dates=['date'])
+indicators_df = pd.read_csv('../data/combined_indicator_data.csv', parse_dates=['date'])
 #read in sentiment data
-combined_senti_df = pd.read_csv("combined_annotation_prediction.csv",parse_dates=['publishedAt'],index_col='publishedAt')
+combined_senti_df = pd.read_csv("../data/combined_sentiment_data.csv",parse_dates=['publishedAt'],index_col='publishedAt')
 
 
 ## main function of Dash app frontend

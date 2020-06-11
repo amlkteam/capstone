@@ -2,16 +2,18 @@
 """
 Created on Mon Jun  8 20:22:17 2020
 
-@author: gen80
+@author: Amy(.py wrapper), Aaron(original code from his Google Colab notebook)
 
 #checkpoint: Jun8 swapped to relative path
 #checkpoint: Jun8 11:31pm cleared bugs for running training in local machine
 #Please use flair version 0.5
+
+#below a demo for training a finetuned classifier for GDP-related articles
 """
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 # many future warnings related to tensorflow
-
+ 
 def main():
     from flair.embeddings import FlairEmbeddings, DocumentLSTMEmbeddings, BertEmbeddings, DocumentRNNEmbeddings, TransformerDocumentEmbeddings
     from flair.models import TextClassifier
@@ -68,7 +70,7 @@ def main():
     ### Second Stage (train on hand annotated datasets)
     #### Build corpus
     
-    
+    ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
     new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
     ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
     finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
