@@ -9,6 +9,8 @@ Created on Mon Jun  8 20:22:17 2020
 #Please use flair version 0.5
 
 #below a demo for training a finetuned classifier for GDP-related articles
+
+#please check our indicator-specific model finetuning results corresponding to each of the 6 economic-indicators in the .ipynb Notebooks inside this folder.
 """
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)

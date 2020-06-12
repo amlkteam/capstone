@@ -66,6 +66,8 @@ def oversampling_on_indicator_and_split(indicator_file, import_folder, export_fo
 #execution 
 
 import_folder = r'../data/annotated_sample_for_training'
+
+## please change indicator names if you're extracting articles associated with other search keywords/other economic indicators
 indicator_names = ['GDP','employment','housing','interest_rate','mortgage_rate','stock']
 export_names_dict = {'GDP':'GDP','employment':'employment','housing':'housing','interest_rate':'interest_rates','mortgage_rate':'mortgage_rates','stock':'stock_market'}
 

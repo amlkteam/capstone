@@ -69,13 +69,16 @@ def get_monthly_avg_score(df):
     
     ave_df = df.resample('M').mean()
     ave_df = ave_df[['raw_sentiment_score']].rename(columns={'raw_sentiment_score': 'monthly_avg_sent_score'})
+    ## the reason we use 'ffill' here is that if there is no articles in the next month, then we assume that the sentiment of the market doesn't change
+
     ave_df = ave_df.fillna(method='ffill')
     return ave_df
 
 def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label", title="Default Title", add_rangeslide=True): 
     """
     returns a Plotly graph given a dataframes containing financial indicator data and 
-    a dataframe containing sentiment values 
+    a dataframe containing sentiment values, to visualize monthly-average sentiment change     against the selected indicator.
+ 
     INPUT:
     indicator_df: dataframe containing a "date" column of datetimes and a "values" column of float values
     senti_df: dataframe containing a "final_sentiment" column of float values
@@ -84,11 +87,15 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
     add_rangeslide: boolean of displaying
     """
     fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+    ## indicators_df has one independent y-axis and senti_df has another y-axis as they're not different scale 
+    ## date ranges of indicator_df also differs from that of senti_df
+
     indi_y = indicator_df["values"].astype('float64')
-    indi_dates = indicator_df["dates"].astype('datetime64[ns]') 
+    indi_dates = indicator_df["dates"].astype('datetime64[ns]')
+    
     senti_y = senti_df["final_sentiment"].astype('float64')
-    #senti_dates = senti_df["publishedAt"].astype('datetime64[ns]')
-    senti_dates = senti_df.index.astype('datetime64[ns]') #Jun3 4:44 pm changed to get dates from index of senti_df
+    senti_dates = senti_df.index.astype('datetime64[ns]') 
     
     
     #set x axis limits for visualization
@@ -146,7 +153,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
 def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis label", title="Default Title", add_rangeslide=True): 
     """
     returns a Plotly graph given a dataframes containing financial indicator data and 
-    a dataframe containing sentiment values 
+    a dataframe containing sentiment values, to visualize daily sentiment change         against the selected indicator.
+ 
     INPUT:
     indicator_df: dataframe containing a "date" column of datetimes and a "values" column of float values
     senti_df: dataframe containing a "final_sentiment" column of float values
@@ -269,7 +277,7 @@ def daily_weighted_average(daily_senti_df, source_weight_dict):
 
 def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=None, end_date=None):
     """
-    calculate the Pearson’s (Spearman’s) correlation between monthly sentiment score
+    calculate the Pearson’s correlation between monthly sentiment score
     of an indicator from a source and the values of that economic indicator.
     
     inputs:
@@ -338,10 +346,10 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
 # dictionary of y-axis labels from Jon
 
 indic_to_value = {}
-indic_to_value["value_GDP"] = "GDP <br>(on-year percentage growth)"
+indic_to_value["value_GDP"] = "GDP <br>(year-on-year percentage growth)"
 indic_to_value["value_TSX"] = "S&P/TSX Composite Index <br>(close value)"
 indic_to_value["value_mortgage_rates"]= "Mortgage Rate <br>(residential, insured)"
-indic_to_value["value_housing_prices"] = "Home Price Index  <br> (on-month percentage growth)"
+indic_to_value["value_housing_prices"] = "Home Price Index  <br> (month-on-month percentage growth)"
 indic_to_value["value_employment"] = "Employment Rate <br>(All genders, 15+ years old)"
 indic_to_value["value_interest_rates"] = "Interest Rate <br>(overnight target rate)"
 
