@@ -15,6 +15,7 @@ from flair.data import Corpus
 from flair.data import Sentence
 import pandas as pd
 import numpy as np
+import os
 
 def finetuned_model_predictions(input_file_path, finetuned_classifier, output_file_path):
   '''Makes Sentiment Predictions on unannotated data points contained in the input csvfile by loading the user-defined classifier.
@@ -86,3 +87,6 @@ output_file_path = '../data/prediction_output/test_gdp'
 classifier = TextClassifier.load('../trained_models/phase_2_employment_model.pt')
 
 finetuned_model_predictions(input_file_path, classifier, output_file_path)
+
+# unit test
+assert os.path.exists(output_file_path)

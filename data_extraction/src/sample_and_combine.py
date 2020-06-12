@@ -7,20 +7,11 @@ after annotation is finished.
 """
 
 import pandas as pd
-import urllib.request
-import json 
-from bs4 import BeautifulSoup
-import requests
-import json
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
-from datetime import datetime, timedelta, date
-import pytz
+from datetime import datetime
 import dateutil.parser
 from collections import defaultdict
 import random
-import json
-import csv
+import os
 
 def sample_dataframe_by_month(dataframe, sample_size, keyword):
     """
@@ -28,6 +19,7 @@ def sample_dataframe_by_month(dataframe, sample_size, keyword):
     keyword (string) should contain the searching query (indicator) used to collect these articles and it's used for naming output file
     (idea is from Sirisha's sample function)
     """
+
     article_dictionary_by_month = defaultdict(list)
     full_list = []
     for column, row in dataframe.iterrows():
@@ -104,30 +96,38 @@ def get_unannotated_data(combined_df, annotated_df, indicator):
 Run functions to create sample first and then get_unannotated_data function to generate files for prediction
 """
 unanno_file_path = "../data/unannotated_data/bloomberg/"
+prediction_file_path = "../../sentiment_analyzer/data/predictions_data/test/" 
 
 bloomberg_interestrates_comb = combine_fp_bloomberg(unanno_file_path + 'interest_rates_100_Bloomberg_article.json', unanno_file_path + 'interest_rate_fpbloomberg.json')
 sample_bloomberg_interestrates = sample_dataframe_by_month(bloomberg_interestrates_comb, 3, 'Bloomberg_interestrates_combined')
 get_unannotated_data(bloomberg_interestrates_comb, sample_bloomberg_interestrates, 'interestrates')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_interestrates_Bloomberg.csv')
+
 
 bloomberg_housing_comb = combine_fp_bloomberg(unanno_file_path + 'housing_price_100_Bloomberg_article.json', unanno_file_path + 'housing_fpbloomberg.json')
 sample_bloomberg_housing = sample_dataframe_by_month(bloomberg_housing_comb, 3, 'Bloomberg_housing_combined')
 get_unannotated_data(bloomberg_housing_comb, sample_bloomberg_housing, 'housing')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_housing_Bloomberg.csv')
 
 bloomberg_gdp_comb = combine_fp_bloomberg(unanno_file_path + 'GDP_100_Bloomberg_article.json', unanno_file_path + 'GDP_fpbloomberg.json')
 sample_bloomberg_gdp = sample_dataframe_by_month(bloomberg_gdp_comb, 3, 'Bloomberg_gdp_combined')
 get_unannotated_data(bloomberg_gdp_comb, sample_bloomberg_gdp, 'GDP')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_GDP_Bloomberg.csv')
 
 bloomberg_employment_comb = combine_fp_bloomberg(unanno_file_path + 'employment_95_Bloomberg_article.json', unanno_file_path + 'employment_fpbloomberg.json')
 sample_bloomberg_employment = sample_dataframe_by_month(bloomberg_employment_comb, 3, 'Bloomberg_employment_combined')
 get_unannotated_data(bloomberg_employment_comb, sample_bloomberg_employment, 'employment')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_employment_Bloomberg.csv')
 
 bloomberg_tsx_comb = combine_fp_bloomberg(unanno_file_path + 'stock_market_100_Bloomberg_article.json', unanno_file_path + 'stock_market_fpbloomberg.json')
 sample_bloomberg_tsx = sample_dataframe_by_month(bloomberg_tsx_comb, 3, 'Bloomberg_tsx_combined')
 get_unannotated_data(bloomberg_tsx_comb, sample_bloomberg_tsx, 'tsx')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_tsx_Bloomberg.csv')
 
 bloomberg_mortgagerates_comb = combine_fp_bloomberg(unanno_file_path + 'mortgage_rates_100_Bloomberg_article.json', unanno_file_path + 'mortgage_rate_fpbloomberg.json')
 sample_bloomberg_mortgagerates = sample_dataframe_by_month(bloomberg_mortgagerates_comb, 3, 'Bloomberg_mortgagerates_combined')
 get_unannotated_data(bloomberg_mortgagerates_comb, sample_bloomberg_mortgagerates, 'mortgagerates')
+assert os.path.exists(prediction_file_path + 'predictions_dataset_mortgagerates_Bloomberg.csv')
 
 
 
@@ -142,7 +142,7 @@ get_unannotated_data(bloomberg_mortgagerates_comb, sample_bloomberg_mortgagerate
     
 def combine_bnn_cbc(bloomberg_file, cbc_file, out_name):
     """
-    combine the bloomberg articles with CBC articles
+    combine the annotated bloomberg articles with annotated CBC articles
     """
     bloomberg_df = pd.read_csv(bloomberg_file)
     bloomberg_df = bloomberg_df[['source', 'title', 'description', 'publishedAt', 'title_desc_sent_1']]

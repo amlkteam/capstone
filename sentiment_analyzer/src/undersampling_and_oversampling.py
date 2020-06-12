@@ -6,6 +6,7 @@ Will be merged with Amy's oversampling function
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import os
 
 
 def undersampling_and_split(import_folder, export_path):
@@ -36,3 +37,15 @@ undersampling_and_split(annotated_data_filepath + 'annotated_interestrates_bnn&C
 undersampling_and_split(annotated_data_filepath + 'annotated_mortgagerates_bnn&CBC.csv', undersampled_path + 'mortgage_rates/')
 undersampling_and_split(annotated_data_filepath + 'annotated_employment_bnn&CBC.csv', undersampled_path + 'employment/')
 undersampling_and_split(annotated_data_filepath + 'annotated_tsx_bnn&CBC.csv', undersampled_path + 'tsx/')
+
+## unit tests
+assert os.path.exists(undersampled_path)
+
+assert os.path.exists(undersampled_path + 'GDP/')
+assert os.path.exists(undersampled_path + 'GDP/train.csv')
+assert os.path.exists(undersampled_path + 'housing/dev.csv')
+assert os.path.exists(undersampled_path + 'interest_rates/test.csv')
+
+assert os.stat(undersampled_path + 'mortgage_rates/train.csv').st_size > 0
+assert os.stat(undersampled_path + 'employment/dev.csv').st_size > 0
+assert os.stat(undersampled_path + 'tsx/test.csv').st_size > 0

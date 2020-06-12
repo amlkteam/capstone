@@ -6,21 +6,11 @@
 
 import requests
 from bs4 import BeautifulSoup
-import time
 import os
 import json
 from datetime import datetime, timedelta
 import re
 
-import pandas as pd
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
-import pytz
-import dateutil.parser
-from collections import defaultdict
-import random
-import csv
-from sklearn.model_selection import train_test_split
 
 
 def clean_bloomberg_date(date):
@@ -153,25 +143,29 @@ out_path = "../data/unannotated_data/bloomberg/"
 
 bloomberg_mr_article = bnn_article_scraper('mortgage rates', out_path)
 assert len(bloomberg_mr_article) == 100
-
+assert os.path.exists(out_path + 'mortgage_rates_100_Bloomberg_articles.json')
 
 bloomberg_ir_article = bnn_article_scraper('interest rates', out_path)
 assert len(bloomberg_ir_article) == 100
+assert os.path.exists(out_path + 'interest_rates_100_Bloomberg_articles.json')
 
 
 bloomberg_hp_article = bnn_article_scraper('housing price', out_path)
 assert len(bloomberg_hp_article) == 100
+assert os.path.exists(out_path + 'housing_price_100_Bloomberg_articles.json')
 
 
 bloomberg_e_article = bnn_article_scraper('employment', out_path)
 assert len(bloomberg_e_article) == 100
-
+assert os.path.exists(out_path + 'employment_100_Bloomberg_articles.json')
 
 bloomberg_gdp_article = bnn_article_scraper('GDP', out_path)
 assert len(bloomberg_gdp_article) == 100
+assert os.path.exists(out_path + 'GDP_100_Bloomberg_articles.json')
 
 
 bloomberg_tsx_article = bnn_article_scraper('stock market', out_path)
 assert len(bloomberg_tsx_article) == 100
+assert os.path.exists(out_path + 'stock_market_100_Bloomberg_articles.json')
     
 
