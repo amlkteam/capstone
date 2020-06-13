@@ -16,7 +16,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 # many future warnings related to tensorflow
  
-def main():
+def main(data_folder,benchmark_classifier_folder,new_data_folder,finetuned_classifier_folder):
     from flair.embeddings import FlairEmbeddings, DocumentLSTMEmbeddings, BertEmbeddings, DocumentRNNEmbeddings, TransformerDocumentEmbeddings
     from flair.models import TextClassifier
     from flair.trainers import ModelTrainer
@@ -26,11 +26,6 @@ def main():
     import os
     
 
-    
-    
-    data_folder = r"../data/annotated_sample_for_training//"
-    ## this benchmark_classifier_folder is where the first-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
-    benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
     
     ### First Stage (Train on benchmark dataset)
     benchmark = pd.read_csv(data_folder+"combined_benchmark.csv")
@@ -72,10 +67,6 @@ def main():
     ### Second Stage (train on hand annotated datasets)
     #### Build corpus
     
-    ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
-    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
-    ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
-    finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
     
     ### this column_name_map must be updated to reflect which column stores the X(text features) and y(golden labels) for training use
     ### in the csv file contained in new_data_folder, 2nd column is 'title_desc',
@@ -102,7 +93,19 @@ def main():
 
 
 if __name__ ==  '__main__':
-    main()
+
+    data_folder = r"../data/annotated_sample_for_training//"
+
+    ## this benchmark_classifier_folder is where the first-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
+
+    ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
+    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
+
+    ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
+
+    main(data_folder,benchmark_classifier_folder,new_data_folder,finetuned_classifier_folder)
 
 
 
