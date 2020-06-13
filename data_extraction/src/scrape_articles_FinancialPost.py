@@ -99,7 +99,7 @@ def get_BloombergNews_from_FP(endpage,output_folder):
             writer.writerow(item)
         
 
-def allocate_to_indicator_basket(indicator,indicator_keywords):
+def allocate_to_indicator_basket(entries, indicator,indicator_keywords,output_folder):
     '''takes in a list of search terms related to a particular economic indicator, identify entries that has the search terms and return them.'''
     
     indicator_basket = []
@@ -116,37 +116,42 @@ def allocate_to_indicator_basket(indicator,indicator_keywords):
     
     return indicator_basket
 
-
-##execution of functions here
     
-output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
-get_BloombergNews_from_FP(200,output_folder)
+#### separate by 6 economic indicators and store into 6 files
 
+def separate_into_indicator_baskets(output_folder):
+    article_file = 'articles_output.json'
+    article_file_path = os.path.join(output_folder,article_file)        
+    f = open(article_file_path, encoding='utf-8')
+    entries = json.load(f)
+    f.close()
     
-## separate by 6 economic indicators and store into 6 files
-article_file = 'articles_output.json'
-article_file_path = os.path.join(output_folder,article_file)        
-f = open(article_file_path, encoding='utf-8')
-entries = json.load(f)
-f.close()
+    ## add in more keywords if first keyword cannot return enough entries. caveat: may lead to inclusion of many irrelevant articles and affect model training result and correlation calculation
+    GDP_keywords = ['GDP']
+    mortgage_keywords = ['mortgage rates']#,'mortgage'] 
+    interestrate_keywords = ['interest rates']#,'interest rate']
+    employment_keywords = ['employment']
+    housing_keywords = ['housing price']#,'housing']
+    TSX_keywords = ['TSX']#, 'stock market']
 
-GDP_keywords = ['GDP']
-mortgage_keywords = ['mortgage rates']#,'mortgage'] ## add in more keywords if first keyword cannot return enough entries
-interestrate_keywords = ['interest rates']#,'interest rate']
-employment_keywords = ['employment']
-housing_keywords = ['housing price']#,'housing']
-TSX_keywords = ['TSX']#, 'stock market']
+    GDP_entries = allocate_to_indicator_basket(entries,'GDP',GDP_keywords,output_folder)
+    mortgage_entries = allocate_to_indicator_basket(entries,'mortgage_rate',mortgage_keywords,output_folder)
+    interestrate_entries = allocate_to_indicator_basket(entries,'interest_rate',interestrate_keywords,output_folder)
+    employment_entries = allocate_to_indicator_basket(entries,'employment',employment_keywords,output_folder)
+    housing_entries = allocate_to_indicator_basket(entries,'housing',housing_keywords,output_folder)
+    TSX_entries = allocate_to_indicator_basket(entries,'TSX',TSX_keywords,output_folder)
 
-GDP_entries = allocate_to_indicator_basket('GDP',GDP_keywords)
-mortgage_entries = allocate_to_indicator_basket('mortgage_rate',mortgage_keywords)
-interestrate_entries = allocate_to_indicator_basket('interest_rate',interestrate_keywords)
-employment_entries = allocate_to_indicator_basket('employment',employment_keywords)
-housing_entries = allocate_to_indicator_basket('housing',housing_keywords)
-TSX_entries = allocate_to_indicator_basket('TSX',TSX_keywords)
+####execution of functions here
+##uncomment the line below to execute extract or separation function   
+##output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
 
+##uncomment the line below to execute extract function 
+#get_BloombergNews_from_FP(200,output_folder)
 
-### checkpoint: 11:20pm done first 200 pages, oldest article before Nov 2018
+####uncomment the line below to execute separation function 
+#separate_into_indicator_baskets(output_folder)
 
+#### examples of one extraction
 # =============================================================================
 # item_dicts[-1]
 # Out[39]: 
@@ -161,7 +166,7 @@ TSX_entries = allocate_to_indicator_basket('TSX',TSX_keywords)
 # =============================================================================
     
     
-
+#### example of original article display in html tags
 # =============================================================================
 # feed_items[-1]
 # Out[10]: 

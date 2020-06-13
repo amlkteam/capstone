@@ -27,7 +27,6 @@ from plotly.subplots import make_subplots
 
 import random
 from scipy.stats import pearsonr
-from scipy.stats import spearmanr
 import re
 import urllib
 
@@ -77,7 +76,7 @@ def get_monthly_avg_score(df):
 def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label", title="Default Title", add_rangeslide=True): 
     """
     returns a Plotly graph given a dataframes containing financial indicator data and 
-    a dataframe containing sentiment values, to visualize monthly-average sentiment change     against the selected indicator.
+    a dataframe containing sentiment values, to visualize monthly-average sentiment change against the selected indicator.
  
     INPUT:
     indicator_df: dataframe containing a "date" column of datetimes and a "values" column of float values
@@ -153,7 +152,7 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
 def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis label", title="Default Title", add_rangeslide=True): 
     """
     returns a Plotly graph given a dataframes containing financial indicator data and 
-    a dataframe containing sentiment values, to visualize daily sentiment change         against the selected indicator.
+    a dataframe containing sentiment values, to visualize daily sentiment change against the selected indicator.
  
     INPUT:
     indicator_df: dataframe containing a "date" column of datetimes and a "values" column of float values
