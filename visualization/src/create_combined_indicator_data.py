@@ -1,19 +1,24 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Jun  10 22:22:17 2020
-@author: Jonathan Chan
+@author: JONATHAN CHAN and SIRISHA PANDRAMISHI
 
-#checkpoint: moved code into main() function
+#checkpoint: address PR feedback: https://github.ubc.ca/ltian05/better_dwelling_capstone/pull/6#issuecomment-16602
 """
 import pandas as pd
 from datetime import datetime
 import datetime as dt
+import os
 
-#define where 
+#define where manually downloaded indicator data files reside
 filename = "../data/financial_indicator_data/"
 
 def get_gdp_df(path, start_date, end_date):
     """
+    Preprocess the csv file containing the manually downloaded GDP data 
+    
+    Data source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610010401
+    
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
     indicator: GDP
@@ -28,10 +33,19 @@ def get_gdp_df(path, start_date, end_date):
 
     
     """
-    df = pd.read_csv(path)
-    start_date = datetime.strptime(start_date, "%Y-%m-%d")
-    end_date = datetime.strptime(end_date, "%Y-%m-%d")
+    try:
+        df = pd.read_csv(path)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
     
+    try:
+        start_date = datetime.strptime(start_date, "%Y-%m-%d")
+        end_date = datetime.strptime(end_date, "%Y-%m-%d")
+        
+    except ValueError:
+        raise ValueError("Incorrect data format, should be YYYY-MM-DD")
+
 
     ## select only all industries
     df = df.loc[df['North American Industry Classification System (NAICS)'].values == 'All industries [T001]']
@@ -77,11 +91,18 @@ def get_gdp_df(path, start_date, end_date):
     assert(gdp_df["date"].dtype == "datetime64[ns]")
     assert(gdp_df["indicator"].dtype == "object")
     assert(gdp_df["value"].dtype == "float64")
+    #check that value column is a percentage
+    assert (gdp_df['value'] < 100).all() & (gdp_df['value'] > -100).all()
     
     return gdp_df
 
 def get_tsx_df(path):
     """
+    
+    Preprocess the csv file containing the manually downloaded TSX data 
+    
+    Data source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1010012501 
+    
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
     indicator: TSX
@@ -93,7 +114,12 @@ def get_tsx_df(path):
     Assume input csv starts and ends with the desired values
     Assume input csv has a 'Close' column
     """
-    df = pd.read_csv(path)
+    try:
+        df = pd.read_csv(path)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
+    
     # Convert the column to datetime type from string type
     df['Date'] = df['Date'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
     # Create new dataframe with only required columns : date and Close values
@@ -110,6 +136,10 @@ def get_tsx_df(path):
 
 def get_mortgage_df(path):
     """
+    Preprocess the csv file containing the manually downloaded mortgage rate data 
+    
+    Data source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1010000601 
+    
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
     indicator: TSX
@@ -122,6 +152,12 @@ def get_mortgage_df(path):
         "Unit of measure" column has value "Interest rate"
         "Components" column has value "Total, funds advanced, residential mortgages, insured"
     """
+    
+    try:
+        df = pd.read_csv(path)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
     
     df = pd.read_csv(path)
     ## select only "Interest rates" and "Total, funds advanced, residential mortgages, insured"
@@ -144,6 +180,11 @@ def get_mortgage_df(path):
 
 def get_interest_df(path):
     """
+    
+    Preprocess the csv file containing the manually downloaded interest rate data 
+    
+    Data source: https://www.bankofcanada.ca/rates/interest-rates/canadian-interest-rates/?rangeType=dates&rangeValue=1&rangeWeeklyValue=1&rangeMonthlyValue=1&ByDate_frequency=daily&lP=lookup_canadian_interest.php&sR=2010-06-02&se=L_V39079&dF=2019-06-02&dT=2020-06-02
+    
     Returns a dataframe with date, indicator, and value columns:
     Date: YYYY-MM-DD 
     indicator: interest_rate
@@ -156,9 +197,13 @@ def get_interest_df(path):
     Assume header is 11 lines
     """
     
-    df = pd.read_csv(path, skiprows=11)
-    df.head()
-    boc_interest_rates_df = df
+    try:
+        boc_interest_rates_df = pd.read_csv(path, skiprows=11)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
+
+    #boc_interest_rates_df = df
     boc_interest_rates_df.insert(loc=1, column='indicator', value="interest_rate")
     boc_interest_rates_df["Date"] = pd.to_datetime(boc_interest_rates_df["Date"], format="%Y-%m-%d")
     boc_interest_rates_df = boc_interest_rates_df.sort_values(by='Date')
@@ -172,6 +217,10 @@ def get_interest_df(path):
 
 def get_employment_df(path):
     """
+    Preprocess the csv file containing the manually downloaded employment data 
+    
+    Data source: https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410001701 
+    
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
     indicator: interest_rate
@@ -185,7 +234,12 @@ def get_employment_df(path):
         "Age group" has value "15 years and over"
         "GEO" column has value "Canada"
     """
-    df = pd.read_csv(path)
+    try:
+        df = pd.read_csv(path)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
+    
     df = df[(df["Sex"] == "Both sexes" )& (df['Age group'] == "15 years and over") & (df['GEO'] == "Canada")]
 
     ## select only "Both sexes" 
@@ -208,6 +262,10 @@ def get_employment_df(path):
 
 def get_housing_df(path):
     """
+    Preprocess the csv file containing the manually downloaded housing price data 
+    
+    Data source: https://www.crea.ca/housing-market-stats/mls-home-price-index/hpi-tool/
+    
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
     indicator: interest_rate
@@ -221,7 +279,11 @@ def get_housing_df(path):
         "year" column has value '2020'
     """
     
-    df = pd.read_csv(path)
+    try:
+        df = pd.read_csv(path)
+    except:
+        print("PATH DOES NOT EXIST: ", path)
+        return None
 
     df['Date'] = pd.to_datetime(df['Date'], format='%b %Y')
     housing_price_df =  pd.concat([df['Date'], df['Composite_HPI']], axis=1, keys=['date', 'value'])
@@ -246,6 +308,8 @@ def get_housing_df(path):
     assert(housing_price_df["date"].dtype == "datetime64[ns]")
     assert(housing_price_df["indicator"].dtype == "object")
     assert(housing_price_df["value"].dtype == "float64")
+    #check that value column is a percentage
+    assert (housing_price_df['value'] < 100).all() & (housing_price_df['value'] > -100).all()
     
     return housing_price_df
 
@@ -267,33 +331,42 @@ def df_to_merge(df, indicator_name):
 def main():
     
     #create six individual dataframes
-    gdp_path = filename + "gdp.csv"
-    gdp_start = "2019-04-01"
-    gdp_end = "2020-03-01"
-    gdp_df = get_gdp_df(gdp_path, gdp_start, gdp_end)
-    
-    tsx_path = filename + 'tsx.csv'
-    tsx_df = get_tsx_df(tsx_path)
-    
-    mortgage_rate_path = filename + 'mortgage_rates.csv'
-    mortgage_rate_df = get_mortgage_df(mortgage_rate_path)
-    
-    employment_path = filename + 'employment.csv'
-    employment_df = get_employment_df(employment_path)
-    
-    interest_rates_path = filename + 'interest_rates.csv'
-    boc_interest_rates_df = get_interest_df(interest_rates_path)
-    
-    housing_path = filename + 'housing_prices.csv'
-    housing_price_df = get_housing_df(housing_path)
+    try:
+        gdp_path = filename + "gdp.csv"
+        gdp_start = "2019-04-01"
+        gdp_end = "2020-03-01"
+        gdp_df = get_gdp_df(gdp_path, gdp_start, gdp_end)
+
+        tsx_path = filename + 'tsx.csv'
+        tsx_df = get_tsx_df(tsx_path)
+
+        mortgage_rate_path = filename + 'mortgage_rates.csv'
+        mortgage_rate_df = get_mortgage_df(mortgage_rate_path)
+
+        employment_path = filename + 'employment.csv'
+        employment_df = get_employment_df(employment_path)
+
+        interest_rates_path = filename + 'interest_rates.csv'
+        boc_interest_rates_df = get_interest_df(interest_rates_path)
+
+        housing_path = filename + 'housing_prices.csv'
+        housing_price_df = get_housing_df(housing_path)
+    except:
+        print("Error in get_INDICATOR_df() functions - check file structure in " + filename)
+        return None
     
     #create dataframes with value_indicator column name
-    gdp_to_merge = df_to_merge(gdp_df, "GDP")
-    tsx_to_merge = df_to_merge(tsx_df, "TSX")
-    mort_to_merge = df_to_merge(mortgage_rate_df, "mortgage_rates")
-    employment_to_merge = df_to_merge(employment_df, "employment")
-    housing_to_merge = df_to_merge(housing_price_df, "housing_prices")
-    intr_to_merge = df_to_merge(boc_interest_rates_df, "interest_rates")
+    try:
+        gdp_to_merge = df_to_merge(gdp_df, "GDP")
+        tsx_to_merge = df_to_merge(tsx_df, "TSX")
+        mort_to_merge = df_to_merge(mortgage_rate_df, "mortgage_rates")
+        employment_to_merge = df_to_merge(employment_df, "employment")
+        housing_to_merge = df_to_merge(housing_price_df, "housing_prices")
+        intr_to_merge = df_to_merge(boc_interest_rates_df, "interest_rates")  
+    except:
+        print("Error in df_to_merge() function - check dataframe inputs")
+        return None
+    
     
     #merge dataframe into full dataframe
     total_df = None
@@ -304,12 +377,23 @@ def main():
     total_df = total_df.merge(intr_to_merge, how="outer")
     total_df = total_df.sort_values(by='date')
     
+    assert total_df.shape[1] == 7, "incorrect number of columns (1 date column + 6 indicator columns)"
     
     #export_to_csv
     out_filename= "combined_indicator_data.csv"
-    total_df.to_csv(out_filename, index = False)
-    print("FINANCIAL INDICATOR FILE CREATED: ", out_filename)
-    print("ROWS, COLUMNS IN FILE: ", total_df.shape)
     
+    if not os.path.exists(out_filename):
+        try:
+            total_df.to_csv(out_filename, index = False)
+            print("FINANCIAL INDICATOR FILE CREATED: ", out_filename)
+            print("ROWS, COLUMNS IN FILE: ", total_df.shape)
+        except:
+            print("Error in outputting csv - check total_df format")
+    else:
+        print("FINANCIAL INDICATOR FILE ALREADY EXISTS: ", out_filename)
+    
+
+
 if __name__ ==  '__main__':
     main()
+
