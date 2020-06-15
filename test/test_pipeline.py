@@ -41,7 +41,14 @@ sys.path.append(module_path)
     #Two_stage_flair_training.main(data_folder,benchmark_classifier_folder,new_data_folder,finetuned_classifier_folder)
 
 ##test visualization app -- Jun13 2pm working fine
+#assert os.path.exists(data_folder)
+#assert os.path.exists(new_data_folder)
+#assert os.path.exists(os.path.join(benchmark_classifier_folder,'best-model.pt'))
+#assert os.path.exists(os.path.join(finetuned_classifier_folder,'best-model.pt'))
+
 ## adding title_desc to hoverinfo in scatter plot for error/correlation analysis (title_desc doesn't exist for "source-weighted Average" option, only applicable for "All sources" and individual source options)
+
+
 
 from visualization.src import dash_frontend_final_main
 

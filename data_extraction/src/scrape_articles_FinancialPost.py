@@ -3,7 +3,7 @@
 Created on Tue May 12 18:34:18 2020
 
 @author: Amy Lam
-
+## June14: added multithreading
 """
 
 import requests
@@ -13,18 +13,18 @@ import os
 import json
 import csv
 import random
+import threading
 
-def get_BloombergNews_from_FP(endpage,output_folder):
+
+def get_BloombergNews_from_FP(startpage,endpage,outputs):
     """
-    extracts latest articles from the author "Bloomberg News" from Financial Post website and export the output as both JSON and csv file.
-    Latest articles are on top and each page contains 10 articles.  
+    extracts latest articles from the author "Bloomberg News" from Financial Post website.
+    Most recent articles are on top and each page contains 10 articles.  
     
     Arguments:
-    endpage(int) -- the first n-th pages to extract.
-    output_folder (path) -- where you store the JSON and CSV files.
-    
-    Returns:
-    a JSON file and a CSV file.
+    startpage(int) -- the page number to start scraping
+    endpage(int) -- the final page number to scrape
+    outputs(list) -- a list where multithreading processes are storing the output from this function.
     
     """
 
@@ -33,7 +33,7 @@ def get_BloombergNews_from_FP(endpage,output_folder):
     # page 190 dates back to Nov 2018
     
     item_dicts = []
-    for pageno in range(1,endpage):
+    for pageno in range(startpage,endpage):
         
         extract_url = base_url+str(pageno)
         
@@ -44,7 +44,7 @@ def get_BloombergNews_from_FP(endpage,output_folder):
         #main text body
         content_section = soup.find('section','author-content')
         feed_items = content_section.find_all('li')
-        #len(feed_items) # 10 items per page
+        len(feed_items) # 10 items per page
         
         
         for item in feed_items:
@@ -80,26 +80,52 @@ def get_BloombergNews_from_FP(endpage,output_folder):
         print("finished page",pageno)
         time.sleep(3) # pause for 3 seconds before scraping next page
         
+        outputs[int(startpage/20)]=item_dicts
         
+
+def BloombergNews_from_FP(endpage, output_folder):
+    '''
+    A multithreading extraction execution of get_BloombergNews_from_FP() function to save time. Extracts 20 pages in a single thread.
+    
+    Arguments:
+    endpage(int) -- the first n-th pages to extract.
+    output_folder(path) -- a folder to export all the extracted article infos in a JSON file and a CSV file.
+    
+    '''
+    #reference: <<Automate the boring stuff with Python>> Chapter 15
+
+    downloadThreads = []
+    outputs = [None] * int(endpage/20)
+    for i in range(0,endpage,20):
+        downloadThread = threading.Thread(target=get_BloombergNews_from_FP, args=(i,i+20,outputs))
+        downloadThreads.append(downloadThread)
+        downloadThread.start()
+        
+    for downloadThread in downloadThreads:
+        downloadThread.join()
+    print('Done extraction.') ## this narrows down the execution time of scraping 
+           
+    all_itemdicts = [d for o in outputs for d in o]
+    #print(len(all_itemdicts))
+    os.makedirs(output_folder,exist_ok=True)
+    
     ## store output as json
     article_file = 'articles_output.json'
     
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-    
     fout = open(os.path.join(output_folder,article_file),'w')
-    json.dump(item_dicts,fout) ## dicts wrapped in a list
+    json.dump(all_itemdicts,fout) ## dicts wrapped in a list
     fout.close()    
     
-    ## also store csv for training sentiment analyzer?
+    ## also store csv for training sentiment analyzer
     with open(os.path.join(output_folder,'articles_export.csv'), 'a', newline='', encoding='utf-8') as csvfile:
         fieldnames = ['source','author','title','description','url','urlToImage','publishedAt','content']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        for item in item_dicts:
+        for item in all_itemdicts:
             writer.writerow(item)
-        
 
-def allocate_to_indicator_basket(entries, indicator,indicator_keywords,output_folder):
+     
+
+def allocate_to_indicator_basket(entries,indicator,indicator_keywords,output_folder):
     '''takes in a list of search terms related to a particular economic indicator, identify entries that has the search terms and return them.'''
     
     indicator_basket = []
@@ -115,6 +141,8 @@ def allocate_to_indicator_basket(entries, indicator,indicator_keywords,output_fo
     fout.close()
     
     return indicator_basket
+
+
 
     
 #### separate by 6 economic indicators and store into 6 files
@@ -146,10 +174,15 @@ def separate_into_indicator_baskets(output_folder):
 ##output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
 
 ##uncomment the line below to execute extract function 
-#get_BloombergNews_from_FP(200,output_folder)
+#BloombergNews_from_FP(200,output_folder)   
 
-####uncomment the line below to execute separation function 
+##uncomment the line below to execute separation function 
 #separate_into_indicator_baskets(output_folder)
+
+##tests
+#assert os.path.exists(output_folder)
+#assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
+#assert os.path.exists(os.path.join(output_folder,'GDP_output.json')) 
 
 #### examples of one extraction
 # =============================================================================
