@@ -6,19 +6,19 @@ module_path = r'C:\Users\gen80\OneDrive\Documents\MDSlectures\capstone_sentiment
 
 sys.path.append(module_path)
 
-#from data_extraction.src import scrape_articles_FinancialPost
+from data_extraction.src import scrape_articles_FinancialPost
 
-#output_folder = r'test_fp_data/'
+output_folder = r'test_fp_data/'
 
-#scrape_articles_FinancialPost.get_BloombergNews_from_FP(2,output_folder)
+scrape_articles_FinancialPost.BloombergNews_from_FP(40,output_folder)
 
-#scrape_articles_FinancialPost.separate_into_indicator_baskets(output_folder)
+scrape_articles_FinancialPost.separate_into_indicator_baskets(output_folder)
 
-##checkpoint: Jun12 8pm -- get_BloombergNews_from_FP() function running.
+##checkpoint: Jun14 11:42pm -- BloombergNews_from_FP() function running.
 
-#assert os.path.exists(output_folder)
-#assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
-#assert os.path.exists(os.path.join(output_folder,'GDP_output.json'))  
+assert os.path.exists(output_folder)
+assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
+assert os.path.exists(os.path.join(output_folder,'GDP_output.json'))  
 
 
 ##test model training -- running much slower in this script than in the sentiment_analyzer/src folder
@@ -50,12 +50,12 @@ sys.path.append(module_path)
 
 
 
-from visualization.src import dash_frontend_final_main
+#from visualization.src import dash_frontend_final_main
 
-if __name__ ==  '__main__':
+#if __name__ ==  '__main__':
     
-    indicators_df_path = os.path.join(module_path,r'visualization/data/combined_indicator_data.csv')
-    senti_df_path = os.path.join(module_path, r"visualization/data/combined_sentiment_data.csv")
+#    indicators_df_path = os.path.join(module_path,r'visualization/data/combined_indicator_data.csv')
+#    senti_df_path = os.path.join(module_path, r"visualization/data/combined_sentiment_data.csv")
 
-    dash_frontend_final_main.main(indicators_df_path,senti_df_path)
+#    dash_frontend_final_main.main(indicators_df_path,senti_df_path)
 
