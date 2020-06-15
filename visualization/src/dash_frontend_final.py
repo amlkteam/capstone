@@ -18,7 +18,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-from datetime import datetime
 from datetime import datetime as dt
 
 import plotly.express as px
@@ -29,28 +28,6 @@ import random
 from scipy.stats import pearsonr
 import re
 import urllib
-
-
-def generate_raw_sentiment_score(row):
-    '''calculate sentiment score based on best_label'''
-    if row['best_label'] == 1:
-        result = row['best_confidence'] + 0.5
-    elif row['best_label'] == -1:
-        result = -row['best_confidence'] - 0.5
-    else:
-        # total = row['best_confidence'] + row['second_confidence'] + row['least_confidence'] these add up to 1
-        if row['second_likely'] == 1:
-            result = row['second_confidence'] - row['least_confidence']
-        else:
-            result = row['least_confidence'] - row['second_confidence']
-    return result
-
-def get_raw_sentiment_score(csvpath):
-    '''outputs a dataframe that contains the raw sentiment score for all the articles'''
-    df = pd.read_csv(csvpath)
-    df['publishedAt'] = df['publishedAt'].apply(lambda x: datetime.strptime(x, '%Y-%m-%d').date())
-    df['raw_sentiment_score'] = df.apply(lambda row: generate_raw_sentiment_score(row), axis=1)
-    return df
 
 def get_monthly_avg_score(df):
     """

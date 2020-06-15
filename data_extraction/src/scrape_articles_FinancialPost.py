@@ -148,6 +148,14 @@ def allocate_to_indicator_basket(entries,indicator,indicator_keywords,output_fol
 #### separate by 6 economic indicators and store into 6 files
 
 def separate_into_indicator_baskets(output_folder):
+
+    """
+    defines keywords for each economic indicator and calls the allocate_to_indicator_basket() function for each of the six selected economic indicators. Exports to JSON files in the user-defined output_folder.
+
+    Argument:
+    output_folder(path) -- a folder to store the six indicator-specific articles in JSON format.
+
+    """
     article_file = 'articles_output.json'
     article_file_path = os.path.join(output_folder,article_file)        
     f = open(article_file_path, encoding='utf-8')
