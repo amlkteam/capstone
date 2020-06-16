@@ -96,8 +96,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
                                    range=[indi_axis_min, indi_axis_max], 
                                    autorange=False)
     #Add sentiment line visualization - set boundaries, add to fig object, update axis
-    senti_axis_min = -2.5 #slightly smaller than min neg sentiment value of -2
-    senti_axis_max = 2.5 #slightly larger than max pos sentiment value of 2
+    senti_axis_min = -2.5 #smaller than min neg sentiment value of -1.5
+    senti_axis_max = 2.5 #larger than max pos sentiment value of 1.5
 
     fig.add_trace(
         go.Scatter(x=senti_dates, 
@@ -276,7 +276,7 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
     
 
     if source == 'Source-weighted Average':
-        #pass # Need to add something here to call the monthly weighted avg
+        
         senti_df = aggregate_df.query('indicator == @senti_indicator')
         source_dict = {}
         for src in list(source_wgt_dict.keys()):

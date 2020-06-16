@@ -77,6 +77,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
     #set x axis limits for visualization
     x_axis_limit_l = max([min(indi_dates), min(senti_dates)]) #latest of two start periods
     x_axis_limit_r = min([max(indi_dates), max(senti_dates)]) #earliest of two end periods
+
+    #print(x_axis_limit_l,x_axis_limit_r)
     #Add indicator area visualization - set boundaries, add to fig object, update axis
     indi_axis_min = min(indi_y) - 0.1
     indi_axis_max = max(indi_y) + 0.1
@@ -96,8 +98,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
                                    range=[indi_axis_min, indi_axis_max], 
                                    autorange=False)
     #Add sentiment line visualization - set boundaries, add to fig object, update axis
-    senti_axis_min = -2.5 #slightly smaller than min neg sentiment value of -2
-    senti_axis_max = 2.5 #slightly larger than max pos sentiment value of 2
+    senti_axis_min = -2.5 #smaller than min neg sentiment value of -1.5
+    senti_axis_max = 2.5 #larger than max pos sentiment value of 1.5
 
     fig.add_trace(
         go.Scatter(x=senti_dates, 
@@ -147,7 +149,7 @@ def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis l
     senti_dates = senti_df.index.astype('datetime64[ns]')
 
     if "title_desc" in senti_df.columns:
-        print('senti_df["title_desc"] exists')
+        #print('senti_df["title_desc"] exists')
         senti_titledesc = [x[:80]+str("...") for x in senti_df["title_desc"]] #limit to 80 characters per title
     else:
         senti_titledesc = []
@@ -291,7 +293,7 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
     
 
     if source == 'Source-weighted Average':
-        #pass # Need to add something here to call the monthly weighted avg
+        
         senti_df = aggregate_df.query('indicator == @senti_indicator')
         source_dict = {}
         for src in list(source_wgt_dict.keys()):
@@ -318,10 +320,13 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
         
     if not end_date or end_date > latest:
         end_date = latest
-        
+    #print(start_date,end_date)
+    
     senti_subset = senti_monthly_avg[start_date:end_date]
     indi_subset = indi_monthly_avg[start_date:end_date]
     assert(len(senti_subset) == len(indi_subset))
+    print(senti_subset)
+    print(indi_subset)
     
     if len(senti_subset) == 0:
         print('please select valid dates!')
