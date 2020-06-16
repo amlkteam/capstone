@@ -24,7 +24,7 @@ def update_datetime_end(dt_object):
     new_dt = dt.datetime(year=new_year, month=new_month, day=new_day)
     return new_dt
 
-def get_gdp_df(path, start_date, end_date):
+def get_gdp_df(path):
     """
     Preprocess the csv file containing the manually downloaded GDP data 
     
@@ -49,13 +49,10 @@ def get_gdp_df(path, start_date, end_date):
     except:
         print("PATH DOES NOT EXIST: ", path)
         return None
-    
-    try:
-        start_date = datetime.strptime(start_date, "%Y-%m-%d")
-        end_date = datetime.strptime(end_date, "%Y-%m-%d")
-        
-    except ValueError:
-        raise ValueError("Incorrect data format, should be YYYY-MM-DD")
+
+    #get data from most recent to the past year
+    start_date = datetime.strptime("2019-04-01", "%Y-%m-%d")
+    end_date = datetime.strptime("2020-04-01", "%Y-%m-%d")
 
 
     ## select only all industries
@@ -354,9 +351,7 @@ def main():
     #create six individual dataframes
     try:
         gdp_path = filename + "gdp.csv"
-        gdp_start = "2019-04-01"
-        gdp_end = "2020-03-01"
-        gdp_df = get_gdp_df(gdp_path, gdp_start, gdp_end)
+        gdp_df = get_gdp_df(gdp_path)
 
         tsx_path = filename + 'tsx.csv'
         tsx_df = get_tsx_df(tsx_path)
