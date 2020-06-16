@@ -9,9 +9,20 @@ import pandas as pd
 from datetime import datetime
 import datetime as dt
 import os
+import calendar
+from calendar import monthrange
 
 #define where manually downloaded indicator data files reside
 filename = "../data/financial_indicator_data/"
+
+def update_datetime_end(dt_object):
+    """returns a datetime object with the day field updated to the last day of the month(leap years included)"""
+    new_year = dt_object.year
+    new_month = dt_object.month
+    new_day = calendar.monthrange(new_year, new_month)[1]
+    
+    new_dt = dt.datetime(year=new_year, month=new_month, day=new_day)
+    return new_dt
 
 def get_gdp_df(path, start_date, end_date):
     """
@@ -53,6 +64,8 @@ def get_gdp_df(path, start_date, end_date):
     df['REF_DATE'] = (df['REF_DATE'] + "-01")
     # Convert the column to datetime type from string type
     df['REF_DATE'] = df['REF_DATE'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    #Update datetime day to the end of month for viz
+    df['REF_DATE'] = df['REF_DATE'].apply(lambda x: update_datetime_end(x))
     #Scale adjusted to millions (so multiply by 1 million)
     df['VALUE'] = df['VALUE']*1000000
     # Create new dataframe with only required columns : date and gdp value
@@ -122,6 +135,8 @@ def get_tsx_df(path):
     
     # Convert the column to datetime type from string type
     df['Date'] = df['Date'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    #Update datetime day to the end of month for viz
+    df['Date'] = df['Date'].apply(lambda x: update_datetime_end(x))
     # Create new dataframe with only required columns : date and Close values
     tsx_df = pd.concat([df['Date'], df['Close']], axis=1, keys=['date', 'value'])
     # Create a new column for indicator
@@ -166,6 +181,8 @@ def get_mortgage_df(path):
     df['REF_DATE'] = (df['REF_DATE'] + "-01")
     # Convert the column to datetime type from string type
     df['REF_DATE'] = df['REF_DATE'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    #Update datetime day to the end of month for viz
+    df['REF_DATE'] = df['REF_DATE'].apply(lambda x: update_datetime_end(x))
     # Create new dataframe with only required columns : date and gdp value
     mortgage_rate_df =  pd.concat([df['REF_DATE'], df['VALUE']], axis=1, keys=['date', 'value'])
     # Create a new column for indicator
@@ -203,7 +220,6 @@ def get_interest_df(path):
         print("PATH DOES NOT EXIST: ", path)
         return None
 
-    #boc_interest_rates_df = df
     boc_interest_rates_df.insert(loc=1, column='indicator', value="interest_rate")
     boc_interest_rates_df["Date"] = pd.to_datetime(boc_interest_rates_df["Date"], format="%Y-%m-%d")
     boc_interest_rates_df = boc_interest_rates_df.sort_values(by='Date')
@@ -248,6 +264,8 @@ def get_employment_df(path):
     df['REF_DATE'] = (df['REF_DATE'] + "-01")
     # Convert the column to datetime type from string type
     df['REF_DATE'] = df['REF_DATE'].apply(lambda x: datetime.strptime(x, "%Y-%m-%d"))
+    #Update datetime day to the end of month for viz
+    df['REF_DATE'] = df['REF_DATE'].apply(lambda x: update_datetime_end(x))
     # Create new dataframe with only required columns : date and gdp value
     employment_df =  pd.concat([df['REF_DATE'], df['VALUE']], axis=1, keys=['date', 'value'])
     # Create a new column for indicator
@@ -303,6 +321,8 @@ def get_housing_df(path):
 
     housing_price_df = housing_price_df.drop(columns=["value"])
     housing_price_df = housing_price_df.rename(columns={"percentage_change": "value"})
+    #Update datetime day to the end of month for viz
+    housing_price_df['date'] = housing_price_df['date'].apply(lambda x: update_datetime_end(x))
     
     #tests
     assert(housing_price_df["date"].dtype == "datetime64[ns]")
@@ -327,6 +347,7 @@ def df_to_merge(df, indicator_name):
     df_to_merge = df_to_merge.drop(columns=["ind"])
     
     return df_to_merge
+
 
 def main():
     
