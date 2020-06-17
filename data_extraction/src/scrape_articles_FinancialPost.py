@@ -44,7 +44,7 @@ def get_BloombergNews_from_FP(startpage,endpage,outputs):
         #main text body
         content_section = soup.find('section','author-content')
         feed_items = content_section.find_all('li')
-        len(feed_items) # 10 items per page
+        # 10 items per page
         
         
         for item in feed_items:
