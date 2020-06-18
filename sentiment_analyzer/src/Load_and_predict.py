@@ -5,16 +5,9 @@ This script is used to generate prediction results using trained models
 User needs to download the model, and specify the directory of the model for prediction
 """
 
-from flair.data_fetcher import NLPTaskDataFetcher
-from flair.embeddings import WordEmbeddings, FlairEmbeddings, DocumentLSTMEmbeddings, DocumentRNNEmbeddings, BertEmbeddings
 from flair.models import TextClassifier
-from flair.trainers import ModelTrainer
-from pathlib import Path
-from flair.datasets import CSVClassificationCorpus
-from flair.data import Corpus
 from flair.data import Sentence
 import pandas as pd
-import numpy as np
 import os
 
 def finetuned_model_predictions(input_file_path, finetuned_classifier, output_file_path):
@@ -25,21 +18,21 @@ def finetuned_model_predictions(input_file_path, finetuned_classifier, output_fi
      and filling in results from model predictions.
   '''
 
-  unannotated_df = pd.read_csv(input_file_path)
+  prediction_df = pd.read_csv(input_file_path)
   ## add six new columns to export predictions
 
-  unannotated_df['best_label'] = None
-  unannotated_df['best_confidence'] = None
-  unannotated_df['second_likely'] = None
-  unannotated_df['second_confidence'] = None
-  unannotated_df['least_likely'] = None
-  unannotated_df['least_confidence'] = None
+  prediction_df['best_label'] = None
+  prediction_df['best_confidence'] = None
+  prediction_df['second_likely'] = None
+  prediction_df['second_confidence'] = None
+  prediction_df['least_likely'] = None
+  prediction_df['least_confidence'] = None
 
 
-  for i in range(len(unannotated_df)):
+  for i in range(len(prediction_df)):
 
     
-    sentence = Sentence(unannotated_df['title_desc'].iloc[i])
+    sentence = Sentence(prediction_df['title_desc'].iloc[i])
     print(sentence)
 
     finetuned_classifier.predict(sentence, multi_class_prob=True)
@@ -50,27 +43,27 @@ def finetuned_model_predictions(input_file_path, finetuned_classifier, output_fi
     pred_score_label.sort()
 
     # list in ascending order on confidence score
-    best_label = int(pred_score_label[-1][1])
-    best_confidence = pred_score_label[-1][0]
-    second_likely_label = int(pred_score_label[-2][1]) 
-    second_likely_confidence = pred_score_label[-2][0]
-    least_likely_label = int(pred_score_label[0][1]) 
-    least_likely_confidence = pred_score_label[0][0]
+    # best_label = int(pred_score_label[-1][1])
+    # best_confidence = pred_score_label[-1][0]
+    # second_likely_label = int(pred_score_label[-2][1]) 
+    # second_likely_confidence = pred_score_label[-2][0]
+    # least_likely_label = int(pred_score_label[0][1]) 
+    # least_likely_confidence = pred_score_label[0][0]
 
 
 
-    unannotated_df['best_label'].iloc[i] = best_label
-    unannotated_df['best_confidence'].iloc[i] = best_confidence
-    unannotated_df['second_likely'].iloc[i] = second_likely_label
-    unannotated_df['second_confidence'].iloc[i] = second_likely_confidence
-    unannotated_df['least_likely'].iloc[i] = least_likely_label
-    unannotated_df['least_confidence'].iloc[i] = least_likely_confidence
+    prediction_df['best_label'].iloc[i] = int(pred_score_label[-1][1])
+    prediction_df['best_confidence'].iloc[i] = pred_score_label[-1][0]
+    prediction_df['second_likely'].iloc[i] = int(pred_score_label[-2][1])
+    prediction_df['second_confidence'].iloc[i] = pred_score_label[-2][0]
+    prediction_df['least_likely'].iloc[i] = int(pred_score_label[0][1]) 
+    prediction_df['least_confidence'].iloc[i] = pred_score_label[0][0]
 
 
 
-  print(f"All { len(unannotated_df) } rows done prediction! ")
+  print(f"All { len(prediction_df) } rows done prediction! ")
 
-  unannotated_df.to_csv(output_file_path,index=False)
+  prediction_df.to_csv(output_file_path,index=False)
 
   print("Done export!")
   
