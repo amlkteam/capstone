@@ -15,8 +15,16 @@ import os
 
 def sample_dataframe_by_month(dataframe, sample_size, keyword):
     """
-    create sample of dataframe based on publish date, sample size is the number of articles to be extracted from each month
-    keyword (string) should contain the searching query (indicator) used to collect these articles and it's used for naming output file
+    create a sample of dataframe based on publish date
+
+    inputs:
+    dataframe:    (Pandas.DataFrame) the dataframe to be sampled from
+    sample_size: (int) the number of articles to be extracted from each month
+    keyword:     (string) should contain the searching query (indicator) used to
+                 collect these articles and it's used for naming output file
+
+    outputs:
+    CSV file
     (idea is from Sirisha's sample function)
     """
 
@@ -43,13 +51,15 @@ def sample_dataframe_by_month(dataframe, sample_size, keyword):
 
 def combine_fp_bloomberg(bloomberg_json, fp_json):
     '''
-    Combine financial post articles and bloomberg articles.
+    Combine Financial Post articles and Bloomberg articles.
     
     input:
     
     bloomberg_json is the file of articles from bloomberg stored in json format
     fp_json is the the file of articles from financial post stored in json format
-    
+
+    output:
+    Pandas DataFrame
     '''
     bloomberg_df = pd.read_json(bloomberg_json)
     bloomberg_df = bloomberg_df[(bloomberg_df.source != 'The Canadian Press') & (bloomberg_df.source != 'Reuters')]
@@ -77,7 +87,17 @@ def combine_fp_bloomberg(bloomberg_json, fp_json):
 
 
 def get_unannotated_data(combined_df, annotated_df, indicator):
-    '''get unannotated data (remove annotated data from all the articles that are collected)'''
+    """
+    get unannotated data (remove annotated data from all the articles that are collected)
+
+    inputs:
+    combined_df: the dataframe that contains all the articles before sampling
+    annotated_df: the dataframe of articles that are sampled for annotation
+    indicator: the searching keyword for an economic indicator, in this case only used for naming the output file
+
+    output:
+    CSV file
+    """
     # Running this line will erase current data
     #prediction_file_path = "../../sentiment_analyzer/data/predictions_data/bloomberg/" 
     # try this line for testing
