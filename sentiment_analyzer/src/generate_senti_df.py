@@ -5,13 +5,30 @@ This script is used to generate one sentiment score for each article
 And combine annotated articles and predicted articles into one big dataframe for visualization
 """
 import pandas as pd
-from datetime import datetime
-import sys
 import os
 
 
 def generate_raw_sentiment_score(row):
-    '''calculate sentiment score based on best_label'''
+    """
+    Calculate sentiment score based on best_label.
+    
+    best_label is the label of the highest confidence score. Its confidence score is best_confidence.
+    second_likely is the label of the second highest confidence score. Its confidence score is second_confidence.
+    least_likely is the label of the lowest confidence score. Its confidence score is least_confidence.
+    
+    If an article is predicted as neutral, we use the confidence score of its positive label to minus
+    the confidence score of negative label. We use this number to tell whether a certain article is
+    slightly positive or slightly negative. If the confidence score of positive and negative are equal
+    then we got 0, which means this article is strongly neutral. By doing this we place the range of all
+    neutral articles in [-0.5, 0.5].
+    
+    If an article is predicted as either positive or negative, we first use its label (1 or -1) to multiply 
+    its confidence score and then add 0.5 or minus 0.5 to that value. Since the confidence score of neutral 
+    prediction will be in the range of [-0.5, 0.5], we do this to prevent positive or negative sentiment scores
+    from being in the same range with neutral sentiment scores. 
+    
+    
+    """
     if row['best_label'] == 1:
         result = row['best_confidence'] + 0.5
     elif row['best_label'] == -1:
@@ -26,13 +43,23 @@ def generate_raw_sentiment_score(row):
 
 
 def combine_annotated_and_predicted(annotation_path, prediction_path, output_path):
-    '''combine the both annotated data and predicted data of all sources and 
+    """
+    combine the both annotated data and predicted data of all sources and 
     all economic indicators into one big dataframe for visualization, each article 
     will have one sentiment score for visualization
     
     inputs:
-    dict_annotated_data: dictionary that contains the locations of all annotated data
-    dict_unannotated_predictions: dictionary that contains the locations of all predicted data '''
+    annotation_path: the path that stores all the annotated datasets
+    predicton_path: the path that stores all the predicted datasets
+    output_path: the path where the generated csv file will be located
+    
+    output:
+    CSV file
+    
+    Notice: for annotated articles we assign 1.5 as the sentiment score for
+            positive articles and -1.5 as the sentiment score for negative articles.
+            For neutral articles, the sentiment score will remain 0.
+    """
     
     indicators = ['gdp','employment','housing','interest','mortgage','stock']
     
