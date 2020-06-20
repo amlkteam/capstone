@@ -192,7 +192,7 @@ def apply_lambda(df, column, lambda_string):
         return None
 
 
-# In[43]:
+# In[44]:
 
 
 def get_unannotated_data(combined_df, annotated_df, indicator, source, project_path):
@@ -203,6 +203,7 @@ def get_unannotated_data(combined_df, annotated_df, indicator, source, project_p
     total['title_desc'] = total['title'] + '. ' + total['description']
     total = total[['source', 'title_desc', 'publishedAt']]
     total = total.drop_duplicates(subset='title_desc', keep='first' )
+    
     
     prediction_file_path =  "sentiment_analyzer/data/predictions_data/"
     
@@ -216,6 +217,7 @@ def get_unannotated_data(combined_df, annotated_df, indicator, source, project_p
             return False
         
     if file_exists(project_path+prediction_file_path_with_source+prediction_file_name):
+        print("The  number of articles for prediction are ", total.shape[0])
         print("Predictions file generated at :", project_path+prediction_file_path_with_source+prediction_file_name )
         return True
     else:
