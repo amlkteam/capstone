@@ -100,22 +100,18 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
                     name=indicator_name,
                     fill='tonexty', 
                     mode='lines', 
-                    line_color='#1d8716'),
+                    line_color='#0fe000'),
                     secondary_y=False)
     fig['layout']['yaxis1'].update(title=indicator_name, 
                                    range=[indi_axis_min, indi_axis_max], 
+                                   color = "#0fe000",
                                    autorange=False)
     #Add sentiment line visualization - set boundaries, add to fig object, update axis
-    senti_axis_min = -2.5 #slightly smaller than min neg sentiment value of -2
-    senti_axis_max = 2.5 #slightly larger than max pos sentiment value of 2
-
+    senti_axis_min = min(senti_y) - 1
+    senti_axis_max = max(senti_y) + 1
     fig.add_trace(
         go.Scatter(x=senti_dates, 
                    y=senti_y,
-                    hovertemplate =
-                    '<b>Monthly average sentiment: </b>: %{y:.4f}'+
-                    '<br><b>Date:</b>: %{x}<br>',
-
                    name="sentiment score", ## we should change this? 
                   line_color='#011269'),
                     secondary_y=True)
@@ -167,10 +163,11 @@ def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis l
                     name=indicator_name,
                     #fill="tozeroy",
                     mode='lines', 
-                    line_color='#0bab00'),
+                    line_color='#0fe000'),
                     secondary_y=False)
     fig['layout']['yaxis1'].update(title=indicator_name, 
-                                   range=[indi_axis_min, indi_axis_max],
+                                   range=[indi_axis_min, indi_axis_max], 
+                                   color="#0fe000",
                                    autorange=False)
     #Add sentiment line visualization - set boundaries, add to fig object, update axis
     senti_axis_min = min(senti_y) - 1
@@ -179,9 +176,6 @@ def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis l
         go.Scatter(
             x=senti_dates, 
             y=senti_y,
-            hovertemplate =
-            '<b>Article Sentiment: </b>: %{y:.3f}'+
-            '<br><b>Date:</b>: %{x}<br>',
             mode="markers",
             opacity=0.75, #0.95
             name="Sentiment Score",
@@ -327,12 +321,12 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
 # dictionary of y-axis labels from Jon
 
 indic_to_value = {}
-indic_to_value["value_GDP"] = "GDP <br>(percentage growth)"
-indic_to_value["value_TSX"] = "S&P/TSX Composite Index <br>(close value)"
-indic_to_value["value_mortgage_rates"]= "Mortgage Rate <br>(residential, insured)"
-indic_to_value["value_housing_prices"] = "Home Price Index  <br> (percentage growth)"
-indic_to_value["value_employment"] = "Employment Rate <br>(All genders, 15+ years old)"
-indic_to_value["value_interest_rates"] = "Interest Rate <br>(overnight target rate)"
+indic_to_value["value_GDP"] = "Growth Rate - Chained (2012) Dollars (seasonally adjusted)"
+indic_to_value["value_TSX"] = "S&P/TSX Composite Index - Close (Unadjusted - CAD)"
+indic_to_value["value_mortgage_rates"]= "Interest Rate - Total, funds advanced, residential mortgages, insured"
+indic_to_value["value_housing_prices"] = "Growth Rate - Composite Home Price Index (Unadjusted for seasonality)"
+indic_to_value["value_employment"] = "Employment Rate - Both sexes, 15 years and over"
+indic_to_value["value_interest_rates"] = "Interest Rate - Overnight Target Rate (Bank of Canada)"
 
 #giant indicators df imported
 indicators_df = pd.read_csv('combined_indicator_data.csv', parse_dates=['date'])
