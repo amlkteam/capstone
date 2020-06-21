@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+
 
 
 ### CBC SCRAPING CODE
 ### Authors: PANDRAMISHI NAGA SIRISHA
 ### This script contains code to extract the articles from CBC news site
 ###MOST RECENT UPDATE:  
-##2020 June 19, 11:52AM
-#wrote separate functions for each JSON element to be collected
+##2020 June 21, 11:52AM
+#added documentation as per the code review
 #extract_json_items() will run for all articles, and will return null if not in proper format
 
 ##2020 June 10 by Pandramishi Naga Sirisha, to write test cases, convert to .py file
 
 
-# In[1]:
 
 
+import configparser
 import urllib.request
 import utility_main
 import json 
@@ -33,9 +33,6 @@ import pytz
 import dateutil.parser
 import os
 from dateutil.parser import parse
-
-
-# In[2]:
 
 
 #https://www.cbc.ca/search_api/v1/search?q=mortgage%20rate&sortOrder=relevance&page=100&fields=feed
@@ -60,11 +57,6 @@ def get_initial_url(search_term):
     print("FIRST URL API CALL: ", first_url)
     return first_url
     
-# get_initial_url("interest rate index")
-
-
-# In[37]:
-
 
 def scrape_urls(url, start_date, end_date):
     """This function takes in the first query url and scrapes all other articles from past 1 year and returns 
@@ -133,11 +125,7 @@ def scrape_urls(url, start_date, end_date):
     print("The number of articles retrieved is: ", len(url_list))
     return url_list
 
-# first_url = get_initial_url("interest rates")
-# all_urls = scrape_urls(first_url, "2019-01-01 00:00:00", "2020-05-01 00:00:00")
 
-
-# In[20]:
 
 
 def get_author(soup):
@@ -152,9 +140,6 @@ def get_author(soup):
     else:
         #print("No author found in article!")
         return None
-
-
-# In[21]:
 
 
 
@@ -173,8 +158,6 @@ def get_desc(soup):
         return None
 
 
-# In[22]:
-
 
 def get_title(soup):
     """returns the title of a BeautifulSoup article if it exists, None if cannot be found
@@ -191,9 +174,6 @@ def get_title(soup):
         return None
 
 
-# In[23]:
-
-
 def get_url_to_image(soup):
     """returns the url to the header image of a CBC article (BeautifulSoup) if it exists, None if not
     
@@ -208,9 +188,6 @@ def get_url_to_image(soup):
         #print("No main header image found in article!")
         return None
         
-
-
-# In[24]:
 
 
 def get_publish_time(soup):
@@ -234,7 +211,6 @@ def get_publish_time(soup):
         return None
 
 
-# In[25]:
 
 
 def get_source(soup, specify_source_type=True):
@@ -265,12 +241,8 @@ def get_source(soup, specify_source_type=True):
     if source:
         return source
     else:
-        #print("no source found in article!")
         return None
     
-
-
-# In[26]:
 
 
 
@@ -301,13 +273,7 @@ def get_content(soup, as_string=True):
         #print("no content found in article!")
         return None
     
-# get_content(soup)
 
-
-# In[27]:
-
-
-#NEW - USING NEW FUNCTIONS: 
 def extract_json_items(url, specify_source_type=True):
     """Returns a json containing the following items from a CBC article:
         url: the url of the article
@@ -364,10 +330,7 @@ def extract_json_items(url, specify_source_type=True):
         final_json = json.dumps(json_dict)
        
         return json_dict
-# extract_json_items('//www.cbc.ca/news/business/powel-trump-negative-rates-1.5567512')
 
-
-# In[33]:
 
 
 def main(query,start_date, end_date, project_path):
@@ -428,20 +391,18 @@ def main(query,start_date, end_date, project_path):
     return json_list
 
 
-# ## Mortgage Rates
-
-# In[13]:
 
 
 config_file = input("Please enter the path to the config file: ")
-# 'twitter_config.ini'
+# Example './twitter_config.ini'
+# Example format of the config file
+# [DEFAULT]
+# economic_indicator="interest rates"
+# start_date="2019-01-01 00:00:00"
+# end_date="2020-05-01 00:00:00"
+# project_path="/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
 print(config_file)
 
-
-# In[36]:
-
-
-import configparser
 
 # Initialize configparser object and read config file
 config = configparser.ConfigParser()
@@ -452,7 +413,6 @@ except:
     print("Config file cannot be read, please check the path")
     
 # Read the configurations
-
 economic_indicator = config.get('DEFAULT','economic_indicator').replace('"', '')
 start_date = config.get('DEFAULT','start_date').replace('"', '')
 end_date = config.get('DEFAULT','end_date').replace('"', '')

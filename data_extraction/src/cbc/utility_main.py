@@ -43,6 +43,11 @@ def convert_json_to_df(project_path,path_to_json):
     Output:
     -------
     Dataframe object
+   
+   Example:
+    project_path = "/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
+    file_path = "project/data_extraction/data/unannotated_data/cbc/interestrates_CBC_article.json"
+    converted_df = convert_json_to_df(project_path, file_path)
     """
     if  file_exists(project_path+path_to_json):
         df = pd.read_json(project_path+path_to_json)
@@ -51,12 +56,6 @@ def convert_json_to_df(project_path,path_to_json):
         print("From convert_json_to_df(): Could not convert the json file to dataframe")
         return None
 
-# project_path = "/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
-# file_path = "project/data_extraction/data/unannotated_data/cbc/interestrates_CBC_article.json"
-# converted_df = convert_json_to_df(project_path, file_path)
-
-
-# In[8]:
 
 
 def check_dir_exists(directory_path):
@@ -77,7 +76,7 @@ def check_dir_exists(directory_path):
     
 
 
-# In[9]:
+
 
 
 def file_exists(absolute_file_path):
@@ -115,6 +114,7 @@ def preprocess_df(df_object,column_name_list,remove_Nans = True):
     -------
     object - The preprocessed dataframe object
     
+    Example: preprocess_df(converted_df, ['title', 'description','publishedAt'])
     """
     try:
         subset_columns_df = df_object[column_name_list]
@@ -127,15 +127,22 @@ def preprocess_df(df_object,column_name_list,remove_Nans = True):
 
     return  subset_columns_df
     
-# k = preprocess_df(converted_df, ['title', 'description','publishedAt'])
-
-
-# In[11]:
-
 
 
 def write_df_to_csv(df,project_path,file_path,file_name):
-    """Takes a dataframe and writes to a file"""
+    """Takes a dataframe and writes to a file
+    Input:
+    ------
+    df (Dataframe) - The dataframe to be written to csv
+    project_path(String) - The path to the project folder from current folder of from root
+    file_path (String) - The path relative to the project_path where to write the file
+    file_name (String) - The output file name
+    
+    Output:
+    ------
+    File created at : project_path+file_path
+    File name:file_name
+    """
     if os.path.isdir(project_path+file_path):
         df.to_csv(project_path+file_path+file_name, encoding='utf-8', index=False)
     else:
@@ -143,12 +150,18 @@ def write_df_to_csv(df,project_path,file_path,file_name):
         return None
 
 
-# In[12]:
-
 
 def sample_dataframe_by_month(dataframe, sample_size):
     """
     create sample of dataframe based on publish date, sample size is the number of articles to be extracted from each month
+    Input:
+    ------
+    dataframe (Dataframe) - The dataframe to be sampled
+    sample_size(integer) - The number of articles to be extracted for each month each year
+    
+    Output:
+    -------
+    dataframe (Dataframe) - The dataframe after sampling
     """
     article_dictionary_by_month = defaultdict(list)
     full_list = []
@@ -179,11 +192,22 @@ def sample_dataframe_by_month(dataframe, sample_size):
     return sample_df
 
 
-# In[13]:
+
 
 
 def apply_lambda(df, column, lambda_string):
-    """Takes a dataframe, column and applies a lambda function to it"""
+    """Takes a dataframe, column and applies a lambda function to it
+    Input:
+    ------
+    df (Dataframe) - The dataframe to apply the lambda function to
+    column (String) - The column name on which to apply the lambda function
+    lambda_string (String) - The lambda function code
+    
+    Output:
+    -------
+    The dataframe after applying the lambda function
+    
+    """
     try:
         df[column] = df[column].apply(eval(lambda_string))
         return df    
@@ -192,11 +216,23 @@ def apply_lambda(df, column, lambda_string):
         return None
 
 
-# In[44]:
 
 
 def get_unannotated_data(combined_df, annotated_df, indicator, source, project_path):
-    '''get unannotated data (remove annotated data from all the articles that are collected)'''
+    '''This function removes annotated data from all the articles that are collected and gives out the predictions data
+    Input:
+    -----
+    combined_df (Dataframe) - Dataframe containing all the articles
+    annotated_df (Dataframe) - Dataframe containing only the sampled articles
+    indicator (String) - The economic indicator for the dataframe
+    source (String) - The source of the articles cbc/bloomberg
+    project_path (String) - the path to the project
+    
+    Output:
+    ------
+    Creates file at path: "sentiment_analyzer/data/predictions_data/"
+    File name: "predictions_dataset_" + indicator + "_" + source + '.csv'
+    '''
     total = combined_df
     drop_list = annotated_df.index.values.tolist()
     total = total.drop(drop_list)
@@ -225,10 +261,26 @@ def get_unannotated_data(combined_df, annotated_df, indicator, source, project_p
         return False
 
 
-# In[41]:
+
 
 
 def get_keyword_df(economic_indicator, project_path,keyword_list, input_file_name,source):
+    """
+    This function filters a file to find articles containing keywords in the keyword_list
+    
+    Input:
+    ------
+    economic_indicator (String) - The economic indicator 
+    project_path (String) - The path to the project
+    keyword_list (list) - List of keywords to search for in the articles
+    input_file_name (String) - Name of the input file which contains articles
+    source (String) - The source CBC/Bloomberg
+    
+    Output:
+    -------
+    File created at  "sentiment_analyzer/data/predictions_data/<source>"
+    File name: "predictions_dataset_<economic_indicator>_<source>.csv
+    """
     index_list = set()
     read_file = project_path + "sentiment_analyzer/data/predictions_data/" + source.lower() + "/" + input_file_name
     df = pd.read_csv(read_file, names = ['source','title_desc','publishedAt'],skiprows = 1)
@@ -242,16 +294,22 @@ def get_keyword_df(economic_indicator, project_path,keyword_list, input_file_nam
                 found  = True
         if found == False:
             index_list.add(i)
-    predicted_filename = project_path + "sentiment_analyzer/data/predictions_data/" + source + "/" + "predictions_dataset_" + economic_indicator + "_" + source.lower() +".csv"
+    predicted_filename = project_path + "sentiment_analyzer/data/predictions_data/" + source.lower() +      "/"+"predictions_dataset_" + economic_indicator + "_" + source.lower() +".csv"
     
     df.drop(df.index[list(index_list)], inplace=True)
     df = df.drop_duplicates('title_desc', keep='last')
     df.to_csv(predicted_filename, index = False)
     print("Total articles retrieved: ", df.shape[0])
-    print("Outputted filtered articles to predict to file :",predicted_filename)
+    
+    
+    if file_exists(predicted_filename):
+        print("Outputted filtered articles to predict to file :",predicted_filename)
+        return True
+    else:
+        print("Predictions articles after filtering not created")
+        return False
 
 
-# In[17]:
 
 
 def unit_tests():
@@ -267,6 +325,7 @@ def unit_tests():
     assert df is None
     k = preprocess_df(converted_df, ['title', 'description','publishedAt'])
     assert isinstance(k, pd.DataFrame)
-    
+    return True
+
 unit_tests()
 

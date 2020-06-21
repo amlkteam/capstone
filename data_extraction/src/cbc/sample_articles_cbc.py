@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import utility_main
 import pandas as pd
@@ -25,19 +23,15 @@ import os
 import datetime
 
 
-# In[55]:
-
-
 def cbc_sampling_wrapper(economic_indicator,project_path, sample_size,column_names_list = ['title', 'description','publishedAt'],source_string = "cbc", remove_Nans = True):
     """This function creates a sample from a given file  of json 
     Input:
     ------
-    economic_indicator: The economic indicator
-    project_path: The path of the project
-    json_file_path: The path tto the file which has the article jsons
-    column_names_list: The list of column names to retain in the final sampled file
-    sample_size: The number of articles to sample per month in any year
-    source_string: The source (CBC/Bloomberg)"""
+    economic_indicator (String): The economic indicator
+    project_path (String): The path of the project
+    sample_size (Integer): The number of articles to sample per month in any year
+    column_names_list (list): The list of column names to retain in the final sampled file
+    source_string (String): The source (CBC/Bloomberg)"""
     try:
         economic_indicator_list = economic_indicator.split(" ")
         economic_indicator="".join(economic_indicator_list).lower()
@@ -68,14 +62,11 @@ def cbc_sampling_wrapper(economic_indicator,project_path, sample_size,column_nam
                 print("Failed to generate predictions file")
                 return False
         else:
-            print("Something went wrong")
+            print("Could not create the sample file")
     except:
         print("Could not successfully sample the data")
         return False
     
-
-
-# In[56]:
 
 
 def unit_tests():
@@ -97,45 +88,15 @@ def unit_tests():
 unit_tests()
 
 
-# In[57]:
-
-
 # project_path = "/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/project/"
 project_path = "../../../"
 cbc_sampling_wrapper("Housing",project_path,3)
-
-
-# In[50]:
-
-
 cbc_sampling_wrapper("mortgage rates",project_path, 3)
-
-
-# In[52]:
-
-
 cbc_sampling_wrapper("interest rates",project_path, 3)
-
-
-# In[58]:
-
-
 cbc_sampling_wrapper("tsx",project_path, 3)
-
-
-# In[59]:
-
-
 cbc_sampling_wrapper("gdp",project_path, 3)
-
-
-# In[60]:
-
-
 cbc_sampling_wrapper("employment",project_path, 3)
 
-
-# In[3]:
 
 
 # To sample only those articles with given key word use the code below and change parameters
