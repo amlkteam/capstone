@@ -143,8 +143,11 @@ File(s):
 
  `../data_extraction/data/annotated_data/cbc/<economic_indicator_sample.json>`
 `../sentiment_analyzer/data/predictions_data/cbc/<predictions_dataset_economicindicator_cbc.csv`
-ex: `predictions_dataset_interestrates_cbc.csv>`
-`interestrates_sample.csv`
+
+Example:
+
+`../data_extraction/data/annotated_data/cbc/interestrates_sample.csv`
+`../sentiment_analyzer/data/predictions_data/cbc/predictions_dataset_interestrates_cbc.csv`
 
 Dry run example:
 
