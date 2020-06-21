@@ -111,7 +111,7 @@ def get_tsx_df(path):
     
     Preprocess the csv file containing the manually downloaded TSX data 
     
-    Data source: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1010012501 
+    Data source: https://ca.finance.yahoo.com/quote/%5EGSPTSE/history?period1=1546300800&period2=1592438400&interval=1mo&filter=history&frequency=1mo
     
     Returns a dataframe with date, indicator, and value columns:
     date: YYYY-MM-DD 
