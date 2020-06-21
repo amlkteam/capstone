@@ -1,0 +1,49 @@
+﻿"Gross domestic product, expenditure-based, Canada, quarterly (x 1,000,000)"
+"Quarterly"
+"Table: 36-10-0104-01 (formerly CANSIM 380-0064)"
+"Geography: Canada"
+
+"","Chained (2012) dollars",,,
+"","Seasonally adjusted at annual rates",,,
+"","Canada",,,
+"Estimates","Q1 2019","Q2 2019","Q3 2019","Q4 2019"
+"","Dollars",,,
+"Final consumption expenditure","1,627,950","1,631,688","1,638,695","1,646,209"
+"Household final consumption expenditure","1,174,638","1,175,884","1,181,631","1,187,371"
+"Goods","525,464","525,031","527,103","527,224"
+"Durable goods","156,696","155,676","156,204","156,145"
+"Semi-durable goods","85,307","86,042","86,344","85,710"
+"Non-durable goods","283,472","283,358","284,596","285,376"
+"Services","649,151","650,784","654,435","659,943"
+"Non-profit institutions serving households' final consumption expenditure","30,312","30,300","30,356","30,772"
+"General governments final consumption expenditure","423,315","425,766","427,000","428,371"
+"Gross fixed capital formation","435,619","432,793","441,252","437,752"
+"Business gross fixed capital formation","354,855","353,607","360,787","358,017"
+"Residential structures","135,509","137,627","141,899","142,288"
+"Non-residential structures, machinery and equipment","186,590","182,867","185,384","182,374"
+"Non-residential structures","111,520","112,712","115,744","115,249"
+"Machinery and equipment","74,545","69,774","69,308","66,840"
+"Intellectual property products","33,203","33,432","33,740","33,483"
+"Non-profit institutions serving households' gross fixed capital formation","2,152","2,084","2,037","2,017"
+"General governments gross fixed capital formation","78,749","77,231","78,557","77,846"
+"Investment in inventories","24,128","17,037","7,109","10,498"
+"Of which: business investment in inventories","24,043","17,069","7,136","10,379"
+"Non-farm","21,329","14,935","3,772","7,919"
+"Farm","2,708","2,131","3,410","2,493"
+"Exports of goods and services","660,109","676,976","675,898","667,046"
+"Exports of goods","540,248","555,064","553,184","545,074"
+"Exports of services","119,105","121,144","121,935","121,183"
+"Less: imports of goods and services","672,840","665,898","665,623","661,345"
+"Imports of goods","547,565","543,125","542,866","536,255"
+"Imports of services","125,631","123,215","123,196","125,249"
+"Statistical discrepancy","944","744","987","-176"
+"Gross domestic product at market prices","2,075,160","2,092,825","2,098,694","2,100,493"
+"Final domestic demand","2,061,723","2,062,489","2,078,185","2,081,990"
+
+Symbol legend:
+
+Footnotes:
+1,
+"How to cite: Statistics Canada. Table 36-10-0104-01 Gross domestic product, expenditure-based, Canada, quarterly (x 1,000,000)"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3610010401
+DOI: https://doi.org/10.25318/3610010401-eng

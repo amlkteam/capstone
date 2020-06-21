@@ -1,0 +1,21 @@
+
+
+altogether 1997 items in the first 200 pages of Bloomberg News journalist archive in Financial Post
+
+-----------------------------
+65 items inside GDP basket
+139 items inside mortgage_rate basket
+208 items inside interest_rate basket
+144 items inside employment basket
+195 items inside housing basket
+176 items inside TSX basket
+----------------------------
+
+search terms used:
+
+GDP_keywords = ['GDP']
+mortgage_keywords = ['mortgage rates','mortgage'] ## add in more keywords if first keyword cannot return enough entries
+interestrate_keywords = ['interest rates']#,'interest rate']
+employment_keywords = ['employment']
+housing_keywords = ['housing price','housing']
+TSX_keywords = ['TSX', 'stock market']
