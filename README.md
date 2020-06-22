@@ -152,7 +152,54 @@ cd data_extraction\src
 python scrape_articles_FinancialPost.py
 ```
 
-**3. CBC Sampling**
+**3. Bloomberg News From BNN Bloomberg article scraping**
+
+**Purpose:** To extract the articles from author "Bloomberg News" on BNN Bloomberg website execute the following script
+
+Required files:
+
+- `scrape_articles_bloomberg.py`
+
+**Script name:** `scrape_articles_bloomberg.py`
+
+**Input (parameters):** 
+
+  - `query`, which represents the searching query
+  - `out_path`, which represents the output file path
+
+
+Example:
+```
+query = 'mortgage rates'
+outpath = '../data/unannotated_data/bloomberg/'
+
+```
+
+**Output :**
+
+The following files are created:
+
+Folder :
+
+`../data/unannotated_data/bloomberg/`
+
+File(s):
+
+ `<ECONOMIC_INDICATOR_NUMBER_OF_ARTICLES_Bloomberg_article.json>`
+
+example: `mortgage_rates_100_Bloomberg_article.json`
+
+
+Dry run example:
+
+```
+cd data_extraction\src
+python scrape_articles_bloomberg.py
+```
+
+notice: Running the above script will scrape the latest 100 articles from BNN Bloomberg website for each searching query. 
+
+**4. CBC Sampling**
 
 **Purpose:** To sample the data from the CBC articles that are extracted  to be split into data to_annotate and data to_predict
 
