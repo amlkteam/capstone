@@ -1,5 +1,12 @@
 # better_dwelling_capstone
 
+#### Authors:
+
+- Pandramishi Naga Sirisha
+- Jonathan TK Chan
+- Aaron Tian
+- Amy Lam
+
 ## Week 1 : 
 Final submission:
 
@@ -9,24 +16,8 @@ https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/master/week_1/Teamwo
 
 
  ---
-title: "README"
-author: "Naga Sirisha"
-date: "20/06/2020"
-output: github_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
-
-#### Authors:
-
-- Pandramishi Naga Sirisha
-- Jonathan TK Chan
-- Aaron Tian
-- Amy Lam
+Capstone project reproduction readme:
 
 #### Last Updated On:
 
@@ -55,8 +46,17 @@ better_dwelling
 
 |Package| Version|
 ------:|-------:|
-Python| 3.2|
-Flair| |
+Python| 3.7|
+Flair| 0.5 |
+requests | 2.23.0 |
+beautifulsoup4 | 4.9.1 |
+pandas | 1.0.2 |
+scikit_learn | 0.23.1 |
+scipy | 1.4.1 |
+dash | 1.10.0 |
+plotly | 4.5.4  |
+dash_core_components  | 1.9.0  |
+dash_html_components  | 1.0.3  |
 
 ### <u>Data Extraction Module:</u>
 
@@ -153,7 +153,66 @@ Dry run example:
 
 `python sample_articles_cbc.py`
 
+### <u>Sentiment Analyzer Module:</u>
+
+**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with Stage 1 feeding in a general Financial News dataset (4000+ examples from https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news), and Stage 2 feeding in Canadian specific financial news datasets that we have labelled.
+
+Required files:
+
+- `Two_stage_flair_training.py`
+- data_folder, which contains the file "combined_benchmark.csv"
+- oversampled_data_folder or undersampled_data_folder, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
+
+**Script name:** `Two_stage_flair_training.py`
+
+**Input (parameters/files):** 
+
+    data_folder, 
+    benchmark_classifier_folder, 
+    oversampled_data_folder / undersampled_data_folder, 
+    finetuned_classifier_folder
+
+**Output :**
+    
+    both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+
+Example:
+    ## contains the file "combined_benchmark.csv" that will be used in first-stage training
+    data_folder = r"../data/annotated_sample_for_training//"
+
+    ## this benchmark_classifier_folder is where the first-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
+
+    ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
+    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
+
+    ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
+    
+Dry run example:
+`cd sentiment_analyzer/src`
+`python Two_stage_flair_training.py`
+``
+
+### <u>Visualization Module:</u>
+
+**Purpose:** To visualize the correlation between changes in news sentiment against trend in economic indicator over a period of time.
+
+Required files:
+- `../data/combined_indicator_data.csv`
+- `../data/combined_sentiment_data.csv`
+- `dash_frontend_final.py`
 
 
+**Script name:** `dash_frontend_final.py`
 
+**Input (parameters/files):** 
+- indicators_df_path
+- senti_df_path
 
+**Output :**
+- a Dash app running on local server
+
+Dry run Example:
+`cd visualization/src`
+`python dash_frontend_final.py`
