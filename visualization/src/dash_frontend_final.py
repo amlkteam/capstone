@@ -77,6 +77,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
     #set x axis limits for visualization
     x_axis_limit_l = max([min(indi_dates), min(senti_dates)]) #latest of two start periods
     x_axis_limit_r = min([max(indi_dates), max(senti_dates)]) #earliest of two end periods
+
+    #print(x_axis_limit_l,x_axis_limit_r)
     #Add indicator area visualization - set boundaries, add to fig object, update axis
     indi_axis_min = min(indi_y) - 0.1
     indi_axis_max = max(indi_y) + 0.1
@@ -107,7 +109,8 @@ def plot_combined_graph_new(indicator_df, senti_df, indicator_name="y-axis label
                     '<br><b>Date:</b>: %{x}<br>',
 
                    name="sentiment score", ## we should change this? 
-                  line_color='#011269'),
+                  line_color='#011269',
+                  hoverlabel={'namelength':-1}),
                     secondary_y=True)
     
     fig['layout']['yaxis2'].update(title='Sentiment Score', 
@@ -144,6 +147,12 @@ def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis l
     senti_y = senti_df["final_sentiment"].astype('float64')
     
     senti_dates = senti_df.index.astype('datetime64[ns]')
+
+    if "title_desc" in senti_df.columns:
+        #print('senti_df["title_desc"] exists')
+        senti_titledesc = [x[:80]+str("...") for x in senti_df["title_desc"]] #limit to 80 characters per title
+    else:
+        senti_titledesc = []
     
     
     #set x axis limits for visualization
@@ -174,14 +183,22 @@ def plot_combined_graph_scatter(indicator_df, senti_df, indicator_name="y-axis l
         go.Scatter(
             x=senti_dates, 
             y=senti_y,
-            hovertemplate =
-            '<b>Article Sentiment: </b>: %{y:.3f}'+
-            '<br><b>Date:</b>: %{x}<br>',
+            
+            #text=senti_df["title_desc"],
+            #hovertemplate =
+            #'<b>Article Sentiment: </b>: %{y:.3f}'+
+            #'<br><b>Date:</b>: %{x}<br>',
             mode="markers",
             opacity=0.75, #0.95
             name="Sentiment Score",
+            hoverlabel={'namelength':-1},
+            hovertext=senti_titledesc, 
+            
+            #hoverinfo='x+y+text',
+            
+            #texttemplate='%{text:15}',
             marker=dict(
-                color="#011269" 
+                color="#011269"
             )
         ),
         secondary_y=True
@@ -303,10 +320,13 @@ def get_correlation(aggregate_df, indicator_df, indicator, source, start_date=No
         
     if not end_date or end_date > latest:
         end_date = latest
-        
+    #print(start_date,end_date)
+    
     senti_subset = senti_monthly_avg[start_date:end_date]
     indi_subset = indi_monthly_avg[start_date:end_date]
     assert(len(senti_subset) == len(indi_subset))
+    print(senti_subset)
+    print(indi_subset)
     
     if len(senti_subset) == 0:
         print('please select valid dates!')
@@ -333,196 +353,204 @@ indic_to_value["value_interest_rates"] = "Interest Rate <br>(overnight target ra
 indicators_df_path = r'../data/combined_indicator_data.csv'
 senti_df_path = r"../data/combined_sentiment_data.csv"
 
-indicators_df = pd.read_csv(indicators_df_path, parse_dates=['date'])
-#read in sentiment data
-combined_senti_df = pd.read_csv(senti_df_path,parse_dates=['publishedAt'],index_col='publishedAt')
+def main(indicators_df_path, senti_df_path):
+
+    indicators_df = pd.read_csv(indicators_df_path, parse_dates=['date'])
+    #read in sentiment data
+    combined_senti_df = pd.read_csv(senti_df_path,parse_dates=    ['publishedAt'],index_col='publishedAt')
 
 
-## main function of Dash app frontend
+    ## main function of Dash app frontend
 
-indicators = ['GDP','mortgage rates','interest rates','employment','housing prices','TSX']
-sources = ['All sources','Source-weighted Average','Bloomberg','CBC']
-default_indicator = 'GDP'
-default_source = 'All sources'
+    indicators = ['GDP','mortgage rates','interest rates','employment','housing prices','TSX']
+    sources = ['All sources','Source-weighted Average','Bloomberg','CBC']
+    default_indicator = 'GDP'
+    default_source = 'All sources'
 
-senti_colname_dict = {'GDP':'gdp', 'employment':'employment', 'housing prices':'housing','interest rates': 'interest', 'mortgage rates':'mortgage','TSX': 'stock'}
-source_wgt_dict = {'Bloomberg': 0.7, 'CBC': 0.3}
+    senti_colname_dict = {'GDP':'gdp', 'employment':'employment', 'housing prices':'housing','interest rates': 'interest', 'mortgage rates':'mortgage','TSX': 'stock'}
+    source_wgt_dict = {'Bloomberg': 0.7, 'CBC': 0.3}
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.layout = html.Div([
-    
-    
-    html.H3("Canadian News Sentiment Swings As Economy Evolves"),
-    
-    html.Div([
+    external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+    app.layout = html.Div([
         
-    html.Div([
+        
+        html.H3("Canadian News Sentiment Swings As Economy Evolves"),
+        
+        html.Div([
             
-    html.P("Pick an economic indicator and a news source: "),
-    
-    dcc.Dropdown(
-                id='indicator-name',
-                options=[{'label': i[0].capitalize()+i[1:], 'value': i} for i in indicators],
-                value=default_indicator, # set a default value
-                optionHeight = 30
-            ),
-    
-    dcc.Dropdown(
-                id='source-name',
-                options=[{'label': i, 'value': i} for i in sources],
-                value=default_source, # set a default value
-                optionHeight = 30
-            ),
-    
-    html.Br(),
+        html.Div([
+                
+        html.P("Pick an economic indicator and a news source: "),
         
-    html.Div([
-    html.Label("Pick a chart type: ",style={'display':'inline-block'}),
-    dcc.RadioItems(
-        id = 'chart-type',
-        options=[
-            {'label': 'Monthly average', 'value': 'line'},
-            {'label': 'Daily datapoints', 'value': 'scatter'}
-        ],
-        value='line',
-        labelStyle={'display': 'inline-block'}
-    )])
+        dcc.Dropdown(
+                    id='indicator-name',
+                    options=[{'label': i[0].capitalize()+i[1:], 'value': i} for i in indicators],
+                    value=default_indicator, # set a default value
+                    optionHeight = 30
+                ),
+        
+        dcc.Dropdown(
+                    id='source-name',
+                    options=[{'label': i, 'value': i} for i in sources],
+                    value=default_source, # set a default value
+                    optionHeight = 30
+                ),
+        
+        html.Br(),
+            
+        html.Div([
+        html.Label("Pick a chart type: ",style={'display':'inline-block'}),
+        dcc.RadioItems(
+            id = 'chart-type',
+            options=[
+                {'label': 'Monthly average', 'value': 'line'},
+                {'label': 'Daily datapoints', 'value': 'scatter'}
+            ],
+            value='line',
+            labelStyle={'display': 'inline-block'}
+        )])
+            ]),
+        
+        html.Div([
+        html.Em(id='correlation-coef'),
+        html.Label(' in the period'),
+            
+        dcc.DatePickerRange(
+            id='date-picker-range',
+            min_date_allowed=dt(2010, 1, 1),
+            #max_date_allowed=dt(2017, 9, 19),
+            initial_visible_month=dt(2020, 6, 1),
+            start_date=dt(2019, 1, 1).date(), #set default start_date to the earliest date of available data
+            end_date=dt(2020, 6, 1).date() #set default end_date to the latest date of available data
+        ),
+
         ]),
-    
-    html.Div([
-    html.Em(id='correlation-coef'),
-    html.Label(' in the period'),
         
-    dcc.DatePickerRange(
-        id='date-picker-range',
-        min_date_allowed=dt(2010, 1, 1),
-        #max_date_allowed=dt(2017, 9, 19),
-        initial_visible_month=dt(2020, 6, 1),
-        start_date=dt(2019, 1, 1).date(), #set default start_date to the earliest date of available data
-        end_date=dt(2020, 6, 1).date() #set default end_date to the latest date of available data
-    ),
-
-    ]),
-    
-    
-    ]), #style={'columnCount': 2}
-    
-
-    
-    dcc.Graph(id = 'indicator-senti-graph'), #figure=test_fig
-    
-    html.P("Notes: "),
-    
-    html.P(" * Daily datapoints of news article sentiment is a combination of customized sentiment analyzer model predictions plus hand-made golden annotations."),
-    
-    html.P(" * On Source-weighted Average option -- Current source-weights are: "+str(source_wgt_dict)),
-    
-    html.A(
-        'Download News Sentiment Data Subset',
-        id='download-link',
-        download="rawdata.csv",
-        href="",
-        target="_blank"
-    ),
-    
-])
-
-@app.callback(
-    Output("correlation-coef","children"),
-    [Input("indicator-name","value"),
-    Input("source-name","value"),
-    Input('date-picker-range', 'start_date'),
-    Input('date-picker-range', 'end_date')]
-)
-def update_corr(indicator_name, source_name, start_date, end_date):    
-    #reference from documentation: https://dash.plotly.com/dash-core-components/datepickerrange
-
-
-    start_date = dt.strptime(re.split('T| ', start_date)[0], '%Y-%m-%d')
-
-    end_date = dt.strptime(re.split('T| ', end_date)[0], '%Y-%m-%d')
-    
-    try:
-        corr = get_correlation(combined_senti_df, indicators_df.set_index('date'), indicator_name,source_name, start_date=start_date, end_date=end_date)
-    except:
-        corr = None
-    
-    string = str(round(corr,2)) if corr else "--"
-    
-    return "Correlation coeficient between "+indicator_name+ " and selected source sentiment is: "+string 
-
-@app.callback(
-    [Output("indicator-senti-graph","figure"),
-    Output("download-link",'href')],# must be a single Output item when returns only one value
-    [Input("indicator-name","value"),
-    Input("source-name","value"),
-    Input("chart-type","value"),
-    Input('date-picker-range', 'start_date'),
-    Input('date-picker-range', 'end_date')])
-def update_graph(indicator_name, source_name,chart_type, start_date, end_date):
-    
-    indicator_colname = 'value_'+"_".join(indicator_name.split())# value_mortgage_rates	
-    
-    indicator_df = indicators_df[['date', indicator_colname]].dropna().rename(columns={indicator_colname:"values","date":"dates"})
-    indicator_label = indic_to_value[indicator_colname]
-    test_title = indicator_name + ' VS news sentiment  ' #(most recent 12 months data) 
-    
-    
-    senti_colname = senti_colname_dict[indicator_name]
-    
-    #filtering by date range
-    start_date = dt.strptime(re.split('T| ', start_date)[0], '%Y-%m-%d')
-    end_date = dt.strptime(re.split('T| ', end_date)[0], '%Y-%m-%d')
-    
-    comb_senti_df = combined_senti_df.sort_index()
-    try:
-        combo_senti_df = comb_senti_df[start_date:end_date]
-    except:
-        #for invalid dates, give the full period
-        combo_senti_df = comb_senti_df
-    
-    
-    senti_df = combo_senti_df.query('indicator == @senti_colname').drop_duplicates('title_desc')
         
-    if source_name == 'Source-weighted Average':
+        ]), #style={'columnCount': 2}
         
-        #ref: source_dict = {'Bloomberg': [bbg_gdp_avg, 0.5], 'CBC': [cbc_gdp_avg, 0.5]}
-        source_dict = {}
-        for src in list(source_wgt_dict.keys()):
-            source_df_subset = get_monthly_avg_score(senti_df.query(' source == @src '))
-            source_dict[src] = [source_df_subset, source_wgt_dict[src]]
+
+        
+        dcc.Graph(id = 'indicator-senti-graph'), #figure=test_fig
+        
+        html.P("Notes: "),
+        
+        html.P(" * Daily datapoints of news article sentiment is a combination of customized sentiment analyzer model predictions plus hand-made golden annotations."),
+        
+        html.P(" * On Source-weighted Average option -- Current source-weights are: "+str(source_wgt_dict)),
+        
+        html.A(
+            'Download News Sentiment Data Subset',
+            id='download-link',
+            download="rawdata.csv",
+            href="",
+            target="_blank"
+        ),
+        
+    ])
+
+    @app.callback(
+        Output("correlation-coef","children"),
+        [Input("indicator-name","value"),
+        Input("source-name","value"),
+        Input('date-picker-range', 'start_date'),
+        Input('date-picker-range', 'end_date')]
+    )
+    def update_corr(indicator_name, source_name, start_date, end_date):    
+        #reference from documentation: https://dash.plotly.com/dash-core-components/datepickerrange
+
+
+        start_date = dt.strptime(re.split('T| ', start_date)[0], '%Y-%m-%d')
+
+        end_date = dt.strptime(re.split('T| ', end_date)[0], '%Y-%m-%d')
+        
+        try:
+            corr = get_correlation(combined_senti_df, indicators_df.set_index('date'), indicator_name,source_name, start_date=start_date, end_date=end_date)
+        except:
+            corr = None
+        
+        string = str(round(corr,2)) if corr else "--"
+        
+        return "Correlation coeficient between "+indicator_name+ " and selected source sentiment is: "+string 
+
+    @app.callback(
+        [Output("indicator-senti-graph","figure"),
+        Output("download-link",'href')],# must be a single Output item when returns only one value
+        [Input("indicator-name","value"),
+        Input("source-name","value"),
+        Input("chart-type","value"),
+        Input('date-picker-range', 'start_date'),
+        Input('date-picker-range', 'end_date')])
+    def update_graph(indicator_name, source_name,chart_type, start_date, end_date):
+        
+        indicator_colname = 'value_'+"_".join(indicator_name.split())# value_mortgage_rates	
+        
+        indicator_df = indicators_df[['date', indicator_colname]].dropna().rename(columns={indicator_colname:"values","date":"dates"})
+        indicator_label = indic_to_value[indicator_colname]
+        test_title = indicator_name + ' VS news sentiment  ' #(most recent 12 months data) 
+        
+        
+        senti_colname = senti_colname_dict[indicator_name]
+        
+        #filtering by date range
+        start_date = dt.strptime(re.split('T| ', start_date)[0], '%Y-%m-%d')
+        end_date = dt.strptime(re.split('T| ', end_date)[0], '%Y-%m-%d')
+        
+        comb_senti_df = combined_senti_df.sort_index()
+        try:
+            combo_senti_df = comb_senti_df[start_date:end_date]
+        except:
+            #for invalid dates, give the full period
+            combo_senti_df = comb_senti_df
+        
+        
+        senti_df = combo_senti_df.query('indicator == @senti_colname').drop_duplicates('title_desc')
             
-        monthly_senti_df = monthly_weighted_average(source_dict)
-        month_senti_df = monthly_senti_df.rename(columns={'monthly_weighted_ave_sent_score':'final_sentiment'} )
-        
-        daily_senti_df = daily_weighted_average(senti_df, source_wgt_dict).rename(columns={'raw_sentiment_score':'final_sentiment'} ) 
-        
-        
-    else:
+        if source_name == 'Source-weighted Average':
             
-        if source_name != 'All sources':
-            senti_df = senti_df.query('source ==@source_name ')
-    
-        monthly_senti_df =get_monthly_avg_score(senti_df)
-        month_senti_df = monthly_senti_df.rename(columns={'monthly_avg_sent_score':'final_sentiment'} ) 
+            #ref: source_dict = {'Bloomberg': [bbg_gdp_avg, 0.5], 'CBC': [cbc_gdp_avg, 0.5]}
+            source_dict = {}
+            for src in list(source_wgt_dict.keys()):
+                source_df_subset = get_monthly_avg_score(senti_df.query(' source == @src '))
+                source_dict[src] = [source_df_subset, source_wgt_dict[src]]
+                
+            monthly_senti_df = monthly_weighted_average(source_dict)
+            month_senti_df = monthly_senti_df.rename(columns={'monthly_weighted_ave_sent_score':'final_sentiment'} )
+            
+            daily_senti_df = daily_weighted_average(senti_df, source_wgt_dict).rename(columns={'raw_sentiment_score':'final_sentiment'} ) 
+            
+            
+        else:
+                
+            if source_name != 'All sources':
+                senti_df = senti_df.query('source ==@source_name ')
         
-        daily_senti_df = senti_df.rename(columns={'raw_sentiment_score':'final_sentiment'} )
-    
+            monthly_senti_df =get_monthly_avg_score(senti_df)
+            month_senti_df = monthly_senti_df.rename(columns={'monthly_avg_sent_score':'final_sentiment'} ) 
+            
+            daily_senti_df = senti_df.rename(columns={'raw_sentiment_score':'final_sentiment'} )
+        
 
-    if chart_type == 'line':
-        chart =  plot_combined_graph_new(indicator_df, month_senti_df, indicator_label, test_title) 
+        if chart_type == 'line':
+            chart =  plot_combined_graph_new(indicator_df, month_senti_df, indicator_label, test_title) 
 
-    else:
-        chart = plot_combined_graph_scatter(indicator_df, daily_senti_df, indicator_label, test_title)
-    
-    #export raw sentiment df with column names "publishedAt","source", "title_desc", "raw sentiment score", "indicator" and "anotation_type"
-    csv_string = senti_df.to_csv(encoding='utf-8')
-    csv_string = "data:text/csv;charset=utf-8,%EF%BB%BF" + urllib.parse.quote(csv_string)
-    
-    return chart,csv_string 
+        else:
+            chart = plot_combined_graph_scatter(indicator_df, daily_senti_df, indicator_label, test_title)
+        
+        #export raw sentiment df with column names including "publishedAt","source", "title_desc", "raw sentiment score", "indicator" and "anotation_type"
+        csv_string = senti_df.to_csv(encoding='utf-8')
+        csv_string = "data:text/csv;charset=utf-8,%EF%BB%BF" + urllib.parse.quote(csv_string)
+        
+        return chart,csv_string 
 
+
+    app.run_server(debug=True)
     
     
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    indicators_df_path = r'../data/combined_indicator_data.csv'
+    senti_df_path = r"../data/combined_sentiment_data.csv"
+
+    main(indicators_df_path, senti_df_path)
+    
