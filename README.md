@@ -97,7 +97,7 @@ File(s):
 
  `<economic_indicator_CBC_article.json>`
 
-ex: `interestrates_CBC_article.json>`
+example: `interestrates_CBC_article.json`
 
 
 Dry run example:
@@ -142,7 +142,7 @@ File(s):
 
  `<economic_indicator_output.json>`
 
-ex: `interest_rate_output.json>`
+example: `interest_rate_output.json`
 
 
 Dry run example:
@@ -178,7 +178,7 @@ The following files are created:
 File(s):
 
  `../data_extraction/data/annotated_data/cbc/<economic_indicator_sample.json>`
-`../sentiment_analyzer/data/predictions_data/cbc/<predictions_dataset_economicindicator_cbc.csv`
+`../sentiment_analyzer/data/predictions_data/cbc/<predictions_dataset_economicindicator_cbc.csv>`
 
 Example:
 
