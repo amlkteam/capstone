@@ -155,44 +155,38 @@ Dry run example:
 
 ### <u>Sentiment Analyzer Module:</u>
 
-**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with Stage 1 feeding in a general Financial News dataset (4000+ examples from https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news), and Stage 2 feeding in Canadian specific financial news datasets that we have labelled.
+**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled.
 
 Required files:
 
 - `Two_stage_flair_training.py`
-- data_folder, which contains the file "combined_benchmark.csv"
-- oversampled_data_folder or undersampled_data_folder, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
+- `data_folder`, which contains the file "combined_benchmark.csv"
+- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
 
 **Script name:** `Two_stage_flair_training.py`
 
 **Input (parameters/files):** 
 
-    data_folder, 
-    benchmark_classifier_folder, 
-    oversampled_data_folder / undersampled_data_folder, 
-    finetuned_classifier_folder
+    # data_folder contains the file "combined_benchmark.csv" that will be used in first-stage training
+    data_folder = r"../data/annotated_sample_for_training//"
+
+    # benchmark_classifier_folder is where the first-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
+
+    # load a subfolder for second-stage training: for example, loading in articles related to GDP
+    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
+
+    # finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+    finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
 
 **Output :**
     
     both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
-
-Example:
-    ## contains the file "combined_benchmark.csv" that will be used in first-stage training
-    data_folder = r"../data/annotated_sample_for_training//"
-
-    ## this benchmark_classifier_folder is where the first-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
-    benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
-
-    ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
-    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
-
-    ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
-    finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
     
 Dry run example:
-`cd sentiment_analyzer/src`
-`python Two_stage_flair_training.py`
-``
+```cd sentiment_analyzer/src
+ python Two_stage_flair_training.py```
+
 
 ### <u>Visualization Module:</u>
 
@@ -214,5 +208,5 @@ Required files:
 - a Dash app running on local server
 
 Dry run Example:
-`cd visualization/src`
-`python dash_frontend_final.py`
+```cd visualization/src
+python dash_frontend_final.py```
