@@ -7,21 +7,13 @@
 - Aaron Tian
 - Amy Lam
 
-## Week 1 : 
-Final submission:
-
-https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/master/week_1/Better%20Dwelling%20Capstone%20Week1%20Project%20Plan.pdf
-
-https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/master/week_1/Teamwork%20Contract.pdf
-
-
  ---
 
-Capstone project reproduction readme:
+### Capstone project reproduction instructions:
 
 #### Last Updated On:
 
-22 Jun
+22 Jun 2:45pm added instruction for sentiment_analyzer, visualization, scrape_articles_FinancialPost.py
 
 #### <u> Initial project structure </u>
 
@@ -58,6 +50,7 @@ plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
 
+---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
 
 **1. CBC  article scraping**
@@ -114,9 +107,52 @@ Dry run example:
 >Enter the path to the config file:
 `./cbc_scraping_config.ini`
 
+**2. Bloomberg News From Financial Post article scraping**
+
+**Purpose:** To extract the articles from author "Bloomberg News" on Financial Post website execute the following script
+
+Required files:
+
+- `scrape_articles_FinancialPost.py`
+
+**Script name:** `scrape_articles_FinancialPost.py`
+
+**Input (parameters/files):** 
+
+ - `output_folder`
+ - `end number of pages to extract`
+ 
+Example:
+```
+output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
+end_page = 200
+BloombergNews_from_FP(end_page,output_folder)   
+separate_into_indicator_baskets(output_folder)
+```
+
+**Output :**
+
+The following files are created:
+
+Folder :
+
+`../data_extraction/data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews`
+
+File(s):
+
+ `<economic_indicator_output.json>`
+
+ex: `interest_rate_output.json>`
 
 
-**2. CBC Sampling**
+Dry run example:
+
+```
+cd data_extraction\src
+python scrape_articles_FinancialPost.py
+```
+
+**3. CBC Sampling**
 
 **Purpose:** To sample the data from the CBC articles that are extracted  to be split into data to_annotate and data to_predict
 
@@ -152,6 +188,7 @@ Example:
 Dry run example:
 
 `python sample_articles_cbc.py`
+
 
 -----------------------------------------------------------------------------------------------------------------------------
 
