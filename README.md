@@ -21,7 +21,7 @@ Capstone project reproduction readme:
 
 #### Last Updated On:
 
-20 Jun, added instructions for `scrape_articles_cbc.py`
+22 Jun
 
 #### <u> Initial project structure </u>
 
@@ -153,9 +153,11 @@ Dry run example:
 
 `python sample_articles_cbc.py`
 
+-----------------------------------------------------------------------------------------------------------------------------
+
 ### <u>Sentiment Analyzer Module:</u>
 
-**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled.
+**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
 
 Required files:
 
@@ -181,12 +183,15 @@ Required files:
 
 **Output :**
     
-    both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
     
 Dry run example:
-```cd sentiment_analyzer/src
- python Two_stage_flair_training.py```
+```
+cd sentiment_analyzer/src
+python Two_stage_flair_training.py
+```
 
+-----------------------------------------------------------------------------------------------------------------------
 
 ### <u>Visualization Module:</u>
 
@@ -208,5 +213,7 @@ Required files:
 - a Dash app running on local server
 
 Dry run Example:
-```cd visualization/src
-python dash_frontend_final.py```
+```
+cd visualization/src
+python dash_frontend_final.py
+```
