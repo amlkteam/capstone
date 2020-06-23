@@ -41,6 +41,22 @@ def generate_raw_sentiment_score(row):
             result = row['least_confidence'] - row['second_confidence']
     return result
 
+def get_raw_sentiment_score(row):
+    """
+    The simplified version of the function above
+    Assuming the sentiment analyzer only return the best_label and best_confidence_score,
+    under this circumstance the sentiment score of positive prediction would be its confidence score
+    the sentiment score of negative prediction would be -1 times its confidence score
+    the sentiment score of neutral prediction would be 0
+
+    """
+    if row['best_label'] == 1:
+        result = row['best_confidence']
+    elif row['best_label'] == -1:
+        result = -row['best_confidence']
+    else:
+        result = 0
+    return result
 
 def combine_annotated_and_predicted(annotation_path, prediction_path, output_path):
     """
