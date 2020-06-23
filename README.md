@@ -265,7 +265,7 @@ File(s):
 
 Example:
 
-`../data/annotated_data/bloomberg/Bloomberg_interestrates_combined_sampled.cs`
+`../data/annotated_data/bloomberg/Bloomberg_interestrates_combined_sampled.csv`
 
 `../sentiment_analyzer/data/predictions_data/bloomberg/predictions_dataset_interestrates_Bloomberg.csv`
 
