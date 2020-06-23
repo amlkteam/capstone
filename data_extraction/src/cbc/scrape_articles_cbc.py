@@ -369,7 +369,7 @@ def main(query,start_date, end_date, project_path):
 
             full_query = query.split(" ")
             file_name_prefix = "".join(full_query)
-            file_name = project_path + "project/data_extraction/data/unannotated_data/cbc/" + file_name_prefix + '_' +'CBC_article' + '.json' 
+            file_name = project_path + "project/data_extraction/data/unannotated_data/cbc/" + file_name_prefix + '_' +'cbc_article' + '.json' 
             
             with open( file_name, 'w') as json_file:
                 json.dump(json_list, json_file)

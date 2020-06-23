@@ -100,7 +100,7 @@ if __name__ ==  '__main__':
     benchmark_classifier_folder = r'../trained_models/gdp_benchmark_classifier//'
 
     ## here loading in the articles related to GDP from a folder containing oversampled/undersampled train, dev and test splits
-    new_data_folder = r'../data/oversampled_training_data_combined/GDP//'
+    new_data_folder = r'../data/oversampled_training_data_combined/gdp//'
 
     ## this finetuned_classifier_folder is where the second-stage trainer will save best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
     finetuned_classifier_folder = r'../trained_models/gdp_finetuned_classifier//'
