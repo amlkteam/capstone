@@ -136,7 +136,7 @@ The following files are created:
 
 Folder :
 
-`../data_extraction/data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews`
+`../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews`
 
 File(s):
 
@@ -201,7 +201,7 @@ notice: Running the above script will scrape the latest 100 articles from BNN Bl
 
 **4. CBC Sampling**
 
-**Purpose:** To sample the data from the CBC articles that are extracted  to be split into data to_annotate and data to_predict
+**Purpose:** To sample the data from the CBC articles that are extracted to be split into data to_annotate and data to_predict
 
 Required files:
 
@@ -236,6 +236,42 @@ Dry run example:
 
 `python sample_articles_cbc.py`
 
+
+**5. Bloomberg Sampling**
+
+**Purpose:** Sample the data from the Bloomberg articles that are extracted from annotation and prediction. The dataset that will be used for annotation and prediction will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/` 
+
+Required files:
+
+- `sample_and_combine.py`
+
+
+
+**Script name:** `sample_and_combine.py`
+
+
+
+
+**Output :**
+
+The following files are created:
+
+
+
+File(s):
+ `../data/annotated_data/bloomberg/KEYWORD_combined_sampled.csv`
+ 
+ `../sentiment_analyzer/data/predictions_data/bloomberg/<predictions_dataset_economicindicator_cbc.csv>`
+
+Example:
+
+`../data/annotated_data/bloomberg/Bloomberg_interestrates_combined_sampled.cs`
+
+`../sentiment_analyzer/data/predictions_data/bloomberg/predictions_dataset_interestrates_Bloomberg.csv`
+
+Dry run example:
+
+`python sample_and_combine.py`
 
 -----------------------------------------------------------------------------------------------------------------------------
 
