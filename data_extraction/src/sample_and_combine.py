@@ -30,6 +30,7 @@ def sample_dataframe_by_month(dataframe, sample_size, keyword):
 
     article_dictionary_by_month = defaultdict(list)
     full_list = []
+    output_path = "../data/annotated_data/bloomberg/"
     for column, row in dataframe.iterrows():
         article_date = (dateutil.parser.parse(row['publishedAt']))
         article_year = article_date.year
@@ -43,7 +44,7 @@ def sample_dataframe_by_month(dataframe, sample_size, keyword):
 
     sample_df = pd.DataFrame(full_list)
     sample_df = sample_df.sort_values(by='publishedAt', ascending=False)
-    sample_df.to_csv(keyword + '_sample.csv')
+    sample_df.to_csv(output_path + keyword + '_sample.csv')
     return sample_df
 
 
@@ -99,9 +100,9 @@ def get_unannotated_data(combined_df, annotated_df, indicator):
     CSV file
     """
     # Running this line will erase current data
-    #prediction_file_path = "../../sentiment_analyzer/data/predictions_data/bloomberg/" 
+    prediction_file_path = "../../sentiment_analyzer/data/predictions_data/bloomberg/"
     # try this line for testing
-    prediction_file_path = "../../sentiment_analyzer/data/predictions_data/test/" 
+    # prediction_file_path = "../../sentiment_analyzer/data/predictions_data/test/"
     
     total = combined_df
     drop_list = annotated_df.index.values.tolist()
@@ -116,36 +117,43 @@ def get_unannotated_data(combined_df, annotated_df, indicator):
 Run functions to create sample first and then get_unannotated_data function to generate files for prediction
 """
 unanno_file_path = "../data/unannotated_data/bloomberg/"
-prediction_file_path = "../../sentiment_analyzer/data/predictions_data/test/" 
+prediction_file_path = "../../sentiment_analyzer/data/predictions_data/bloomberg/"
+annotated_output_path = "../data/annotated_data/bloomberg/"
 
 bloomberg_interestrates_comb = combine_fp_bloomberg(unanno_file_path + 'interest_rates_100_Bloomberg_article.json', unanno_file_path + 'interest_rate_fpbloomberg.json')
 sample_bloomberg_interestrates = sample_dataframe_by_month(bloomberg_interestrates_comb, 3, 'Bloomberg_interestrates_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_interestrates_combined_sampled.csv')
 get_unannotated_data(bloomberg_interestrates_comb, sample_bloomberg_interestrates, 'interestrates')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_interestrates_Bloomberg.csv')
 
 
 bloomberg_housing_comb = combine_fp_bloomberg(unanno_file_path + 'housing_price_100_Bloomberg_article.json', unanno_file_path + 'housing_fpbloomberg.json')
 sample_bloomberg_housing = sample_dataframe_by_month(bloomberg_housing_comb, 3, 'Bloomberg_housing_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_housing_combined_sampled.csv')
 get_unannotated_data(bloomberg_housing_comb, sample_bloomberg_housing, 'housing')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_housing_Bloomberg.csv')
 
 bloomberg_gdp_comb = combine_fp_bloomberg(unanno_file_path + 'GDP_100_Bloomberg_article.json', unanno_file_path + 'GDP_fpbloomberg.json')
 sample_bloomberg_gdp = sample_dataframe_by_month(bloomberg_gdp_comb, 3, 'Bloomberg_gdp_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_gdp_combined_sampled.csv')
 get_unannotated_data(bloomberg_gdp_comb, sample_bloomberg_gdp, 'GDP')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_GDP_Bloomberg.csv')
 
 bloomberg_employment_comb = combine_fp_bloomberg(unanno_file_path + 'employment_95_Bloomberg_article.json', unanno_file_path + 'employment_fpbloomberg.json')
 sample_bloomberg_employment = sample_dataframe_by_month(bloomberg_employment_comb, 3, 'Bloomberg_employment_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_employment_combined_sampled.csv')
 get_unannotated_data(bloomberg_employment_comb, sample_bloomberg_employment, 'employment')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_employment_Bloomberg.csv')
 
 bloomberg_tsx_comb = combine_fp_bloomberg(unanno_file_path + 'stock_market_100_Bloomberg_article.json', unanno_file_path + 'stock_market_fpbloomberg.json')
 sample_bloomberg_tsx = sample_dataframe_by_month(bloomberg_tsx_comb, 3, 'Bloomberg_tsx_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_tsx_combined_sampled.csv')
 get_unannotated_data(bloomberg_tsx_comb, sample_bloomberg_tsx, 'tsx')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_tsx_Bloomberg.csv')
 
 bloomberg_mortgagerates_comb = combine_fp_bloomberg(unanno_file_path + 'mortgage_rates_100_Bloomberg_article.json', unanno_file_path + 'mortgage_rate_fpbloomberg.json')
 sample_bloomberg_mortgagerates = sample_dataframe_by_month(bloomberg_mortgagerates_comb, 3, 'Bloomberg_mortgagerates_combined')
+assert os.path.exists(annotated_output_path + 'Bloomberg_mortgagerates_combined_sampled.csv')
 get_unannotated_data(bloomberg_mortgagerates_comb, sample_bloomberg_mortgagerates, 'mortgagerates')
 assert os.path.exists(prediction_file_path + 'predictions_dataset_mortgagerates_Bloomberg.csv')
 
