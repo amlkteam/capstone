@@ -170,16 +170,16 @@ def separate_into_indicator_baskets(output_folder):
     housing_keywords = ['housing price']#,'housing']
     TSX_keywords = ['TSX']#, 'stock market']
 
-    GDP_entries = allocate_to_indicator_basket(entries,'GDP',GDP_keywords,output_folder)
+    GDP_entries = allocate_to_indicator_basket(entries,'gdp',GDP_keywords,output_folder)
     mortgage_entries = allocate_to_indicator_basket(entries,'mortgage_rate',mortgage_keywords,output_folder)
     interestrate_entries = allocate_to_indicator_basket(entries,'interest_rate',interestrate_keywords,output_folder)
     employment_entries = allocate_to_indicator_basket(entries,'employment',employment_keywords,output_folder)
     housing_entries = allocate_to_indicator_basket(entries,'housing',housing_keywords,output_folder)
-    TSX_entries = allocate_to_indicator_basket(entries,'TSX',TSX_keywords,output_folder)
+    TSX_entries = allocate_to_indicator_basket(entries,'tsx',TSX_keywords,output_folder)
 
 ####execution of functions here
 ##uncomment the line below to execute extract or separation function   
-##output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
+#output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_fp_bloombergnews/test'
 
 ##uncomment the line below to execute extract function 
 #BloombergNews_from_FP(200,output_folder)   
@@ -188,9 +188,9 @@ def separate_into_indicator_baskets(output_folder):
 #separate_into_indicator_baskets(output_folder)
 
 ##tests
-#assert os.path.exists(output_folder)
-#assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
-#assert os.path.exists(os.path.join(output_folder,'GDP_output.json')) 
+assert os.path.exists(output_folder)
+assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
+assert os.path.exists(os.path.join(output_folder,'gdp_output.json')) 
 
 #### examples of one extraction
 # =============================================================================
