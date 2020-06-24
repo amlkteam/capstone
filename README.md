@@ -13,7 +13,7 @@
 
 #### Last Updated On:
 
-22 Jun 2:45pm added instruction for sentiment_analyzer, visualization, scrape_articles_FinancialPost.py
+24 Jun 1:13pm added note on neccessary versions
 
 #### <u> Initial project structure </u>
 
@@ -39,7 +39,7 @@ better_dwelling
 |Package| Version|
 ------:|-------:|
 Python| 3.7|
-Flair| 0.5 |
+Flair| **0.5** |
 requests | 2.23.0 |
 beautifulsoup4 | 4.9.1 |
 pandas | 1.0.2 |
@@ -49,6 +49,7 @@ dash | 1.10.0 |
 plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
+Note: bolded dependencies must be the specified version; unbolded text represents the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
@@ -326,8 +327,8 @@ Required files:
 **Script name:** `dash_frontend_final.py`
 
 **Input (parameters/files):** 
-- indicators_df_path
-- senti_df_path
+- indicators_df_path: the csv file that contains all the indicators values.
+- senti_df_path: The csv file containing aggregated sentiment data of both annotated and predicted data under each indicator and each source.
 
 **Output :**
 - a Dash app running on local server
