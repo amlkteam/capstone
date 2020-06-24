@@ -49,6 +49,7 @@ dash | 1.10.0 |
 plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
+
 Note: bolded dependencies must be the specified version; unbolded text represents the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
