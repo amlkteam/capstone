@@ -1,1 +1,1 @@
-This folder contains all the articles that are retreived by the extraction code (Before sampling for annotation). Later this data will be used for performing predictions.
+This folder contains all the articles that are retreived by the extraction code (Before sampling for annotation). Later some of the articles will be used for annotation and others will be used to perform predictions.
