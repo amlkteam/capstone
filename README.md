@@ -128,8 +128,6 @@ Example:
 ```
 output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
 end_page = 200
-BloombergNews_from_FP(end_page,output_folder)   
-separate_into_indicator_baskets(output_folder)
 ```
 
 **Output :**
@@ -142,7 +140,7 @@ Folder :
 
 File(s):
 
- `<economic_indicator_output.json>`
+six `<economic_indicator_output.json>`
 
 example: `interest_rate_output.json`
 
