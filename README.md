@@ -39,7 +39,7 @@ better_dwelling
 |Package| Version|
 ------:|-------:|
 Python| 3.7|
-Flair| **0.5** |
+**Flair**| **0.5** |
 requests | 2.23.0 |
 beautifulsoup4 | 4.9.1 |
 pandas | 1.0.2 |
@@ -50,7 +50,7 @@ plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
 
-Note: bolded dependencies must be the specified version; unbolded text represents the versions we used and tested.
+Note: bolded dependency must be the specified version; unbolded dependencies represents the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
