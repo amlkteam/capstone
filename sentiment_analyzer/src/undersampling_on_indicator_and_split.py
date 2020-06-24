@@ -20,7 +20,7 @@ def undersampling_and_split(import_folder, export_path):
     
     df_zero = df[df['title_desc_sent_1'] == 0].sample(numof_min_class_bet_pos_neg - 1)
     concat_df = pd.concat([df_non_zero, df_zero])
-    #print(concat_df['title_desc_sent_1'].value_counts())
+    concat_df = concat_df[['title_desc', 'publishedAt', 'title_desc_sent_1']]
     
     train, test = train_test_split(concat_df, test_size=0.15, random_state=42)
     
@@ -29,14 +29,14 @@ def undersampling_and_split(import_folder, export_path):
     test.to_csv(export_path + 'test.csv')
 
 annotated_data_filepath = '../../data_extraction/data/annotated_data/combined/'
-undersampled_path = '../data/phase_2_training/Undersampled_data/'
+undersampled_path = '../data/undersampled_training_data_combined/'
 
 undersampling_and_split(annotated_data_filepath + 'annotated_GDP_bnn&CBC.csv', undersampled_path + 'GDP/')
 undersampling_and_split(annotated_data_filepath + 'annotated_housing_bnn&CBC.csv', undersampled_path + 'housing/')
 undersampling_and_split(annotated_data_filepath + 'annotated_interestrates_bnn&CBC.csv', undersampled_path + 'interest_rates/')
 undersampling_and_split(annotated_data_filepath + 'annotated_mortgagerates_bnn&CBC.csv', undersampled_path + 'mortgage_rates/')
 undersampling_and_split(annotated_data_filepath + 'annotated_employment_bnn&CBC.csv', undersampled_path + 'employment/')
-undersampling_and_split(annotated_data_filepath + 'annotated_tsx_bnn&CBC.csv', undersampled_path + 'tsx/')
+undersampling_and_split(annotated_data_filepath + 'annotated_stock_bnn&CBC.csv', undersampled_path + 'tsx/')
 
 ## unit tests
 assert os.path.exists(undersampled_path)
