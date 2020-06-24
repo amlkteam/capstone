@@ -29,7 +29,7 @@ def undersampling_and_split(import_folder, export_path):
     test.to_csv(export_path + 'test.csv')
 
 annotated_data_filepath = '../../data_extraction/data/annotated_data/combined/'
-undersampled_path = '../data/phase_2_training/Undersampled_data/'
+undersampled_path = '../data/undersampled_training_data_combined/'
 
 undersampling_and_split(annotated_data_filepath + 'annotated_GDP_bnn&CBC.csv', undersampled_path + 'GDP/')
 undersampling_and_split(annotated_data_filepath + 'annotated_housing_bnn&CBC.csv', undersampled_path + 'housing/')
