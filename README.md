@@ -277,6 +277,8 @@ Dry run example:
 
 ### <u>Sentiment Analyzer Module:</u>
 
+**1. Finetuning Sentiment Analyzer for a specific economic indicator**
+
 **Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
 
 Required files:
@@ -303,13 +305,16 @@ Required files:
 
 **Output :**
     
-both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt. best_model.pt (or final_model.pt if it performs better on new data prediction) is necessary for  visualization module, other files could be discarded.  
     
 Dry run example:
 ```
 cd sentiment_analyzer/src
 python Two_stage_flair_training.py
 ```
+**2. Make predictions on news articles you want to check sentiment on**
+
+[to be filled]
 
 -----------------------------------------------------------------------------------------------------------------------
 
