@@ -283,7 +283,7 @@ Required files:
 
 - `Two_stage_flair_training.py`
 - `data_folder`, which contains the file "combined_benchmark.csv"
-- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
+- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders, one for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
 
 **Script name:** `Two_stage_flair_training.py`
 
