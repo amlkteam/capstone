@@ -13,7 +13,7 @@
 
 #### Last Updated On:
 
-22 Jun 2:45pm added instruction for sentiment_analyzer, visualization, scrape_articles_FinancialPost.py
+24 Jun 1:13pm added note on neccessary versions
 
 #### <u> Initial project structure </u>
 
@@ -39,7 +39,7 @@ better_dwelling
 |Package| Version|
 ------:|-------:|
 Python| 3.7|
-Flair| 0.5 |
+**Flair**| **0.5** |
 requests | 2.23.0 |
 beautifulsoup4 | 4.9.1 |
 pandas | 1.0.2 |
@@ -49,6 +49,8 @@ dash | 1.10.0 |
 plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
+
+Note: bolded dependency must be the specified version; unbolded ones represent the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
@@ -126,8 +128,6 @@ Example:
 ```
 output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
 end_page = 200
-BloombergNews_from_FP(end_page,output_folder)   
-separate_into_indicator_baskets(output_folder)
 ```
 
 **Output :**
@@ -140,7 +140,7 @@ Folder :
 
 File(s):
 
- `<economic_indicator_output.json>`
+six `<economic_indicator_output.json>`
 
 example: `interest_rate_output.json`
 
@@ -277,13 +277,15 @@ Dry run example:
 
 ### <u>Sentiment Analyzer Module:</u>
 
+**1. Finetuning Sentiment Analyzer for a specific economic indicator**
+
 **Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
 
 Required files:
 
 - `Two_stage_flair_training.py`
 - `data_folder`, which contains the file "combined_benchmark.csv"
-- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
+- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders, one for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
 
 **Script name:** `Two_stage_flair_training.py`
 
@@ -303,13 +305,16 @@ Required files:
 
 **Output :**
     
-both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt. best_model.pt (or final_model.pt if it performs better on new data prediction) is necessary for  visualization module, other files could be discarded.  
     
 Dry run example:
 ```
 cd sentiment_analyzer/src
 python Two_stage_flair_training.py
 ```
+**2. Make predictions on news articles you want to check sentiment on**
+
+[to be filled]
 
 -----------------------------------------------------------------------------------------------------------------------
 
@@ -326,8 +331,8 @@ Required files:
 **Script name:** `dash_frontend_final.py`
 
 **Input (parameters/files):** 
-- indicators_df_path
-- senti_df_path
+- indicators_df_path: the csv file that contains all the indicators values.
+- senti_df_path: The csv file containing aggregated sentiment data of both annotated and predicted data under each indicator and each source.
 
 **Output :**
 - a Dash app running on local server
