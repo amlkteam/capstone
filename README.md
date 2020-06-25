@@ -342,3 +342,5 @@ Dry run Example:
 cd visualization/src
 python dash_frontend_final.py
 ```
+
+![Dash visualization app interface](https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/amylam/readme_img/switch_indicator_graphs.gif)
