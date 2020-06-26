@@ -166,7 +166,7 @@ Required files:
 
   - `query`, which represents the searching query
   - `out_path`, which represents the output file path
-  - **By running the script, six pre-defined searching queries will be used to search articles from BNN Bloomberg website. To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided.**
+  - **By running the script, six pre-defined searching queries will be used to search articles from BNN Bloomberg website. (They are 'mortgage rates', 'interest rates', 'housing price', 'employment', 'GDP', and 'stock market') To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided.**
 
 
 Example:
@@ -198,9 +198,9 @@ cd data_extraction\src
 python scrape_articles_bloomberg.py
 ```
 
-notice: Running the above script will scrape the latest 100 articles from BNN Bloomberg website for each searching query. 
+notice: <ins>*Free users of BNN Bloomberg will only have access to 100 articles per query. Running the above script will scrape at most 100 latest articles from their website for each query.*</ins>
 
-**4. CBC Sampling**
+**4. CBC Sampling for annotation**
 
 **Purpose:** To sample the data from the CBC articles that are extracted to be split into data to_annotate and data to_predict
 
@@ -238,9 +238,9 @@ Dry run example:
 `python sample_articles_cbc.py`
 
 
-**5. Bloomberg Sampling**
+**5. Bloomberg Sampling for annotation**
 
-**Purpose:** Sample the data from the Bloomberg articles that are extracted from annotation and prediction. The dataset that will be used for annotation and prediction will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/`. *This step is optional if annotated data is already available. Sampling and annotation is for the fine-tuning phase of the algorithm.*
+**Purpose:** Sample the data from the Bloomberg articles that are extracted. The dataset to be used for annotation will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/`. <ins>*This step is optional if annotated data is already available. Sampling and annotation is for the fine-tuning phase of the algorithm.*</ins>
 
 Required files:
 
