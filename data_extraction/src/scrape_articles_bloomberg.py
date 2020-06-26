@@ -1,7 +1,7 @@
 """
 # Code that is used to scrape articles from bnn bloomberg archive
 # This script will allow users to scrape 100 previous articles from the bnn bloomberg website for each searching query from the date when the code is executed
-# Code can be improved 
+
 """
 
 import requests
