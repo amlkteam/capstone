@@ -154,7 +154,7 @@ python scrape_articles_FinancialPost.py
 
 **3. Bloomberg News From BNN Bloomberg article scraping**
 
-**Purpose:** To extract the articles from author "Bloomberg News" on BNN Bloomberg website execute the following script
+**Purpose:** To extract the articles from official website of [BNN Bloomberg](https://www.bnnbloomberg.ca/) execute the following script
 
 Required files:
 
@@ -166,6 +166,7 @@ Required files:
 
   - `query`, which represents the searching query
   - `out_path`, which represents the output file path
+  - **By running the script, all six pre-defined searching query will be used to search articles from BNN Bloomberg website. To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided. **
 
 
 Example:
@@ -185,7 +186,7 @@ Folder :
 
 File(s):
 
- `<ECONOMIC_INDICATOR_NUMBER_OF_ARTICLES_Bloomberg_article.json>`
+ 6 X `<ECONOMIC_INDICATOR_NUMBER_OF_ARTICLES_Bloomberg_article.json>`
 
 example: `mortgage_rates_100_Bloomberg_article.json`
 
