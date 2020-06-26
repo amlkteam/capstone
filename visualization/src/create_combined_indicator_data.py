@@ -351,21 +351,23 @@ def main():
     #create six individual dataframes
     try:
         gdp_path = filename + "gdp.csv"
+        gdp_start = "2019-04-01"
+        gdp_end = "2020-03-01"
         gdp_df = get_gdp_df(gdp_path)
 
         tsx_path = filename + 'tsx.csv'
         tsx_df = get_tsx_df(tsx_path)
 
-        mortgage_rate_path = filename + 'mortgage_rates.csv'
+        mortgage_rate_path = filename + 'mortgagerates.csv'
         mortgage_rate_df = get_mortgage_df(mortgage_rate_path)
 
         employment_path = filename + 'employment.csv'
         employment_df = get_employment_df(employment_path)
 
-        interest_rates_path = filename + 'interest_rates.csv'
+        interest_rates_path = filename + 'interestrates.csv'
         boc_interest_rates_df = get_interest_df(interest_rates_path)
 
-        housing_path = filename + 'housing_prices.csv'
+        housing_path = filename + 'housing.csv'
         housing_price_df = get_housing_df(housing_path)
     except:
         print("Error in get_INDICATOR_df() functions - check file structure in " + filename)
@@ -408,7 +410,6 @@ def main():
     else:
         print("FINANCIAL INDICATOR FILE ALREADY EXISTS: ", out_filename)
     
-
 
 if __name__ ==  '__main__':
     main()
