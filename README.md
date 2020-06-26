@@ -335,7 +335,7 @@ Required files:
 
 **Output :**
 
-Each prediction value includes the confidence scores for all three classes (positive, neutral, and negative). We need these three values to compute the final sentiment score for each article. The sentiment scores will be in a continuous scale.  
+The predicted files will be stored in the prediction_output folder. Each prediction value includes the confidence scores for all three classes (positive, neutral, and negative). We need these three values to compute the final sentiment score for each article. The sentiment scores will be in a continuous scale.  
 
 example:
 ```
@@ -364,7 +364,7 @@ Required files:
 
 **Output :**
 
-A .csv file that includes all the annotated and predicted data points. This filename is `combined_sentiment_data.csv`, which can directly function as an input for the visualization module. 
+A .csv file (`combined_sentiment_data.csv`) will be created in the prediction_combined folder. The file includes all the annotated and predicted data points. This file will directly function as an input for the visualization module. 
 
 example:
 ```
