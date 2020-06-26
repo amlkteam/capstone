@@ -280,7 +280,7 @@ Dry run example:
 
 **1. Finetuning Sentiment Analyzer for a specific economic indicator**
 
-**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
+**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (combined and balanced from 4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news), and 500 + examples from [Matheus Gomes de Sousa et. al](https://drive.google.com/file/d/1eqNwkqb1tnaJm_l975K6LJBic8pMof1x/view)), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
 
 Required files:
 
@@ -315,7 +315,60 @@ python Two_stage_flair_training.py
 ```
 **2. Make predictions on news articles you want to check sentiment on**
 
-[to be filled]
+**Purpose:** Make predictions on news articles based on title and subtitles
+
+**Script name:** `Load_and_predict.py`
+
+Required files:
+
+- `Load_and_predict.py`
+- data to be predicted on
+- trained classifiers
+- file location where predicted data will go
+
+**Input (parameters/files, please go to line 73 to line 75 to edit):**
+- `input_file_path`, file path of data to be predicted on, for example: '../data/predictions_data/bloomberg_or_cbc/FILE_NAME'
+- `output_file_path`, file path of predicted data, for example: '../data/prediction_output/OUT_FILE_NAME'
+- `classifier`, classifier that will be used to classify articles, for example:  TextClassifier.load('../trained_models/MODEL_NAME')
+
+**Output :**
+
+Each prediction value includes the confidence scores for all three classes (positive, neutral, and negative). We need these three values to compute the final sentiment score for each article. The sentiment scores will be in a continuous scale.  
+
+example:
+```
+cd sentiment_analyzer/src
+python Load_and_predict.py
+```
+
+**3. Calculate final sentiment values**
+
+**Purpose:** Calculate the final sentiment score for all the predicted data points, and combine them with annotated data point to a csv file, that will function as the input for visualization
+
+**Script name:** `generate_senti_df.py`
+
+Required files:
+
+- `generate_senti_df.py`
+- the file path where the annotated datasets are stored
+- the file path where the predicted datasets are stored
+- the file path where the output csv file will be located
+
+**Input (parameters/files, please go to line 132 to line 134 to edit):**
+- `annotation_path`, annotated datasets file path, for example: '../../data_extraction/data/annotated_data/combined/'
+- `prediction_path`, predicted datasets file path, for example:  '../data/prediction_output/'
+- `output_path`, output file path, for example: '../data/prediction_combined/'
+
+
+**Output :**
+
+A .csv file that includes all the annotated and predicted data points. This filename is `combined_sentiment_data.csv`, which can directly function as an input for the visualization module. 
+
+example:
+```
+cd sentiment_analyzer/src
+python generate_senti_df.py
+```
 
 -----------------------------------------------------------------------------------------------------------------------
 
