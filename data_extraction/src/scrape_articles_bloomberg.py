@@ -91,7 +91,7 @@ def bnn_article_scraper(query, out_path):
                         article_text += ' ' + children.text
                 # article_text = article_text_tag.get_text(' ')
                 # desc = article_text_tag.p.get_text()
-                desc = article_text_tag.text.strip().split("\n")[0]  # Amy spotted this bug
+                desc = article_text_tag.text.strip().split("\n")[0]  
             else:
                 article_text = None
                 desc = None
@@ -125,9 +125,9 @@ def bnn_article_scraper(query, out_path):
 
 
 # execute function with unit tests
-
+# Modify parameters here
 out_path = "../data/unannotated_data/bloomberg/"
-
+# Modify parameters here
 bloomberg_mr_article = bnn_article_scraper('mortgage rates', out_path)
 assert len(bloomberg_mr_article) == 100
 assert os.path.exists(out_path + 'mortgage_rates_100_Bloomberg_articles.json')
