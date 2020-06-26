@@ -166,7 +166,7 @@ Required files:
 
   - `query`, which represents the searching query
   - `out_path`, which represents the output file path
-  - **By running the script, all six pre-defined searching query will be used to search articles from BNN Bloomberg website. To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided. **
+  - **By running the script, all six pre-defined searching query will be used to search articles from BNN Bloomberg website. To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided.**
 
 
 Example:
