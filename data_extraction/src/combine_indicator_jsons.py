@@ -41,7 +41,7 @@ def combine_article_jsons(json_folder_path, output_filename):
         for json_path in os.listdir(json_folder_path):
             curr_path = json_folder_path + json_path
             if curr_path.endswith(".json"):
-                with open(curr_path, ) as file:
+                with open(curr_path) as file:
                     data = file.read()
                     indicator_data = json.loads(data)
                     for article_json in indicator_data:
