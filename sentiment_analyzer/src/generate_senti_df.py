@@ -124,7 +124,7 @@ def combine_annotated_and_predicted(annotation_path, prediction_path, output_pat
     # set the index
     output_df = output_df.set_index('publishedAt')
     
-    output_df.to_csv(output_path + 'combined_annotation_prediction.csv')
+    output_df.to_csv(output_path + 'combined_sentiment_data.csv')
     
     return output_df
 
@@ -135,4 +135,4 @@ output_path = '../data/prediction_combined/'
 
 
 combine_annotated_and_predicted(annotation_path, prediction_path, output_path)
-assert os.path.exists(output_path + 'combined_annotation_prediction.csv')
+assert os.path.exists(output_path + 'combined_sentiment_data.csv')
