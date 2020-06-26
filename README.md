@@ -240,7 +240,7 @@ Dry run example:
 
 **5. Bloomberg Sampling**
 
-**Purpose:** Sample the data from the Bloomberg articles that are extracted from annotation and prediction. The dataset that will be used for annotation and prediction will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/` 
+**Purpose:** Sample the data from the Bloomberg articles that are extracted from annotation and prediction. The dataset that will be used for annotation and prediction will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/`. *This step is optional if annotated data is already available. Sampling and annotation is for the fine-tuning phase of the algorithm.*
 
 Required files:
 
