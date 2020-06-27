@@ -75,6 +75,8 @@ This file contains the following format
 - `start_date` (String - yyyy/mm/dd hh:mm:s) : The start date from which you want to scrape the articles.
 - `end_date`(String - yyyy/mm/dd hh:mm:s) : The end date until which you want to scrape the articles
 - `project_path` (String): The path to the project folder
+- `total_count` (Integer) : The total number of articles to scrape
+
 
 Example:
 
@@ -84,6 +86,7 @@ economic_indicator="interest rates"
 start_date="2019-01-01 00:00:00"
 end_date="2020-05-01 00:00:00"
 project_path="/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
+total_count = 100
 ```
 
 
