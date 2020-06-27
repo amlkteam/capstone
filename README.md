@@ -13,7 +13,7 @@
 
 #### Last Updated On:
 
-24 Jun 1:13pm added note on neccessary versions
+27 Jun 10:31pm added note on custom weights for new sources
 
 #### <u> Initial project structure </u>
 
@@ -389,6 +389,8 @@ Required files:
 **Input (parameters/files):** 
 - indicators_df_path: the csv file that contains all the indicators values.
 - senti_df_path: The csv file containing aggregated sentiment data of both annotated and predicted data under each indicator and each source.
+
+Note: user can change custom weights for each news source at line 382 in dash_frontend_final.py, to render Source-Weighted Average monthly and daily datapoints. Current placeholder weights are: {'Bloomberg': 0.7, 'CBC': 0.3}. 
 
 **Output :**
 - a Dash app running on local server
