@@ -63,7 +63,7 @@ def finetuned_model_predictions(input_file_path, finetuned_classifier, output_fi
 
   print(f"All { len(prediction_df) } rows done prediction! ")
 
-  prediction_df.to_csv(output_file_path,index=False)
+  prediction_df.to_csv(output_file_path + '.csv', index=False)
 
   print("Done export!")
   

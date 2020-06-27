@@ -10,9 +10,13 @@ import os
 
 
 def undersampling_and_split(import_folder, export_path):
-    '''takes in a csv file containing mixed-sourced news articles related to a particular economic indicator, 
+    """
+    Takes in a csv file containing mixed-sourced news articles related to a particular economic indicator,
     performs undersampling on the train_set to make all labels have similar number of examples, 
-    export the undersampled train, dev, and test csvfile. '''
+    export the undersampled train, dev, and test csvfile.
+    The default export_path is located at sentiment analyzer modele, in undersampled_training_data_combined folder
+
+    """
     
     df = pd.read_csv(import_folder)
     df_non_zero = df[df['title_desc_sent_1'] != 0]
@@ -31,12 +35,18 @@ def undersampling_and_split(import_folder, export_path):
 annotated_data_filepath = '../../data_extraction/data/annotated_data/combined/'
 undersampled_path = '../data/undersampled_training_data_combined/'
 
-undersampling_and_split(annotated_data_filepath + 'annotated_GDP_bnn&CBC.csv', undersampled_path + 'GDP/')
-undersampling_and_split(annotated_data_filepath + 'annotated_housing_bnn&CBC.csv', undersampled_path + 'housing/')
-undersampling_and_split(annotated_data_filepath + 'annotated_interestrates_bnn&CBC.csv', undersampled_path + 'interest_rates/')
-undersampling_and_split(annotated_data_filepath + 'annotated_mortgagerates_bnn&CBC.csv', undersampled_path + 'mortgage_rates/')
-undersampling_and_split(annotated_data_filepath + 'annotated_employment_bnn&CBC.csv', undersampled_path + 'employment/')
-undersampling_and_split(annotated_data_filepath + 'annotated_stock_bnn&CBC.csv', undersampled_path + 'tsx/')
+## please change indicator names if you're extracting articles associated with other search keywords/other economic indicators
+indicator_names = ['GDP', 'employment', 'housing', 'interestrates', 'mortgagerates', 'stock']
+export_names_dict = {'GDP': 'GDP', 'employment': 'employment', 'housing': 'housing', 'interestrates': 'interest_rates', 'mortgagerates': 'mortgage_rates', 'stock': 'tsx'}
+
+for indicator_name in indicator_names:
+    indicator_file = 'annotated_' + indicator_name + '_bnn&CBC.csv'
+    export_folder = undersampled_path + export_names_dict[indicator_name]
+    if not os.path.exists(export_folder):
+        os.makedirs(export_folder)
+        undersampling_and_split(annotated_data_filepath + indicator_file, export_folder + '/')
+
+
 
 ## unit tests
 assert os.path.exists(undersampled_path)

@@ -44,7 +44,7 @@ def sample_dataframe_by_month(dataframe, sample_size, keyword):
 
     sample_df = pd.DataFrame(full_list)
     sample_df = sample_df.sort_values(by='publishedAt', ascending=False)
-    sample_df.to_csv(output_path + keyword + '_sample.csv')
+    sample_df.to_csv(output_path + keyword + '_sampled.csv')
     return sample_df
 
 
@@ -166,22 +166,3 @@ assert os.path.exists(prediction_file_path + 'predictions_dataset_mortgagerates_
     
 
 
-    
-    
-def combine_bnn_cbc(bloomberg_file, cbc_file, out_name):
-    """
-    combine the annotated bloomberg articles with annotated CBC articles
-    """
-    bloomberg_df = pd.read_csv(bloomberg_file)
-    bloomberg_df = bloomberg_df[['source', 'title', 'description', 'publishedAt', 'title_desc_sent_1']]
-    
-    CBC_df = pd.read_csv(cbc_file)
-    CBC_df.rename(columns = {'date':'publishedAt'}, inplace = True)
-    
-    concat_df = pd.concat([bloomberg_df,CBC_df])
-    concat_df = concat_df.sort_values(by='publishedAt', ascending=False)
-    concat_df.reset_index(drop=True, inplace=True)
-    concat_df['title_desc'] = concat_df['title'] + '. ' + concat_df['description']
-    concat_df = concat_df[['source', 'title_desc', 'publishedAt', 'title_desc_sent_1']]
-    
-    concat_df.to_csv(out_name + '.csv')
