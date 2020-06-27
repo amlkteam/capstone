@@ -375,6 +375,10 @@ def main(indicators_df_path, senti_df_path):
     default_source = 'All sources'
 
     senti_colname_dict = {'GDP':'gdp', 'employment':'employment', 'housing prices':'housing','interest rates': 'interest', 'mortgage rates':'mortgage','TSX': 'stock'}
+    
+    ## current weights for each source are just placeholder values
+    ## can change them to other weights according to your judgement
+    ## can add more news sources and their associated weights, all weights should sum to 1
     source_wgt_dict = {'Bloomberg': 0.7, 'CBC': 0.3}
 
     external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
