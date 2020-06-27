@@ -117,14 +117,14 @@ def combine_annotated_and_predicted(annotation_path, prediction_path, output_pat
     
     output_df = pd.concat([annotated_df, predicted_df])
     
-    # reminded by Amy's code to make all the Bloomberg articles the same source
+    # Make sure the source of all Bloomberg articles is the same
     output_df.source = output_df.source.str.replace("{'id': 'fp-bloomberg-news', 'name': 'Bloomberg News From FP'}","Bloomberg")
     output_df.source = output_df.source.str.replace("Bloomberg News","Bloomberg")
     output_df.source = output_df.source.str.replace("BNN Bloomberg","Bloomberg")
     # set the index
     output_df = output_df.set_index('publishedAt')
     
-    output_df.to_csv(output_path + 'combined_annotation_prediction.csv')
+    output_df.to_csv(output_path + 'combined_sentiment_data.csv')
     
     return output_df
 
@@ -135,4 +135,4 @@ output_path = '../data/prediction_combined/'
 
 
 combine_annotated_and_predicted(annotation_path, prediction_path, output_path)
-assert os.path.exists(output_path + 'combined_annotation_prediction.csv')
+assert os.path.exists(output_path + 'combined_sentiment_data.csv')
