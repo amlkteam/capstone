@@ -398,7 +398,7 @@ def main():
     assert total_df.shape[1] == 7, "incorrect number of columns (1 date column + 6 indicator columns)"
     
     #export_to_csv
-    out_filename= "combined_indicator_data.csv"
+    out_filename= "../data/combined_indicator_data.csv"
     
     if not os.path.exists(out_filename):
         try:
