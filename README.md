@@ -390,7 +390,7 @@ python generate_senti_df.py
 
 **1. Build combined indicator datafile for visualization **
 
-**Purpose:** To extract relevant values from indicator data files and combine into one csv file with a single column for each of the indicator values. Assume that individual indicator data files are contained within `better_dwelling_capstone/visualization/data/financial_indicator_data/`. Output file will be created within the current directory
+**Purpose:** To extract relevant values from indicator data files and combine into one csv file with a single column for each of the indicator values. Assume that individual indicator data files are contained within `better_dwelling_capstone/visualization/data/financial_indicator_data/`. Output file will be created in `visualization/data/`
 
 **Script name:** `create_combined_indicator_data.py`
 
