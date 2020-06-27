@@ -1,0 +1,1 @@
+combined_annotation_prediction.csv contains all the predicted articles, and all the annotated articles for both sources and all six economic indicator. The publish date for the articles are between 2019-01-01 to 2020-05-20. This file is used for visualization. 

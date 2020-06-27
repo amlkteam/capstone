@@ -354,6 +354,13 @@ indicators_df_path = r'../data/combined_indicator_data.csv'
 senti_df_path = r"../data/combined_sentiment_data.csv"
 
 def main(indicators_df_path, senti_df_path):
+    """
+    creates the Dash app frontend visualization interface to show correlation coefficients between monthly/daily news sentiment and economic indicators.
+
+    Arguments:
+    - indicators_df_path(str): The csv file that contains all the indicators values.
+    - senti_df_path(str): The csv file containing aggregated sentiment dataframe that includes both annotated and predicted data for under each indicator and each source.
+    """
 
     indicators_df = pd.read_csv(indicators_df_path, parse_dates=['date'])
     #read in sentiment data

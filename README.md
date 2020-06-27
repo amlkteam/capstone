@@ -13,7 +13,7 @@
 
 #### Last Updated On:
 
-22 Jun 2:45pm added instruction for sentiment_analyzer, visualization, scrape_articles_FinancialPost.py
+24 Jun 1:13pm added note on neccessary versions
 
 #### <u> Initial project structure </u>
 
@@ -39,7 +39,7 @@ better_dwelling
 |Package| Version|
 ------:|-------:|
 Python| 3.7|
-Flair| 0.5 |
+**Flair**| **0.5** |
 requests | 2.23.0 |
 beautifulsoup4 | 4.9.1 |
 pandas | 1.0.2 |
@@ -49,6 +49,8 @@ dash | 1.10.0 |
 plotly | 4.5.4  |
 dash_core_components  | 1.9.0  |
 dash_html_components  | 1.0.3  |
+
+Note: bolded dependency must be the specified version; unbolded ones represent the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
@@ -126,8 +128,6 @@ Example:
 ```
 output_folder = '../data/unannotated_data/bloomberg/extraction_first200pages_FP_BloombergNews'
 end_page = 200
-BloombergNews_from_FP(end_page,output_folder)   
-separate_into_indicator_baskets(output_folder)
 ```
 
 **Output :**
@@ -140,7 +140,7 @@ Folder :
 
 File(s):
 
- `<economic_indicator_output.json>`
+six `<economic_indicator_output.json>`
 
 example: `interest_rate_output.json`
 
@@ -154,7 +154,7 @@ python scrape_articles_FinancialPost.py
 
 **3. Bloomberg News From BNN Bloomberg article scraping**
 
-**Purpose:** To extract the articles from author "Bloomberg News" on BNN Bloomberg website execute the following script
+**Purpose:** To extract the articles from official website of [BNN Bloomberg](https://www.bnnbloomberg.ca/) execute the following script
 
 Required files:
 
@@ -166,6 +166,7 @@ Required files:
 
   - `query`, which represents the searching query
   - `out_path`, which represents the output file path
+  - **By running the script, six pre-defined searching queries will be used to search articles from BNN Bloomberg website. (They are 'mortgage rates', 'interest rates', 'housing price', 'employment', 'GDP', and 'stock market') To use new queries and output path, please go to line 129 and line 131 of script `scrape_articles_bloomberg.py` and update the parameters. Line 135 to line 153 could be commented out if only one query is provided.**
 
 
 Example:
@@ -185,7 +186,7 @@ Folder :
 
 File(s):
 
- `<ECONOMIC_INDICATOR_NUMBER_OF_ARTICLES_Bloomberg_article.json>`
+ 6 X `<ECONOMIC_INDICATOR_NUMBER_OF_ARTICLES_Bloomberg_article.json>`
 
 example: `mortgage_rates_100_Bloomberg_article.json`
 
@@ -197,9 +198,9 @@ cd data_extraction\src
 python scrape_articles_bloomberg.py
 ```
 
-notice: Running the above script will scrape the latest 100 articles from BNN Bloomberg website for each searching query. 
+notice: <ins>*Free users of BNN Bloomberg will only have access to 100 articles per query. Running the above script will scrape at most 100 latest articles from their website for each query.*</ins>
 
-**4. CBC Sampling**
+**4. CBC Sampling for annotation**
 
 **Purpose:** To sample the data from the CBC articles that are extracted to be split into data to_annotate and data to_predict
 
@@ -237,9 +238,9 @@ Dry run example:
 `python sample_articles_cbc.py`
 
 
-**5. Bloomberg Sampling**
+**5. Bloomberg Sampling for annotation**
 
-**Purpose:** Sample the data from the Bloomberg articles that are extracted from annotation and prediction. The dataset that will be used for annotation and prediction will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/` 
+**Purpose:** Sample the data from the Bloomberg articles that are extracted. The dataset to be used for annotation will be generated, the rest of the articles will be used for prediction. The data files used for annotation will be generate at `../data/annotated_data/bloomberg/`. And the data files for prediction will be generated at `../../sentiment_analyzer/data/predictions_data/bloomberg/`. <ins>*This step is optional if annotated data is already available. Sampling and annotation is for the fine-tuning phase of the algorithm.*</ins>
 
 Required files:
 
@@ -277,13 +278,17 @@ Dry run example:
 
 ### <u>Sentiment Analyzer Module:</u>
 
-**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news) ), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
+**1. Finetuning Sentiment Analyzer for a specific economic indicator**
+
+**Purpose:** To execute two-stage finetuning on the pretrained general sentiment classifier, with first stage feeding in a general Financial News dataset (combined and balanced from 4000+ examples from [Malo, P., Sinha, A., Korhonen, P., Wallenius, J., & Takala, P. (2014)](https://www.kaggle.com/ankurzing/sentiment-analysis-for-financial-news), and 500 + examples from [Matheus Gomes de Sousa et. al](https://drive.google.com/file/d/1eqNwkqb1tnaJm_l975K6LJBic8pMof1x/view)), and second stage feeding in Canadian specific financial news datasets that we have labelled (~600 examples).
+
+**Oversampling and undersampling:** Oversampling and undersampling are techniques used to adjust the class distribution of a dataset. We conducted oversampling by randomly sampling the under-represented classes with replacement and undersampling by randomly sampling the over-represented classes. For our experiment, we used the undersampling method for the datasets of employment and stock market, and implemented the oversampling method for the datasets of the rest four economic indicators.
 
 Required files:
 
 - `Two_stage_flair_training.py`
 - `data_folder`, which contains the file "combined_benchmark.csv"
-- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
+- `oversampled_data_folder or undersampled_data_folder`, which contains 6 subfolders, one for each economic indicator. Each subfolder contains 3 files: train.csv, dev.csv, test.csv.
 
 **Script name:** `Two_stage_flair_training.py`
 
@@ -303,12 +308,68 @@ Required files:
 
 **Output :**
     
-both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt
+both benchmark_classifier_folder and finetuned_classifier_folder will create the following files: best_model.pt, final_model.pt, loss.tsv, training.log and weights.txt. best_model.pt (or final_model.pt if it performs better on new data prediction) is necessary for  visualization module, other files could be discarded.  
     
 Dry run example:
 ```
 cd sentiment_analyzer/src
 python Two_stage_flair_training.py
+```
+**2. Make predictions on news articles you want to check sentiment on**
+
+**Purpose:** Make predictions on news articles based on title and subtitles
+
+**Script name:** `Load_and_predict.py`
+
+Required files:
+
+- `Load_and_predict.py`
+- data to be predicted on
+- trained classifiers
+- file location where predicted data will go
+
+**Input (parameters/files, please go to line 73 to line 75 to edit):**
+- `input_file_path`, file path of data to be predicted on, for example: '../data/predictions_data/bloomberg_or_cbc/FILE_NAME'
+- `output_file_path`, file path of predicted data, for example: '../data/prediction_output/OUT_FILE_NAME'
+- `classifier`, classifier that will be used to classify articles, for example:  TextClassifier.load('../trained_models/MODEL_NAME')
+
+**Output :**
+
+The predicted files will be stored in the prediction_output folder. Each prediction value includes the confidence scores for all three classes (positive, neutral, and negative). We need these three values to compute the final sentiment score for each article. The sentiment scores will be in a continuous scale.  
+
+example:
+```
+cd sentiment_analyzer/src
+python Load_and_predict.py
+```
+
+**3. Calculate final sentiment values**
+
+**Purpose:** Calculate the final sentiment score for all the predicted data points, and combine them with annotated data point to a csv file, that will function as the input for visualization
+
+**Script name:** `generate_senti_df.py`
+
+Required files:
+
+- `generate_senti_df.py`
+- the file path where the annotated datasets are stored
+- the file path where the predicted datasets are stored
+- the file path where the output csv file will be located
+
+**Input (parameters/files, please go to line 132 to line 134 to edit):**
+- `annotation_path`, annotated datasets file path, for example: '../../data_extraction/data/annotated_data/combined/'
+- `prediction_path`, predicted datasets file path, for example:  '../data/prediction_output/'
+- `output_path`, output file path, for example: '../data/prediction_combined/'
+
+
+**Output :**
+
+A .csv file (`combined_sentiment_data.csv`) will be created in the prediction_combined folder. The file includes all the annotated and predicted data points. This file will directly function as an input for the visualization module. 
+
+example:
+```
+cd sentiment_analyzer/src
+python generate_senti_df.py
 ```
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -326,8 +387,8 @@ Required files:
 **Script name:** `dash_frontend_final.py`
 
 **Input (parameters/files):** 
-- indicators_df_path
-- senti_df_path
+- indicators_df_path: the csv file that contains all the indicators values.
+- senti_df_path: The csv file containing aggregated sentiment data of both annotated and predicted data under each indicator and each source.
 
 **Output :**
 - a Dash app running on local server
@@ -337,3 +398,5 @@ Dry run Example:
 cd visualization/src
 python dash_frontend_final.py
 ```
+
+![Dash visualization app interface](https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/master/readme_img/switch_indicator_graphs.gif)
