@@ -13,7 +13,7 @@
 
 #### Last Updated On:
 
-27 Jun 10:31pm added note on custom weights for new sources
+27 Jun 12:14pm added section for combined_indicator_data.csv in viz section
 
 #### <u> Initial project structure </u>
 
@@ -107,7 +107,10 @@ example: `interestrates_CBC_article.json`
 
 Dry run example:
 
-`python scrape_articles_cbc.py`
+```
+cd data_extraction/src/cbc
+python scrape_articles_cbc.py
+```
 
 >Enter the path to the config file:
 `./cbc_scraping_config.ini`
@@ -238,7 +241,10 @@ Example:
 
 Dry run example:
 
-`python sample_articles_cbc.py`
+```
+cd data_extraction/src/cbc
+python sample_articles_cbc.py
+```
 
 
 **5. Bloomberg Sampling for annotation**
@@ -275,7 +281,10 @@ Example:
 
 Dry run example:
 
-`python sample_and_combine.py`
+```
+cd data_extraction/src
+python sample_and_combine.py
+```
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -340,7 +349,7 @@ Required files:
 
 The predicted files will be stored in the prediction_output folder. Each prediction value includes the confidence scores for all three classes (positive, neutral, and negative). We need these three values to compute the final sentiment score for each article. The sentiment scores will be in a continuous scale.  
 
-example:
+Dry run example:
 ```
 cd sentiment_analyzer/src
 python Load_and_predict.py
@@ -369,7 +378,7 @@ Required files:
 
 A .csv file (`combined_sentiment_data.csv`) will be created in the prediction_combined folder. The file includes all the annotated and predicted data points. This file will directly function as an input for the visualization module. 
 
-example:
+Dry run example:
 ```
 cd sentiment_analyzer/src
 python generate_senti_df.py
@@ -379,13 +388,38 @@ python generate_senti_df.py
 
 ### <u>Visualization Module:</u>
 
+**1. Build combined indicator datafile for visualization **
+
+**Purpose:** To extract relevant values from indicator data files and combine into one csv file with a single column for each of the indicator values. Assume that individual indicator data files are contained within `better_dwelling_capstone/visualization/data/financial_indicator_data/`. Output file will be created within the current directory
+
+**Script name:** `create_combined_indicator_data.py`
+
+**Input (parameters/files):** 
+- `../data/financial_indicator_data/GDP.csv`
+- `../data/financial_indicator_data/employment.csv`
+- `../data/financial_indicator_data/housing.csv`
+- `../data/financial_indicator_data/interestrates.csv`
+- `../data/financial_indicator_data/mortgagerates.csv`
+- `../data/financial_indicator_data/tsx.csv`
+- `create_combined_indicator_data.py`
+
+**Output :**
+combined_indicator_data.csv
+
+Dry run example:
+```
+cd visualization/src
+python create_combined_indicator_data.py 
+```
+
+**2. Run final visualization **
+
 **Purpose:** To visualize the correlation between changes in news sentiment against trend in economic indicator over a period of time.
 
 Required files:
 - `../data/combined_indicator_data.csv`
 - `../data/combined_sentiment_data.csv`
 - `dash_frontend_final.py`
-
 
 **Script name:** `dash_frontend_final.py`
 
@@ -398,7 +432,7 @@ Note: user can change custom weights for each news source at line 382 in dash_fr
 **Output :**
 - a Dash app running on local server
 
-Dry run Example:
+Dry run example:
 ```
 cd visualization/src
 python dash_frontend_final.py
