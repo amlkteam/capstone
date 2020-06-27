@@ -166,30 +166,35 @@ def sample_dataframe_by_month(dataframe, sample_size):
     article_dictionary_by_month = defaultdict(list)
     full_list = []
     
-    if  type(dataframe) is  not pd.DataFrame or not sample_size > 0:
+    if  type(dataframe) is  not pd.DataFrame or not sample_size > -1:
         print("Sample size should be greater than 0")
         return None
     
-    try:
-        for column, row in dataframe.iterrows():
-            article_date = (dateutil.parser.parse(row['publishedAt']))
-            article_year = article_date.year
-            article_month = article_date.month
-            article_dictionary_by_month[str(article_year) + '-' + str(article_month)].append(row)
-
-        for month_number, list_of_articles in article_dictionary_by_month.items():
-            random.shuffle(list_of_articles)
-            subset_list = list_of_articles[:sample_size]
-            full_list.extend(subset_list)
-
-        sample_df = pd.DataFrame(full_list)
-        sample_df = sample_df.sort_values(by='publishedAt', ascending=False)
+    if sample_size == 0:
+        empty_df = pd.DataFrame(columns=dataframe.columns)
+        return empty_df
     
-    except:
-        print("From function sample_dataframe_by_month() : Could not sample")
-        return None
-    
-    return sample_df
+    else:
+        try:
+            for column, row in dataframe.iterrows():
+                article_date = (dateutil.parser.parse(row['publishedAt']))
+                article_year = article_date.year
+                article_month = article_date.month
+                article_dictionary_by_month[str(article_year) + '-' + str(article_month)].append(row)
+
+            for month_number, list_of_articles in article_dictionary_by_month.items():
+                random.shuffle(list_of_articles)
+                subset_list = list_of_articles[:sample_size]
+                full_list.extend(subset_list)
+
+            sample_df = pd.DataFrame(full_list)
+            sample_df = sample_df.sort_values(by='publishedAt', ascending=False)
+
+        except:
+            print("From function sample_dataframe_by_month() : Could not sample")
+            return None
+
+        return sample_df
 
 
 
@@ -311,21 +316,20 @@ def get_keyword_df(economic_indicator, project_path,keyword_list, input_file_nam
 
 
 
-
 def unit_tests():
     project_path = "/non existent"
     file_path = "non_existent_file.json"
     converted_df = convert_json_to_df(project_path, file_path)
     assert converted_df is None, "If path is not present return None"
     
-    project_path = "/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
-    file_path = "project/data_extraction/data/unannotated_data/cbc/interestrates_CBC_article.json"
+    project_path = "../../../"
+    file_path = "data_extraction/data/unannotated_data/cbc/interestrates_CBC_article.json"
     converted_df = convert_json_to_df(project_path, file_path)
     df = preprocess_df(converted_df, ['xyz'])
     assert df is None
+
     k = preprocess_df(converted_df, ['title', 'description','publishedAt'])
     assert isinstance(k, pd.DataFrame)
-    return True
-
+    
 unit_tests()
 
