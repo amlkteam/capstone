@@ -188,9 +188,9 @@ def separate_into_indicator_baskets(output_folder):
 #separate_into_indicator_baskets(output_folder)
 
 ##tests
-assert os.path.exists(output_folder)
-assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
-assert os.path.exists(os.path.join(output_folder,'GDP_output.json')) 
+#assert os.path.exists(output_folder)
+#assert os.path.exists(os.path.join(output_folder,'articles_output.json'))
+#assert os.path.exists(os.path.join(output_folder,'GDP_output.json')) 
 
 #### examples of one extraction
 # =============================================================================

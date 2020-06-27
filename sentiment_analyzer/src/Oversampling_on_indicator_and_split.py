@@ -68,8 +68,8 @@ def oversampling_on_indicator_and_split(indicator_file, import_folder, export_fo
 import_folder = r'../data/annotated_sample_for_training'
 
 ## please change indicator names if you're extracting articles associated with other search keywords/other economic indicators
-indicator_names = ['GDP','employment','housing','interest_rate','mortgage_rate','stock']
-export_names_dict = {'GDP':'GDP','employment':'employment','housing':'housing','interest_rate':'interest_rates','mortgage_rate':'mortgage_rates','stock':'stock_market'}
+indicator_names = ['gdp','employment','housing','interest_rate','mortgage_rate','stock']
+export_names_dict = {'gdp':'GDP','employment':'employment','housing':'housing','interest_rate':'interest_rates','mortgage_rate':'mortgage_rates','stock':'tsx'}
 
 for indicator_name in indicator_names:
   print(indicator_name)
@@ -85,9 +85,9 @@ for indicator_name in indicator_names:
 
 assert os.path.exists(r'../data/oversampled_training_data_combined')
 assert os.path.exists(r'../data/oversampled_training_data_combined/interest_rates')
-assert os.path.exists(r'../data/oversampled_training_data_combined/stock_market/train.csv')
-assert os.path.exists(r'../data/oversampled_training_data_combined/stock_market/dev.csv')
-assert os.path.exists(r'../data/oversampled_training_data_combined/stock_market/test.csv')
+assert os.path.exists(r'../data/oversampled_training_data_combined/tsx/train.csv')
+assert os.path.exists(r'../data/oversampled_training_data_combined/tsx/dev.csv')
+assert os.path.exists(r'../data/oversampled_training_data_combined/tsx/test.csv')
 assert os.stat(r'../data/oversampled_training_data_combined/GDP/train.csv').st_size > 0
 assert os.stat(r'../data/oversampled_training_data_combined/housing/train.csv').st_size > 0
 assert os.stat(r'../data/oversampled_training_data_combined/employment/dev.csv').st_size > 0
