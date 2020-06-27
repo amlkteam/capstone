@@ -63,7 +63,7 @@ def finetuned_model_predictions(input_file_path, finetuned_classifier, output_fi
 
   print(f"All { len(prediction_df) } rows done prediction! ")
 
-  prediction_df.to_csv(output_file_path,index=False)
+  prediction_df.to_csv(output_file_path, index=False)
 
   print("Done export!")
   
@@ -76,7 +76,7 @@ def finetuned_model_predictions(input_file_path, finetuned_classifier, output_fi
 
 # test using local files
 input_file_path = '../data/predictions_data/bloomberg/predictions_dataset_employment_Bloomberg.csv'
-output_file_path = '../data/prediction_output/test_gdp'
+output_file_path = '../data/prediction_output/test_employment.csv'
 classifier = TextClassifier.load('../trained_models/phase_2_employment_model.pt')
 
 finetuned_model_predictions(input_file_path, classifier, output_file_path)
