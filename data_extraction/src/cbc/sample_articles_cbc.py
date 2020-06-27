@@ -90,10 +90,9 @@ unit_tests()
 
 # project_path = "/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/project/"
 project_path = "../../../"
-cbc_sampling_wrapper("Housing",project_path,3)
+cbc_sampling_wrapper("housing",project_path,3)
 cbc_sampling_wrapper("mortgage rates",project_path, 3)
 cbc_sampling_wrapper("interest rates",project_path, 3)
-cbc_sampling_wrapper("tsx",project_path, 3)
 cbc_sampling_wrapper("gdp",project_path, 3)
 cbc_sampling_wrapper("employment",project_path, 3)
 

@@ -1,23 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
+# In[7]:
 
 
 ### CBC SCRAPING CODE
 ### Authors: PANDRAMISHI NAGA SIRISHA
 ### This script contains code to extract the articles from CBC news site
 ###MOST RECENT UPDATE:  
-##2020 June 21, 11:52AM
-#added documentation as per the code review
-#extract_json_items() will run for all articles, and will return null if not in proper format
+##2020 June 27 changed CBC to cbc in output file
+##2020 June 26
+# Included total_count for number of articles to scrape
+#extract_json_items() will now run for articles between start and end date, and will return null if not in proper format
 
 ##2020 June 10 by Pandramishi Naga Sirisha, to write test cases, convert to .py file
 
 
+# In[8]:
 
 
-import configparser
 import urllib.request
 import utility_main
 import json 
@@ -34,8 +35,6 @@ import dateutil.parser
 import os
 from dateutil.parser import parse
 
-
-#https://www.cbc.ca/search_api/v1/search?q=mortgage%20rate&sortOrder=relevance&page=100&fields=feed
 def get_initial_url(search_term):
     """This function returns the URL of the first page API call of the CBC news website given a search string
     Input:
@@ -58,7 +57,7 @@ def get_initial_url(search_term):
     return first_url
     
 
-def scrape_urls(url, start_date, end_date):
+def scrape_urls(url, start_date, end_date, total_count):
     """This function takes in the first query url and scrapes all other articles from past 1 year and returns 
     the urls of such articles
     
@@ -67,14 +66,21 @@ def scrape_urls(url, start_date, end_date):
     url - string : The url of the first page
     start_date - date (format:''%Y-%m-%d %H:%M:%S') : The start date from which you want to retrieve articles from
     end_date - date (format:''%Y-%m-%d %H:%M:%S') : The start date from which you want to retrieve articles till
+    total_count - integer : The minimum count of articles to retrieve
     
     Note: The default time zone will be taken as UTC 
     
     Example:
-    # all_urls = scrape_urls(first_url, "2019-01-01 00:00:00", "2020-05-01 00:00:00")
+    # all_urls = scrape_urls(first_url, "2019-01-01 00:00:00", "2020-05-01 00:00:00", 100)
     """
-    count = 0
     url_list = []
+    print("in scrape_urls() total_count is", total_count)
+    
+    if total_count <= 0:
+        print("The total count should be greater than or equal to 0, writing an empty file")
+        return url_list
+        
+    count = 0
     main_url = url
     r = requests.get(url)
     info = r.json()
@@ -91,24 +97,23 @@ def scrape_urls(url, start_date, end_date):
         return None
     
     for i in info:
-        
         if 'publishtime' in i.keys() and dateutil.parser.parse(i['publishtime']).astimezone(pytz.UTC) > start_tz_obj and dateutil.parser.parse(i['publishtime']) < end_tz_obj:   
             url_list.append(i['url'])
             count += 1
         
     page_number = 2
-    
-    while last_retrieved_items_count > 0 :
-    # For retreiving specific amount of articles (ex: 100) set count < 100 
-    #in the while block below and comment the line above
-    #   while count < 10 :
+    # To extract all the articles remove the AND condition for total_count
+    while last_retrieved_items_count > 0 and count < total_count :
         split_url = main_url.split('page')
         new_url = split_url[0] + "page=" + str(page_number) + "&fields=feed" 
         try:
             r = requests.get(new_url)
+            if r.status_code == 500:
+                print("URL unaccessible")
+                return url_list
         except requests.exceptions.RequestException as e:  
-            raise SystemExit(e)    
-            return None
+            print("URL unaccessible")   
+            return url_list
         
         info = r.json()
         last_retrieved_items_count= len(info)
@@ -117,10 +122,11 @@ def scrape_urls(url, start_date, end_date):
             if  'publishtime' in i.keys() and dateutil.parser.parse(i['publishtime']).astimezone(pytz.UTC) > start_tz_obj and dateutil.parser.parse(i['publishtime']) < end_tz_obj:
                 url_list.append(i['url'])
                 count += 1
+            
                 
         page_number += 1   
         print("page_number: ", page_number)
-
+        print("The count : ", count)
         
     print("The number of articles retrieved is: ", len(url_list))
     return url_list
@@ -138,7 +144,6 @@ def get_author(soup):
     if author_span:
         return author_span.text
     else:
-        #print("No author found in article!")
         return None
 
 
@@ -154,9 +159,7 @@ def get_desc(soup):
         desc_text = desc_tag.text
         return desc_text
     else:
-        #print("No description found in article!")
         return None
-
 
 
 def get_title(soup):
@@ -170,8 +173,8 @@ def get_title(soup):
         title_text = title_tag.text
         return title_text
     else:
-        #print("no title found in article!")
         return None
+
 
 
 def get_url_to_image(soup):
@@ -185,10 +188,8 @@ def get_url_to_image(soup):
         main_image_url = main_image_tag.find("img").attrs["src"]
         return main_image_url
     else:
-        #print("No main header image found in article!")
         return None
         
-
 
 def get_publish_time(soup):
     """returns a tuple of publish time string and datetime string if found in article, None if not
@@ -207,10 +208,10 @@ def get_publish_time(soup):
         timetext_str = time_tag.text.split("|")[0].replace("Posted: ", "").strip()
         return (timetext_str, datetime_str)
     else:
-        #print("No time information found in article!")
         return None
 
 
+# In[16]:
 
 
 def get_source(soup, specify_source_type=True):
@@ -245,7 +246,6 @@ def get_source(soup, specify_source_type=True):
     
 
 
-
 def get_content(soup, as_string=True):
     """Returns the text content from a CBC article (as BeautifulSoup object)
     if as_string is True, return content as one string,
@@ -270,10 +270,12 @@ def get_content(soup, as_string=True):
 
         return final_content
     else:
-        #print("no content found in article!")
         return None
     
 
+
+
+#NEW - USING NEW FUNCTIONS: 
 def extract_json_items(url, specify_source_type=True):
     """Returns a json containing the following items from a CBC article:
         url: the url of the article
@@ -332,8 +334,7 @@ def extract_json_items(url, specify_source_type=True):
         return json_dict
 
 
-
-def main(query,start_date, end_date, project_path):
+def main(query,start_date, end_date, project_path, total_count):
     """
     This function takes a search string, the start date and end_date to retrieve the articles
     from CBC website and stores articles retreived in a json file
@@ -356,7 +357,7 @@ def main(query,start_date, end_date, project_path):
     if  directory_flag == True:
         # path exists
         first_url = get_initial_url(query)
-        all_urls = scrape_urls(first_url, start_date, end_date)
+        all_urls = scrape_urls(first_url, start_date, end_date, total_count)
         json_list = []
     
         try:
@@ -369,8 +370,8 @@ def main(query,start_date, end_date, project_path):
 
             full_query = query.split(" ")
             file_name_prefix = "".join(full_query)
-            file_name = project_path + "project/data_extraction/data/unannotated_data/cbc/" + file_name_prefix + '_' +'cbc_article' + '.json' 
-            
+            file_name = project_path + "data_extraction/data/unannotated_data/cbc/" + file_name_prefix + '_' +'cbc_article' + '.json' 
+            print(file_name)
             with open( file_name, 'w') as json_file:
                 json.dump(json_list, json_file)
             if utility_main.file_exists(file_name):
@@ -388,21 +389,33 @@ def main(query,start_date, end_date, project_path):
         return None
         
     
-    return json_list
+    return True
 
 
+def run_tests():
+    first_url = get_initial_url("interest rates")
+    project_path="/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/project/"
+    
+    # Check start date is earlier than end date
+    x = main("interest rates", "2019-02-01 00:00:00", "2019-01-01 00:00:00", project_path,10)
+    assert x is None, "if start date is greater than end date, None should be returned"
+    
+    # Check the "project" path exists
+    project_path="/non_existenet_path"
+    x = main("interest rates", "2019-01-01 00:00:00", "2019-02-01 00:00:00", project_path,10)
+    assert x is None, "if project directory path does not exist, None should be returned"
+    
+    print("All tests passed")
+    print("----"*30)
 
+run_tests()
 
 config_file = input("Please enter the path to the config file: ")
-# Example './twitter_config.ini'
-# Example format of the config file
-# [DEFAULT]
-# economic_indicator="interest rates"
-# start_date="2019-01-01 00:00:00"
-# end_date="2020-05-01 00:00:00"
-# project_path="/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/"
+# 'cbc_scraping_config.ini'
 print(config_file)
 
+
+import configparser
 
 # Initialize configparser object and read config file
 config = configparser.ConfigParser()
@@ -413,40 +426,20 @@ except:
     print("Config file cannot be read, please check the path")
     
 # Read the configurations
+
 economic_indicator = config.get('DEFAULT','economic_indicator').replace('"', '')
 start_date = config.get('DEFAULT','start_date').replace('"', '')
 end_date = config.get('DEFAULT','end_date').replace('"', '')
 project_path = config.get('DEFAULT','project_path').replace('"', '')
+total_count = config.get('DEFAULT','total_count').replace('"', '')
 print("The economic indicator is ", economic_indicator)
 print("The start date is ", start_date)
 print("The end date is ", end_date)
 print("The project path is ", project_path)
-
-main(economic_indicator,start_date,end_date,(project_path))
-
-
-# ### For other economic indicators
-# #### For interest rates,  the search string used is "interest rates"
-# #### For housing price, the search used is   'housing price'
-# #### For employment, the  search string used is "employment"
-# #### For GDP,  the search string used is "gdp"
-# #### For TSX, the search string used is "tsx", "stock market"
-
-# In[34]:
+print("The count of articles to be retrieved is ", total_count)
+main(economic_indicator,start_date,end_date,(project_path), int(total_count))
 
 
-def run_tests():
-    first_url = get_initial_url("interest rates")
-    project_path="/Users/nagasiri/Desktop/NagaSiri/MDS-CL/Capstone/better_dwelling_capstone/project/"
-    
-    # Check start date is earlier than end date
-    x = main("interest rates", "2019-02-01 00:00:00", "2019-01-01 00:00:00", project_path)
-    assert x is None, "if start date is greater than end date, None should be returned"
-    
-    # Check the "project" path exists
-    project_path="/non_existenet_path"
-    x = main("interest rates", "2019-01-01 00:00:00", "2019-02-01 00:00:00", project_path)
-    assert x is None, "if project directory path does not exist, None should be returned"
 
-run_tests()
+
 
