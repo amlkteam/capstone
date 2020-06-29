@@ -1,12 +1,4 @@
 # better_dwelling_capstone
-
-#### Authors:
-
-- Pandramishi Naga Sirisha
-- Jonathan TK Chan
-- Aaron Tian
-- Amy Lam
-
  ---
 
 ### Capstone project reproduction instructions:
@@ -438,4 +430,4 @@ cd visualization/src
 python dash_frontend_final.py
 ```
 
-![Dash visualization app interface](https://github.ubc.ca/ltian05/better_dwelling_capstone/blob/master/readme_img/switch_indicator_graphs.gif)
+![Dash visualization app interface](https://github.com/amlkteam/capstone/readme_img/switch_indicator_graphs.gif)
