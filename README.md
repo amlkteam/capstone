@@ -430,4 +430,4 @@ cd visualization/src
 python dash_frontend_final.py
 ```
 
-![Dash visualization app interface](https://github.com/amlkteam/capstone/readme_img/switch_indicator_graphs.gif)
+![Dash visualization app interface](https://github.com/amlkteam/capstone/tree/master/readme_img/switch_indicator_graphs.gif)
