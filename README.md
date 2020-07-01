@@ -56,11 +56,11 @@ Note: bolded dependency must be the specified version; unbolded ones represent t
 
 **Oversampling and undersampling:** Oversampling and undersampling are techniques used to adjust the class distribution of a dataset. We conducted oversampling by randomly sampling the under-represented classes with replacement, and undersampling by randomly sampling the over-represented classes. For our experiment, we used the undersampling method for the datasets of employment and stock market, and implemented the oversampling method for the datasets of the rest four economic indicators.
 
-#### We inject human knowledge/understanding of the economic/financial world through annotated/golden-labelled examples to train more accurate indicator-specific models.  
+#### We injected human domain knowledge about the economic/financial world through annotations/golden-labelled examples to train accurate indicator-specific models.  
 Factors we took into consideration when labelling sentiment of news articles with respect to each economic indicator:
 
  Economic Indicator | Factors that influence the economic indicator
- -------------------------------------------------------------------
+ --------|----------------------------
  GDP  | Employment, Economy, Investment in a company, Layoffs, Province-level increase/decrease.  
  Employment | Recession, Layoffs, Investment in a large company.
 Stock Market | Interest rates, Employment, General economy
@@ -69,9 +69,10 @@ Mortgage rate | Interest rate as a cost of funding, Bank competition(price war t
 Housing price | Economy, Insolvency/bankruptcy (leads to force sale ),investment by a big company, Surge in investors, Money laundering(push up certain luxury housing price), Layoffs(if it increases insolvency rate of home owners, likely if big layoffs)
 
 #### Model training results
-- baseline pretrained Bert models only gave accuracy around 0.5-0.6 when doing sentiment classification on our golden-labelled test-set
+- comparison: baseline pretrained Bert models only gave accuracy score around 0.46-0.62 when performing sentiment classification on our golden-labelled examples
+
 Classifier | Best Accuracy | Best F1-score
-------------------------------------------
+-----|--------------|-------------------
 GDP | 0.82 | 0.72
 Mortgage Rate | 0.72 | 0.56
 Interest Rate| 0.83 | 0.70
