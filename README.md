@@ -44,6 +44,7 @@ Note: bolded dependency must be the specified version; unbolded ones represent t
 **4. CBC Sampling for annotation** -- To sample the data from the CBC articles that are extracted to be split into data to_annotate and data to_predict
 
 **5. Bloomberg Sampling for annotation** -- Sample the data from the Bloomberg articles that are extracted.
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 ### <u>Sentiment Analyzer Module:</u>
@@ -62,7 +63,7 @@ Note: bolded dependency must be the specified version; unbolded ones represent t
 
 ### <u>Visualization Module:</u>
 
-**1. Build combined indicator datafile for visualization ** -- To extract relevant values from indicator data files and combine into one csv file. 
+**1. Build combined indicator datafile for visualization** -- To extract relevant values from indicator data files and combine into one csv file. 
 
-**2. Run final visualization ** -- To visualize the correlation between changes in news sentiment against trend in economic indicator with Plotly in a Dash app.
+**2. Run final visualization** -- To visualize the correlation between changes in news sentiment against trend in economic indicator with Plotly in a Dash app.
 
