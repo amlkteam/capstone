@@ -1,13 +1,13 @@
 # Capstone project : Does new report or manipulate financial markets? 
 #### In collaboration with Canadian housing news outlet Better Dwelling
 
-Introduction: This project aims to  explore the relationship between news article sentiment and economic indicator performance in Canada. The project involved scraping Canadian news articles, assigning polarity classification using a sentiment analyzer, and creating a visualization interface displaying correlation results.
+This project aims to  explore the relationship between news article sentiment and economic indicator performance in Canada. The project involved scraping Canadian news articles, assigning polarity classification using a sentiment analyzer, and creating a visualization interface displaying correlation results.
 
+[Check out our Presentation slides on Model training results, Correlation Analysis and Error Analysis](https://github.com/amlkteam/capstone/blob/master/Better%20Dwelling%20Capstone_Presentation_combined.pdf)
 
 #### Our final product deliverable:
 ![Dash visualization app interface](https://github.com/amlkteam/capstone/blob/master/readme_img/switch_indicator_graphs.gif)
 
-[Check out our Presentation slides on Model training results, Correlation Analysis and Error Analysis](https://github.com/amlkteam/capstone/blob/master/Better%20Dwelling%20Capstone_Presentation_combined.pdf)
 
 **Programming Pipeline - Three independent modules:**
 
