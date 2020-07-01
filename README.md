@@ -66,7 +66,7 @@ Factors we took into consideration when labelling sentiment of news articles wit
 Stock Market | Interest rates, Employment, General economy
 Interest rate | Economy, Employment, Inflation target
 Mortgage rate | Interest rate as a cost of funding, Bank competition(price war to gain market share), Lay offs, Economy, Housing price
-Housing price | Economy, Insolvency/bankruptcy (leads to force sale ),investment by a big company, Surge in investors, Money laundering(push up certain luxury housing price), Layoffs(if it increases insolvency rate of home owners, likely if big layoffs)
+Housing price | Economy, Insolvency/bankruptcy (leads to force sale ),investment by a big company, Surge in investors, Money laundering(push up luxury housing price), Layoffs(iincreases insolvency rate of home owners)
 
 #### Model training results
 - comparison: baseline pretrained Bert models only gave accuracy score around 0.46-0.62 when performing sentiment classification on our golden-labelled examples
@@ -98,7 +98,10 @@ Toronto Stock Exchange Index | 0.83 |0.75
 
 The results of the project resulted in 5 out of the 6 models finding positive correlation for the time period observed. GDP was found to have the most heavy positive correlation with the collected news sources, while only mortgage rates were found to have a negative correlation when considering averaged monthly news sentiment. 
 
-Main issues with classification include: news reporting practices creating bias towards negative or neutral classifications, ambiguity in classifying on title and description text alone, and overall small dataset size for fine-tuning. 
+Main issues with classification include: 
+- news reporting practices creating bias towards negative or neutral classifications
+- sentiment ambiguity in classifying on title and description text alone
+- overall small dataset size for fine-tuning. 
 
 Future work for this project can address improvements to classification accuracy by expanding manual annotation datasets and re-working classification pipeline to assign polarity score based on full text content.
 
