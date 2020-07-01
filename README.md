@@ -65,10 +65,10 @@ Factors we took into consideration when labelling sentiment of news articles wit
 Stock Market | Interest rates, Employment, General economy
 Interest rate | Economy, Employment, Inflation target
 Mortgage rate | Interest rate as a cost of funding, Bank competition(price war to gain market share), Lay offs, Economy, Housing price
-Housing price | Economy, Insolvency/bankruptcy (leads to force sale ),investment by a big company, Surge in investors, Money laundering(push up luxury housing price), Layoffs(iincreases insolvency rate of home owners)
+Housing price | Economy, Insolvency/bankruptcy (leads to force sale ),investment by a big company, Surge in investors, Money laundering(push up luxury housing price), Layoffs(increases insolvency rate of home owners)
 
 #### Model training results
-- comparison: baseline pretrained Bert models only gave accuracy score around 0.46-0.62 when performing sentiment classification on our golden-labelled examples
+- as a comparison: baseline pretrained Bert models only gave accuracy score around 0.46-0.62 when performing sentiment classification on our golden-labelled examples
 
 Classifier | Best Accuracy | Best F1-score
 -----|--------------|-------------------
