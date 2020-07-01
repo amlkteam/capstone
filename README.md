@@ -1,4 +1,5 @@
-# Capstone project : Does new report or manipulate financial markets? 
+# Capstone project : Does news report or manipulate financial markets? 
+
 #### In collaboration with Canadian housing news outlet Better Dwelling
 
 This project aims to  explore the relationship between news article sentiment and economic indicator performance in Canada. The project involved scraping Canadian news articles, assigning polarity classification using a sentiment analyzer, and creating a visualization interface displaying correlation results.
@@ -30,8 +31,6 @@ scikit_learn | 0.23.1 |
 scipy | 1.4.1 |
 dash | 1.10.0 |
 plotly | 4.5.4  |
-
-Note: bolded dependency must be the specified version; unbolded ones represent the versions we used and tested.
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### <u>Data Extraction Module:</u>
